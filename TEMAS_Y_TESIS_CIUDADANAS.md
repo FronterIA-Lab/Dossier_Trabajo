@@ -38,84 +38,69 @@ Sin jerga innecesaria. Misma raíz del corpus (soberanía cognitiva), otro tono.
 
 ---
 
-## 2. Quince tesis para desarrollar en chat o nota
+## 2. Quince tesis — párrafo de rumbo (por dónde ir)
 
-Cada tesis es una afirmación fuerte. En el chat: plantéala → da un ejemplo de vida diaria → cierra con una pregunta al lector.
+Cada bloque trae la tesis en una línea y un párrafo para orientar la nota o el chat. No es el texto final: es el norte.
 
 ### T1. La coherencia no es verdad
-**Tesis:** Que una respuesta sea fluida, segura y bien escrita no significa que sea cierta; solo significa que suena como lo que suele decirse.  
-**Gancho cotidiano:** el consejo médico, legal o financiero “perfecto” del chat.  
-**Cierre:** ¿Cuándo fue la última vez que una frase bien dicha te hizo bajar la guardia?
+**Tesis:** Que suene bien no lo hace cierto.  
+**Por dónde ir:** Parte de una escena donde alguien pidió “algo rápido” al chat —un síntoma, una multa, una fecha histórica— y recibió una respuesta impecable, segura, casi paternal. Luego revela el fallo al contrastar. El punto no es “la IA miente”: es que **optimiza fluidez**, y la fluidez nos desarma. Cierra enseñando un gesto: pedir fuente, preguntar “¿cómo lo sabes?” o contrastar con alguien que viva el tema. Tono: calma, sin panic porn.
 
 ### T2. Si no validas tú, valida el promedio
-**Tesis:** Cuando dejas que la máquina cierre el juicio, no estás siendo eficiente: estás aceptando la opinión más frecuente de internet.  
-**Gancho:** tareas escolares, currículums, cartas, decisiones de compra.  
-**Cierre:** ¿Qué decisión tuya reciente salió “promedio” sin que te dieras cuenta?
+**Tesis:** Delegar el juicio final es aceptar el promedio de internet.  
+**Por dónde ir:** Habla de eficiencia falsa. Currículum “perfecto”, carta de amor sin olor a nadie, tarea escolar que podría ser de cualquier país. Muestra que el modelo no elige lo mejor para *ti*: elige lo más probable en sus datos. Lleva al lector a recuperar una decisión reciente y preguntarse qué tenía de suyo y qué era plantilla. Invita a usar la IA como borrador, nunca como veredicto.
 
 ### T3. Tu duda es un acto político
-**Tesis:** En un sistema que premia la velocidad y la certeza, detenerse a dudar es una forma mínima de soberanía.  
-**Gancho:** scrollear noticias de guerra, economía o “lo que dijo la IA”.  
-**Cierre:** ¿Qué pasaría si antes de compartir esperaras el tiempo de un café?
+**Tesis:** En un mundo adicto a la certeza, dudar es soberanía mínima.  
+**Por dónde ir:** Contrasta la velocidad del feed (guerra, mercados, “lo dijo la IA”) con el tiempo de un café. No celebres la parálisis: celebra la **pausa con método**. Un minuto antes de compartir ya desplaza poder. Puedes dar tres preguntas de bolsillo: ¿quién gana si me lo creo?, ¿quién lo vivió?, ¿qué me falta saber? Cierra sin sermón: la duda no es frialdad; es cuidado.
 
 ### T4. La atención es el primer extractivismo
-**Tesis:** Antes de robarte datos, la plataforma te roba foco; sin atención propia no hay pensamiento propio.  
-**Gancho:** notificaciones en el trabajo, en la cena, en el camión.  
-**Cierre:** ¿Quién decidió hoy a qué miraste?
+**Tesis:** Antes que tus datos, te quitan el foco.  
+**Por dónde ir:** Empieza en el cuerpo: el dedo que abre la notificación en el camión, en la cena, en el baño. Sin atención no hay memoria ni criterio; por eso el saqueo empieza ahí. Evita moralina anti-celular: nombra diseño (rojo, badge, urgencia fabricada). Propón un experimento corto —una comida o un trayecto sin pantalla— y describe qué vuelve cuando vuelve el silencio. Pregunta final: ¿quién decidió hoy a qué miraste?
 
 ### T5. “Gratis” casi nunca es el precio real
-**Tesis:** Si no pagas con dinero, pagas con comportamiento, perfil y predicción sobre tu vida.  
-**Gancho:** apps “útiles”, filtros, traductores, asistentes.  
-**Cierre:** ¿Qué parte de tu día ya está en manos de un servicio que no puedes auditar?
+**Tesis:** Si no pagas con dinero, pagas con predicción sobre tu vida.  
+**Por dónde ir:** Haz inventario casero: traductor, filtro, nube de fotos, asistente “útil”. Explica sin tecnicismo que el producto eres tú perfilado —hábitos, miedos, horarios—. No hace falta demonizar cada app: sí hacer visible el trueque. Una línea útil: *lo gratis suele cobrarse en soberanía*. Cierra pidiendo al lector nombrar un servicio del que no podría salir aunque quisiera.
 
 ### T6. El olvido también es violencia
-**Tesis:** Lo que no aparece en los datos —tu pueblo, tu acento, tu muerto, tu fiesta— no es un detalle: es una exclusión con consecuencias.  
-**Gancho:** búsquedas sobre tu región que salen vacías o estereotipadas.  
-**Cierre:** ¿Qué de lo que amas no cabría en un dataset del Norte?
+**Tesis:** Lo que no entra en los datos no es un detalle: es exclusión.  
+**Por dónde ir:** Ancla en territorio: un pueblo, un apodo, una fiesta, un muerto, una lengua que el buscador aplana o estereotipa. El olvido no es inocente: organiza qué existe para la máquina y qué no. Evita romanticismo: muestra consecuencia práctica (no hay info útil, o solo hay estigma). Invita a escribir una frase que *no cabría* en un dataset del Norte. Esa frase es el corazón de la nota.
 
 ### T7. El error de la máquina lo paga el de abajo
-**Tesis:** Cuando un algoritmo se equivoca, rara vez paga la empresa: paga quien ya era vulnerable (migrante, pobre, mujer, indígena, joven).  
-**Gancho:** crédito negado, currículum filtrado, “riesgo” marcado por una app.  
-**Cierre:** ¿Quién limpia el desastre cuando la IA “casi acierta”?
+**Tesis:** El costo del “casi acierto” cae sobre quien ya era vulnerable.  
+**Por dónde ir:** Casos cotidianos: crédito negado, CV filtrado, “persona de riesgo”, error en un trámite digital. La empresa disculpa; la persona carga la consecuencia. Sin victimismo abstracto: nombra asimetría. Puedes cerrar con la pregunta ética simple: ¿quién limpia el desastre? Y con un gesto: no aceptar un “no” algorítmico sin pedir humano que explique.
 
 ### T8. Preguntar mal es dejarse gobernar
-**Tesis:** La forma de la pregunta ya orienta la respuesta; si preguntas como cliente del Norte, recibes mundo del Norte.  
-**Gancho:** “explícame neutro”, “dame la mejor opción”, “sé objetivo”.  
-**Cierre:** ¿Qué pasa si empiezas con “desde mi barrio / mi lengua / mi herida…”?
+**Tesis:** La forma de la pregunta ya trae el mundo de la respuesta.  
+**Por dónde ir:** Compara dos prompts. Uno: “explícame neutro / dame lo mejor / sé objetivo”. Otro: “desde mi barrio / mi lengua / mi trabajo informal / mi herida…”. Muestra cómo el primero produce enciclopedia del promedio y el segundo obliga a situar. Esto es MCC sin nombrarlo: calibración contextual en casa. Termina con una plantilla de pregunta situada que el lector pueda copiar mañana.
 
 ### T9. No necesitas hackear: necesitas no delegar lo esencial
-**Tesis:** La resistencia cotidiana no exige ser ingeniero; exige no entregar el criterio final sobre tu vida, tu voto, tu duelo o tu deseo.  
-**Gancho:** pedirle a la IA que te diga qué sentir, qué postear, qué creer.  
-**Cierre:** ¿Qué cosas de tu vida no deberían pasar nunca por un modelo?
+**Tesis:** La resistencia cotidiana es no entregar el criterio final.  
+**Por dónde ir:** Baja la temperatura: no hace falta ser ingeniero ni “desconectarse del siglo”. Hace falta una frontera. Lista corta de lo no delegable: voto, duelo, deseo, cuidado de alguien, pelea ética. La IA puede ayudar a redactar; no a decidir quién eres. Tono íntimo, casi de conversación de cocina. Cierra: ¿qué de tu vida no debería pasar nunca por un modelo?
 
 ### T10. La vigilancia se vende como cuidado
-**Tesis:** Muchas herramientas de “seguridad”, “orden” o “eficiencia” funcionan también como mapas de control sobre cuerpos ya marcados.  
-**Gancho:** cámaras, apps vecinales, denuncias automatizadas, listas de “sospechosos”.  
-**Cierre:** ¿Seguridad para quién, y a costa de quién?
+**Tesis:** Mucha “seguridad” es mapa de control con buena prensa.  
+**Por dónde ir:** Cámaras, apps vecinales, botones de pánico, listas de sospechosos, “inteligencia” policial. Parte del miedo legítimo (robo, violencia) y muestra la trampa: proteger a unos marcando a otros. Pregunta guía: ¿seguridad para quién, a costa de quién? Evita conspiración; usa ejemplos reconocibles. Un gesto: preguntar, en junta o chat vecinal, quién administra los datos y quién puede borrar tu nombre.
 
 ### T11. Hablar como máquina es empezar a pensar como promedio
-**Tesis:** Si copias el tono del asistente —limpio, sin contradicción, siempre útil— puedes perder el derecho a la ambigüedad, la rabia y la lentitud.  
-**Gancho:** mails, informes, mensajes que “suenan a ChatGPT”.  
-**Cierre:** ¿Qué palabra tuya no entraría en una respuesta “bien optimizada”?
+**Tesis:** El tono “útil y limpio” también coloniza la prosa interior.  
+**Por dónde ir:** Detecta el estilo ChatGPT en mails, informes, hasta disculpas de pareja: simétrico, sin contradicción, siempre conciliador. No es pecaminoso usar ayuda; es peligroso perder rabia, humor, rodeos, palabras feas y necesarias. Propón reescribir un párrafo “perfecto” hasta que huela a persona. Celebrar la imperfección como señal de vida, no de error.
 
 ### T12. Desconectar no es nostalgia: es higiene
-**Tesis:** Apagar, caminar, escribir a mano o conversar sin pantalla no es “odio a la tecnología”: es mantener músculo cognitivo.  
-**Gancho:** un domingo sin feeds; una reunión sin celular en la mesa.  
-**Cierre:** ¿Cuánto de tu cansancio es falta de sueño… y cuánto es saqueo de atención?
+**Tesis:** Apagar es mantenimiento del músculo cognitivo, no odio a la técnica.  
+**Por dónde ir:** Habla de cansancio real: no solo falta de sueño, también saqueo de atención. Un domingo sin feeds, celular lejos en la sobremesa, caminar sin audífonos. Enmarca como higiene —como lavarse los dientes—, no como pureza moral. Si alguien depende del celular para trabajo, ofrece micro-gestos, no retiro total. Pregunta: ¿cuánto de tu agotamiento es diseño ajeno?
 
 ### T13. La colonización también entra por el bolsillo y el hábito
-**Tesis:** No hace falta un ejército: basta dependencia de nube, chip, idioma y costumbre para que otro decida el marco de tu realidad.  
-**Gancho:** “no puedo trabajar si cae WhatsApp / el login / la nube”.  
-**Cierre:** ¿Qué parte de tu vida se cae si se cae un servidor lejano?
+**Tesis:** Basta dependencia de nube, chip e idioma para que otro marque el marco.  
+**Por dónde ir:** “Se cayó WhatsApp y se cayó el día.” Login, nube, POS, plataforma escolar. Sin ejército: con hábito. Traduce “soberanía tecnológica” a experiencia: qué parte de tu vida no tolera un servidor lejano apagado. No prometas autosuficiencia mágica; sí conciencia de puntos únicos de falla y un plan B humano (teléfono, libreta, vecino). Eso ya es política.
 
 ### T14. Enseñar a desconfiar con cariño es un oficio democrático
-**Tesis:** La salida no es el pánico ni la fe ciega: es enseñar en casa, escuela y barrio a verificar, contextualizar y sostener la incertidumbre.  
-**Gancho:** hijos con tarea hecha por IA; tíos reenviando audios.  
-**Cierre:** ¿Quién te enseñó a dudar sin volverte cínico?
+**Tesis:** Ni pánico ni fe ciega: pedagogía de la verificación en casa y barrio.  
+**Por dónde ir:** Escenas: hijo con tarea hecha por IA; tío reenviando audio milagroso; compañero que “lo dijo el chat”. La respuesta no es humillar: es acompañar a contrastar. Dale al lector un ritual familiar de tres pasos (pausar, preguntar origen, buscar segunda fuente). Democracia aquí es oficio cotidiano, no solo urna. Cierra: ¿quién te enseñó a dudar sin volverte cínico? Si nadie, puedes ser esa persona para alguien.
 
 ### T15. Soberanía cognitiva empieza en gestos pequeños
-**Tesis:** No esperes la ley perfecta para empezar: un minuto de demora, una fuente segunda, una pregunta situada y un “esto lo decido yo” ya desplazan poder.  
-**Gancho:** checklist de bolsillo para el día.  
-**Cierre:** ¿Cuál de esos cuatro gestos puedes practicar mañana sin pedir permiso a nadie?
+**Tesis:** No esperes la ley perfecta: cuatro gestos ya desplazan poder.  
+**Por dónde ir:** Esta es la nota-manifiesto breve. Lista de bolsillo: (1) un minuto de demora, (2) una segunda fuente, (3) una pregunta situada, (4) un “esto lo decido yo”. Cada gesto caben en un día laboral. Evita heroísmo; celebra lo repetible. Puede ser el cierre de la serie o el texto que pegas en la bio del blog. Pregunta final: ¿cuál practicas mañana sin pedir permiso?
 
 ---
 
