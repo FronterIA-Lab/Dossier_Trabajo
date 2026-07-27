@@ -13,3 +13,7 @@ El cruce del corpus está en:
 **[DOSSIER_INVESTIGACION_AUTONOMA.md](./DOSSIER_INVESTIGACION_AUTONOMA.md)**
 
 Incluye: mapa del sistema teórico, categorías propias, ejes de investigación, agenda de papers/libros, talleres, literaturas y redes a monitorear, y un plan operativo por ciclos.
+
+Para piezas cortas orientadas al ciudadano de a pie (notas, blog, chat):
+
+**[TEMAS_Y_TESIS_CIUDADANAS.md](./TEMAS_Y_TESIS_CIUDADANAS.md)** — temas sencillos + 15 tesis desarrollables.
