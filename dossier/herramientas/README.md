@@ -2,6 +2,7 @@
 
 | Archivo | Para qué |
 |---|---|
+| [`MERCADO_COMO_VENDER_CERTEZA.md`](MERCADO_COMO_VENDER_CERTEZA.md) | **Qué compra el mercado** + 3 opciones (recomendada: taller) |
 | [`FAMILIA_CERTEZA.md`](FAMILIA_CERTEZA.md) | Keynote + taller + guía PDF (grupal vs individual) |
 | [`SKU1_CERTEZA_ONEPAGER.md`](SKU1_CERTEZA_ONEPAGER.md) | Vender la charla / keynote |
 | [`SKU1B_TALLER_CERTEZA_ONEPAGER.md`](SKU1B_TALLER_CERTEZA_ONEPAGER.md) | Vender el taller (misma idea + práctica) |
