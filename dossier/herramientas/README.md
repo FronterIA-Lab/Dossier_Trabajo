@@ -2,7 +2,9 @@
 
 | Archivo | Para qué |
 |---|---|
-| [`SKU1_CERTEZA_ONEPAGER.md`](SKU1_CERTEZA_ONEPAGER.md) | Vender la charla (precios + CTA) |
+| [`FAMILIA_CERTEZA.md`](FAMILIA_CERTEZA.md) | Keynote + taller + guía PDF (grupal vs individual) |
+| [`SKU1_CERTEZA_ONEPAGER.md`](SKU1_CERTEZA_ONEPAGER.md) | Vender la charla / keynote |
+| [`SKU1B_TALLER_CERTEZA_ONEPAGER.md`](SKU1B_TALLER_CERTEZA_ONEPAGER.md) | Vender el taller (misma idea + práctica) |
 | [`SLIDES_CERTEZA_OUTLINE.md`](SLIDES_CERTEZA_OUTLINE.md) | Armar las 16 slides sin inventar |
 | [`SOW_CHARLA_CERTEZA.md`](SOW_CHARLA_CERTEZA.md) | Contrato corto cuando te contraten |
 | [`SKU2_MACS_ONEPAGER.md`](SKU2_MACS_ONEPAGER.md) | Vender la auditoría MACS |
