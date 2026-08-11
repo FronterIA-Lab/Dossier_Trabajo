@@ -33,10 +33,13 @@ Curso MCC completo · auditoría MACS · implementación técnica.
 
 ## Precios
 
-| Modalidad | Precio ancla |
+| Modalidad | Precio lista |
 |---|---|
-| Grupo cerrado (institución, hasta ~20 pers.) | **$30,000–35,000 MXN** |
-| Cohorte abierta (boletos) | **$800–1,500 MXN / persona** (mín. 8) |
+| Grupo cerrado ½ día (hasta ~20 pers.) | **$55,000 MXN** |
+| Grupo cerrado día completo (hasta ~25) | **$85,000 MXN** |
+| Cohorte abierta (boletos) | **$1,200–2,000 MXN / persona** (mín. 10) |
+
+Fuente: `dossier/15_MENU_PRECIOS_PRIMER_NIVEL.md`
 | Internacional | USD equivalente |
 
 Anticipo 50–100% para bloquear fecha.
@@ -44,7 +47,7 @@ Anticipo 50–100% para bloquear fecha.
 ## CTA
 
 > Taller **Certeza sin sustancia** (2.5–3 h): el equipo sale sabiendo qué es un LLM sin humo y con un filtro práctico para no firmar fluidez vacía.  
-> Desde $30,000 MXN grupo cerrado. ¿Agendamos?
+> Taller Certeza desde $55,000 MXN (½ día). ¿Agendamos?
 
 ## Puerta al MCC (al final, suave)
 

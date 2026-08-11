@@ -36,10 +36,12 @@ Medios / periodismo → despachos → universidad / ONG.
 
 ## Precios ancla
 
-| Modalidad | Precio | Anticipo |
+| Modalidad | Precio lista | Anticipo |
 |---|---|---|
-| **MACS Express** (1 documento / 1 flujo) | **$35,000–55,000 MXN** · o **$1,800–2,800 USD** | 50% |
-| **MACS Completa** (flujo multi-etapa) | **$95,000–150,000 MXN** · o **$5,000–8,000 USD** | 50% |
+| **MACS Express** (1 documento / 1 flujo) | **$65,000 MXN** · **$3,800 USD** | 50% |
+| **MACS Completa** (flujo multi-etapa) | **$145,000 MXN** · **$8,500 USD** | 50% |
+
+Fuente: `dossier/15_MENU_PRECIOS_PRIMER_NIVEL.md`
 
 + IVA cuando aplique. Cliente aporta corpus bajo NDA.
 
@@ -56,7 +58,7 @@ Medios / periodismo → despachos → universidad / ONG.
 
 > FronterIA-Lab ofrece **MACS Express**: auditoría de cómo su organización produce con IA — no solo si el output “está sesgado”, sino si el mandato de producción replica el daño.  
 > Entrega: informe 8–12 pp + Coeficiente de Grieta.  
-> Desde $35,000 MXN (50% anticipo). ¿Agendamos kickoff de 30 minutos?
+> MACS Express $65,000 MXN (50% anticipo). ¿Agendamos kickoff de 30 minutos?
 
 ## Checklist para ti
 
