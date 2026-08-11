@@ -45,6 +45,8 @@ Serie *“Sujeto no contemplado”* — sí, pero **1 pieza por semana máximo**
 
 ## 4. Menú de servicios (solo estos — deja de reinventarlo)
 
+**Vitrina fijada (competencia percibida → paquetes):** [`12_PAQUETES_OPCIONES.md`](12_PAQUETES_OPCIONES.md) — P1 Certeza · P2 MACS · P3 TEKTRON.
+
 Marca dual (ya decidida): keynote a **tu nombre**; auditoría/protocolo a **FronterIA-Lab**.
 
 ### SKU 1 — Puerta (a): Alfabetización crítica = charla *Certeza sin sustancia*

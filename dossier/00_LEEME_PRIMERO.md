@@ -60,7 +60,8 @@ Curso MCC: **sí se termina**, pero en paralelo ligero (pago + media mínima). V
 | [`04_GAPS_Y_FALTANTES.md`](04_GAPS_Y_FALTANTES.md) | Lo que bloquea cobro |
 | [`05_ESTRATEGIA_SERVICIOS.md`](05_ESTRATEGIA_SERVICIOS.md) | Menú de 4 SKUs |
 | [`09_INVESTIGACION_CONSULTORIAS_IA.md`](09_INVESTIGACION_CONSULTORIAS_IA.md) | Qué es consultoría de IA y precios de mercado |
-| [`11_EVALUACION_COMPETENCIA.md`](11_EVALUACION_COMPETENCIA.md) | **100x / Seedup / Magokoro** — qué copiar, qué no pelear |
+| [`11_EVALUACION_COMPETENCIA.md`](11_EVALUACION_COMPETENCIA.md) | Competencia *percibida* (categoría “consultoría IA”) |
+| [`12_PAQUETES_OPCIONES.md`](12_PAQUETES_OPCIONES.md) | **Menú P1–P3** a partir de cómo compra el usuario promedio |
 
 Corpus crudo (PDFs/MD originales) sigue en la raíz de este repo y en los demás repos del lab.
 

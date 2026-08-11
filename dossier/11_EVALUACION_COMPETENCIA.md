@@ -200,24 +200,13 @@ Ofrece **Certeza** como literacy de segundo nivel (“después del taller de her
 
 ---
 
-## 7. Playbook: copia / adapta / ignora
+## 7. Para qué sirve esta ficha (y para qué no)
 
-### Copia esta semana
-1. Bloque “Capacitaciones / intervenciones recientes” (aunque sean 2 entradas).  
-2. Tres precios “desde” en one-pager y sitio.  
-3. CTA único: agenda 30 min / mailto indioyori@.  
-4. Una FAQ de precios (estilo 100x blog).
+**Sí sirve para:** ver qué ranuras de compra ocupa el mercado medio (formación / diagnóstico / implementación) y calibrar *tus* paquetes en esa categoría percibida.
 
-### Adapta (no clones)
-1. Guía vertical Magokoro → tu ángulo crítico + menú MACS/Certeza/TEKTRON.  
-2. Escalera Seedup → Express/Completa pero con entregables epistémicos.  
-3. Lean 100x → “mandato y proceso antes de modelo”.
+**No sirve para:** clonar su playbook (CTAs, SEO vertical, claims de ROI, catálogo de tools). Eso es el manual SV; no es tu oferta.
 
-### Ignora
-1. Catálogo de 20 tools.  
-2. Garantías de ROI inventadas.  
-3. Retainers enterprise de cientos de miles/mes.  
-4. Más investigación de competencia (esta ficha basta).
+**Decisión de menú (P1–P3):** ver [`12_PAQUETES_OPCIONES.md`](12_PAQUETES_OPCIONES.md).
 
 ---
 
