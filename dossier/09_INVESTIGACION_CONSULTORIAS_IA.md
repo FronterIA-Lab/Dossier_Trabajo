@@ -151,7 +151,7 @@ Evitar “descuento del Sur Global”: precio = valor del entregable, no tu cód
 2. Tu foso está en **D (gobernanza epistémica) + C on-prem + A crítica** — no en automatizar WhatsApp.  
 3. La entrada comercial que el mercado ya presupuesta es el **taller/assessment** ($15–90k MXN). Ahí entra **Certeza** y **MACS Express**.  
 4. La caja recurrente está en **RAG + retainer** (TEKTRON) y luego gobernanza mensual.  
-5. CLACSO/grants son **canal de misión y autoridad**, no el plan A de renta del mes — salvo diploma propio / grant ganado.  
+5. CLACSO: **ya eres miembro (GT EPICC)** y el **MCC tiene validación CLACSO** (está en fronteria-lab.com junto al DOI Zenodo). Eso es autoridad de formación/gobernanza que 100x/Seedup/Magokoro no tienen. Usarlo en propuestas; no tratarlo como “pendiente”. Grants/honorarios siguen siendo canal de misión, no plan A de renta del mes.  
 6. La home de fronteria-lab.com (infra soberana / diagnóstico) ya habla línea C; falta explícita la línea A (Certeza) y D (MACS) enlazadas al blog.
 
 ---

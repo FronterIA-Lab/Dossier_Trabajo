@@ -30,10 +30,10 @@ Cobertura de **catálogo idéntico** = no, y está bien.
 
 | Línea | ¿Ellos la ofrecen? | ¿Tú la cubres? | Con qué | Nota |
 |---|---|---|---|---|
-| **Formación** | 100x sí (núcleo) · Seedup marginal · Magokoro marginal | **Sí** | Certeza (+ MCC curso aparte) | Cubres la *necesidad* “capacitar al equipo”. No cubres su *contenido* (ChatGPT/prompts/marketing). |
+| **Formación** | 100x sí (núcleo) · Seedup marginal · Magokoro marginal | **Sí** | Certeza (+ **MCC** con validación CLACSO / GT EPICC) | Cubres la necesidad “capacitar”. Ellos: tools. Tú: criterio + método validado en red académica LatAm. |
 | **Diagnóstico** | Seedup sí (Express/Estratégica) · Magokoro assessment · 100x lean/procesos | **Sí** | MACS | Cubres “díganme dónde estamos”. Ellos miden growth/readiness/procesos; tú mandato cognitivo. |
 | **Implementación** | Magokoro sí (núcleo) · Seedup Engine · 100x acelerador 30d | **Sí, acotada** | TEKTRON piloto + retainer | Cubres RAG/perímetro soberano. **No** cubres chatbot WhatsApp, agentes de ventas, legal tech, edtech custom, CRM. |
-| **Gobernanza** | Ellos: bullet “ética” / datos · casi nadie vende auditoría seria en ES | **Sí, y más fuerte** | MACS + IPA (+ papers) | Aquí **tú cubres más** que ellos. Ellos nombran ética; tú tienes instrumento. |
+| **Gobernanza** | Ellos: bullet “ética” / datos · casi nadie vende auditoría seria en ES | **Sí, y más fuerte** | MACS + IPA (+ papers) · respaldo **CLACSO/EPICC + MCC** | Aquí **tú cubres más** que ellos. |
 
 ---
 

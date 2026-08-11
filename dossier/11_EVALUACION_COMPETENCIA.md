@@ -141,7 +141,7 @@ La competencia mexicana de “IA para empresas” vende **productividad, growth 
 | Diagnóstico | Lean / procesos | Pulso / growth | Assessment readiness | **MACS (mandato cognitivo)** |
 | Implementación | Acelerador 30d | Agentes revenue + CRM | Custom software | **TEKTRON / RAG on-prem** |
 | Gobernanza | Bullet “ética” | Casi ausente | Seguridad/datos táctico | **MCC + IPA + papers + Chapultepec-aligned** |
-| Prueba social | Casos recientes fuertes | Logos + % | Casos blog + Holiday Inn | **CLACSO/Zenodo/papers — falta casos B2B con N+ciudad** |
+| Prueba social | Casos recientes fuertes | Logos + % | Casos blog + Holiday Inn | **MCC con validación / afiliación GT EPICC-CLACSO** (ya en fronteria-lab.com) + Zenodo · NVIDIA Inception · falta casos B2B con N+ciudad |
 | Precio entrada | $15–35k | $45k diag / gratis call | Consulta gratis | **$22–35k Certeza / $35–55k MACS Express** |
 | Foso | Volumen talleres | Stack growth | Capacidad de build | **Teoría + instrumentos propios + edge soberano** |
 
@@ -168,7 +168,7 @@ Conclusión: **tus precios ya están calibrados al mercado medio.** El problema 
 
 | Gap | Ellos | Tú hoy | Acción mínima |
 |---|---|---|---|
-| Prueba social con N + ciudad + mes | 100x lo tiene | Papers/CLACSO, pocos B2B nombrados | Pedir permiso a 2–3 orgs / usar “taller N personas · ciudad · año” anónimo si hace falta |
+| Prueba social con N + ciudad + mes | 100x lo tiene | Papers + **MCC validado / GT EPICC-CLACSO** (en sitio); pocos B2B nombrados | Pedir permiso a 2–3 orgs / usar “taller N personas · ciudad · año” anónimo si hace falta — **no reinventar autoridad CLACSO: ya está** |
 | Precio en sitio | Seedup/100x | Cotización opaca | En `/servicios` o one-pager: “desde $35k taller · desde $55k auditoría MACS” |
 | CTA gratis | Todos | Menos visible | Calendly / “30 min sin costo” en home + Ghost |
 | Contenido vertical SEO | Magokoro | Blog genérico / teórico | **1** pieza: “IA en redacciones MX 2026” o “Soberanía cognitiva en universidades” con tu menú al final |
