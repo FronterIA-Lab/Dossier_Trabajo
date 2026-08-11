@@ -16,6 +16,7 @@ Este repo guarda el corpus de trabajo **y** el dossier maestro para dejar de pro
 | [`dossier/05_ESTRATEGIA_SERVICIOS.md`](dossier/05_ESTRATEGIA_SERVICIOS.md) | Menú de 4 SKUs y framing Grieta |
 | [`dossier/06_MAPA_CLARO.md`](dossier/06_MAPA_CLARO.md) | Diccionario simple: qué es cada cosa + curso sí/no |
 | [`dossier/07_ESTRATEGIA_SOBERANIA.md`](dossier/07_ESTRATEGIA_SOBERANIA.md) | **Estrategia madre:** común gratis vs práctica/intervención de pago |
+| [`dossier/08_SITIOS_UNIFICACION.md`](dossier/08_SITIOS_UNIFICACION.md) | Diagnóstico fronteria-lab + Ghost Indioyori + plan unificar/automatizar |
 | [`dossier/herramientas/`](dossier/herramientas/) | One-pagers, SOWs, outline de slides, plan curso MCC |
 
 ## Regla operativa
