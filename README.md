@@ -18,6 +18,7 @@ Este repo guarda el corpus de trabajo **y** el dossier maestro para dejar de pro
 | [`dossier/07_ESTRATEGIA_SOBERANIA.md`](dossier/07_ESTRATEGIA_SOBERANIA.md) | **Estrategia madre:** común gratis vs práctica/intervención de pago |
 | [`dossier/08_SITIOS_UNIFICACION.md`](dossier/08_SITIOS_UNIFICACION.md) | Diagnóstico fronteria-lab + Ghost Indioyori + plan unificar/automatizar |
 | [`dossier/09_INVESTIGACION_CONSULTORIAS_IA.md`](dossier/09_INVESTIGACION_CONSULTORIAS_IA.md) | Investigación profunda: qué venden las consultoras de IA y tu fit |
+| [`dossier/10_PAGINAS_DONDE_CONTRATAN_IA.md`](dossier/10_PAGINAS_DONDE_CONTRATAN_IA.md) | URLs concretas: Workana, Sortlist, CompraNet, Indela, Zinn Hub… |
 | [`dossier/herramientas/`](dossier/herramientas/) | One-pagers, SOWs, outline de slides, plan curso MCC |
 
 ## Regla operativa
