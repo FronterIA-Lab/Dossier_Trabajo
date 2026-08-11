@@ -22,8 +22,8 @@
 
 | # | Oferta | Qué es | Estado | Precio zona |
 |---|---|---|---|---|
-| **F1** | **Certeza sin sustancia** — Keynote | Charla 60–90 min literacy crítica | Guion ✅ · slides ❌ | ~$22–28k MXN |
-| **F1b** | **Certeza** — Taller | 3–4 h (o ~2.5–1 día) in-company | Definido · one-pager listo | ~$35–45k MXN |
+| **F1** | **Certeza sin sustancia** — Keynote | Charla 60–90 min · **también es puerta del método** | Guion ✅ · slides ❌ | ~$22–28k MXN |
+| **F1b** | **Certeza** — Taller | 3–4 h in-company · **formación/método de entrada** (no solo “evento”) | Definido · one-pager listo | ~$35–45k MXN |
 | **F2** | **MACS Express** | Auditoría mandato cognitivo (~2 sem) | Instrumento v1.0 ✅ · SOW/one-pager ✅ | ~$35–55k MXN |
 | **F2b** | **MACS Completa** | Auditoría amplia 4–8 sem | Instrumento ✅ | ~$95–150k MXN |
 | **F3** | **IPA** Express/Completa | Protocolo de instrucción post-MACS | Instrumento v1.0 ✅ · SOW falta | Tras MACS |
@@ -40,18 +40,17 @@
 **Certeza sin sustancia** no es solo “charla comercial”: es la **puerta del método**.  
 Formatos: keynote · taller · (guía corta). Upsell natural: **curso / práctica MCC**.
 
-| Pieza | Rol en el método | Estado | Nota |
-|---|---|---|---|
-| **Certeza** (keynote / taller) | Literacy crítica de entrada | Guion ✅ | Misma familia que MCC |
-| **Curso digital MCC** (13 lecciones, aula, glifos, landing) | Método profundo empaquetado | 🟡 CASI | Falta media + checkout |
-| **16 glifos** (plantillas prácticas) | ✅ | Dentro del curso |
-| **OUTLINE_CURSO_MCC** | ✅ | Backbone pedagógico |
-| Guía vendedor + precios curso | ✅ | Make-Taller-MCC |
-| ZIP empaque venta + láminas + guiones | ✅ | Archivo-final-MCC |
-| Video ejemplo `.mov` | ✅ | Archivo-final-MCC |
-| **Manual para la Soberanía Cognitiva** (CC BY-NC-SA) | ✅ | Hermano práctico del método |
-| Spec / protocolo MCC (capas, métricas) | ✅ | Incl. uso en infra (abstención auditada) |
-| Bitácora campo DeepSeek + métricas multi-modelo | ✅ | Evidencia empírica |
+| Pieza | Rol | Estado |
+|---|---|---|
+| **Certeza** (keynote / taller / guía) | Puerta del método — literacy crítica | Guion ✅ · slides ❌ |
+| **MCC** (método + spec + protocolo) | Método profundo · validación CLACSO | ✅ |
+| **Curso digital MCC** (13 lecciones, glifos, landing) | MCC empaquetado asíncrono | 🟡 Falta media + checkout |
+| **16 glifos** | Práctica del curso | ✅ |
+| **OUTLINE_CURSO_MCC** | Backbone pedagógico | ✅ |
+| Guía vendedor + precios curso | Empaque venta | ✅ |
+| ZIP + láminas + guiones + video `.mov` | Assets Archivo-final | ✅ |
+| **Manual para la Soberanía Cognitiva** | Hermano práctico (CC BY-NC-SA) | ✅ |
+| Bitácora / métricas multi-modelo | Evidencia empírica MCC | ✅ |
 
 ---
 
@@ -155,10 +154,14 @@ CREDENCIALES
   CLACSO/EPICC · MCC validado · Zenodo · NVIDIA Inception
 
 CONSULTORÍA (4 líneas)
-  Formación     → Certeza (+ curso MCC)
+  Formación     → Certeza + MCC
   Diagnóstico   → MACS
   Implementación→ TEKTRON / RAG soberano
   Gobernanza    → MACS + IPA
+
+FORMACIÓN / MÉTODO
+  Certeza sin sustancia → puerta (keynote | taller | guía)
+  MCC (+ curso + manual) → método (validación CLACSO)
 
 PRODUCTOS
   Curso MCC · Manual soberanía · Libro Indio Yori
