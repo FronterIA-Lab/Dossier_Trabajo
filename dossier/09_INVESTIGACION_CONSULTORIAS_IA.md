@@ -170,6 +170,12 @@ Evitar “descuento del Sur Global”: precio = valor del entregable, no tu cód
 
 ---
 
+## Ver también
+
+Evaluación detallada de **100x, Seedup y Magokoro** (PDFs + sitios, agosto 2026): [`11_EVALUACION_COMPETENCIA.md`](11_EVALUACION_COMPETENCIA.md).
+
+---
+
 ## Caveats (honestidad metodológica)
 
 - Precios MX de blogs de agencias = órdenes de magnitud con sesgo comercial, no estadística INEGI.  
