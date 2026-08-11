@@ -77,7 +77,7 @@ ESCALA DIGITAL (paralelo, no bloquea)
 | **Certeza sin sustancia** | Charla de entrada: “la IA suena segura aunque esté vacía” | La puerta de la casa |
 | **Grieta Generativa** | Tesis de poder: no pueden cerrarte sin apagar la máquina | El mensaje fuerte de tus videos |
 | **Olvido Estructural** | Mecanismo: la máquina no te modeló / te deja fuera | El diagnóstico del problema |
-| **MCC** | Método para *usar* la IA sin entregar el juicio | El manual de manejo |
+| **MCC** | Método para *usar* la IA sin entregar el juicio | El manual de manejo · **validación CLACSO / GT EPICC** (ya en sitio) |
 | **Curso MCC** | Ese método enseñado en 13 lecciones online | El curso grabado |
 | **MACS** | Auditoría a una organización (cómo produce con IA) | La inspección del edificio |
 | **IPA** | Protocolo de cómo deben *instruir* sus sistemas | El reglamento después de la inspección |
