@@ -20,18 +20,19 @@
 
 ## 1. Menú consultora (lo que se vende como servicio)
 
-| # | Oferta | Qué es | Estado | Precio zona |
-|---|---|---|---|---|
-| **F1** | **Certeza sin sustancia** — Keynote | Charla 60–90 min · **también es puerta del método** | Guion ✅ · slides ❌ | ~$22–28k MXN |
-| **F1b** | **Certeza** — Taller | 3–4 h in-company · **formación/método de entrada** (no solo “evento”) | Definido · one-pager listo | ~$35–45k MXN |
-| **F2** | **MACS Express** | Auditoría mandato cognitivo (~2 sem) | Instrumento v1.0 ✅ · SOW/one-pager ✅ | ~$35–55k MXN |
-| **F2b** | **MACS Completa** | Auditoría amplia 4–8 sem | Instrumento ✅ | ~$95–150k MXN |
-| **F3** | **IPA** Express/Completa | Protocolo de instrucción post-MACS | Instrumento v1.0 ✅ · SOW falta | Tras MACS |
-| **F4** | **TEKTRON / RAG soberano** — Piloto | Asistente docs en perímetro (edge/on-prem) | Capacidad Jetson 🟠 · oferta a empacar | $80–180k + $8–20k/mes retainer |
-| **F5** | Diagnóstico infra (corto) | Puerta técnica al piloto | Form en sitio | Cotización / lead |
+**Precios lista (primer nivel):** [`15_MENU_PRECIOS_PRIMER_NIVEL.md`](15_MENU_PRECIOS_PRIMER_NIVEL.md)
 
-**Secuencia institucional:** MACS → IPA → MCC (formación).  
-**No fusionar** nombres. No llamar “Auditoría MCC” a MACS.
+| # | Oferta | Qué es | Estado | Precio lista |
+|---|---|---|---|---|
+| **F1** | **Certeza sin sustancia** — Keynote | Puerta del método · literacy crítica | Guion ✅ · slides ❌ | **$32,000 MXN** |
+| **F1b** | **Certeza** — Taller | Formación/método de entrada | Definido · one-pager | **$55k** ½ día · **$85k** día |
+| **F2** | **MACS Express / Completa** | Auditoría mandato cognitivo | Instrumento ✅ | **$65k / $145k** |
+| **F3** | **IPA** (post-MACS) | Protocolo de instrucción | Instrumento ✅ | **$55k / $110k** |
+| **F4** | **Sistemas RAG soberanos** | Dedicado a docs propios · abogados, investigadores, empresas | Capacidad TEKTRON 🟠 | **Cotización** · diag. desde **$35k** · piloto desde **$150k** · retainer desde **$18k/mes** |
+| **F5** | Curso MCC digital | Método profundo · validación CLACSO | 🟡 media + pago | **$149 USD** |
+
+**Nombre de venta:** Sistemas RAG soberanos. **Motor/lab:** TEKTRON.  
+**Secuencia institucional:** MACS → IPA → MCC. No llamar “Auditoría MCC” a MACS.
 
 ---
 
@@ -153,21 +154,21 @@ Publicados / listos (~18 obras núcleo):
 CREDENCIALES
   CLACSO/EPICC · MCC validado · Zenodo · NVIDIA Inception
 
-CONSULTORÍA (4 líneas)
+CONSULTORÍA (4 líneas) — ver precios en 15_
   Formación     → Certeza + MCC
   Diagnóstico   → MACS
-  Implementación→ TEKTRON / RAG soberano
+  Implementación→ Sistemas RAG soberanos (motor TEKTRON)
   Gobernanza    → MACS + IPA
 
 FORMACIÓN / MÉTODO
-  Certeza sin sustancia → puerta (keynote | taller | guía)
-  MCC (+ curso + manual) → método (validación CLACSO)
+  Certeza → puerta · MCC → método (CLACSO)
 
 PRODUCTOS
-  Curso MCC · Manual soberanía · Libro Indio Yori
+  Curso MCC · Manual · Libro Indio Yori
 
-DEMO / INFRA
-  TEKTRON Edge · 5 Códices (si se mantienen en vitrina)
+RAG SOBERANOS
+  Cotización personalizada · docs propios
+  Abogados · investigadores · empresas
 
 COMMONS
   Guía · papers · blog Indioyori

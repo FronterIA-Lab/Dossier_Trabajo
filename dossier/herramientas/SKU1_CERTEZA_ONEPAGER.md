@@ -31,12 +31,14 @@ Editores, universidades, ONG, gestores, equipos que ya usan ChatGPT/Claude y sie
 
 ## Formatos y precios
 
-| Formato | Duración | Precio ancla | Incluye |
+| Formato | Duración | Precio lista | Incluye |
 |---|---|---|---|
-| **Keynote / charla** | 60–75 min (+ Q&A) | **$20,000–25,000 MXN** | Charla + 12–16 slides + 1 hoja de toma de notas |
-| **Charla + demo** | 75–90 min | **$25,000–30,000 MXN** | Lo anterior + demo TEKTRON en vivo |
-| **Taller** (si piden práctica) | 2.5 h | **$30,000–35,000 MXN** | Charla + 2 ejercicios guiados + bitácora corta |
-| Institucional / intl | — | **USD** (Wise/Stripe) | Misma oferta; cotizar en dólares |
+| **Keynote / charla** | 60–90 min (+ Q&A) | **$32,000 MXN** · **$1,900 USD** | Charla + slides + hoja de criterios |
+| **Charla + demo** | 75–90 min | **$38,000 MXN** · **$2,200 USD** | Lo anterior + demo TEKTRON en vivo |
+| **Taller ½ día** | 3–4 h | **$55,000 MXN** · **$3,200 USD** | Criterio + ejercicios · hasta 20 pers. |
+| **Taller día** | 7–8 h | **$85,000 MXN** · **$4,900 USD** | Profundización + plan de adopción consciente |
+
+Fuente de precios: `dossier/15_MENU_PRECIOS_PRIMER_NIVEL.md`
 
 Anticipo: **100%** para fecha bloqueada · o 50% al agendar / 50% 48 h antes.
 

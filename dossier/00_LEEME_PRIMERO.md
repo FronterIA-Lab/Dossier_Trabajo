@@ -64,6 +64,7 @@ Curso MCC: **sí se termina**, pero en paralelo ligero (pago + media mínima). V
 | [`12_PAQUETES_OPCIONES.md`](12_PAQUETES_OPCIONES.md) | Menú P1–P3 (opcional; el ancla sigue siendo 4 líneas + Certeza/MACS/TEKTRON) |
 | [`13_COBERTURA_VS_COMPETENCIA.md`](13_COBERTURA_VS_COMPETENCIA.md) | **¿Lo que ofreces cubre lo que ofrecen ellos?** Solo sí/parcial/no |
 | [`14_ARSENAL_COMPLETO.md`](14_ARSENAL_COMPLETO.md) | **Todo el arsenal** antes de tocar el HTML |
+| [`15_MENU_PRECIOS_PRIMER_NIVEL.md`](15_MENU_PRECIOS_PRIMER_NIVEL.md) | **Menú + precios lista** (primer nivel) |
 
 Corpus crudo (PDFs/MD originales) sigue en la raíz de este repo y en los demás repos del lab.
 
