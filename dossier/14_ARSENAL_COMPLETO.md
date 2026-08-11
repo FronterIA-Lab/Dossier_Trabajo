@@ -35,11 +35,15 @@
 
 ---
 
-## 2. Productos digitales / formación empaquetada
+## 2. Formación / método (incluye Certeza)
 
-| Pieza | Estado | Nota |
-|---|---|---|
-| **Curso digital MCC** (13 lecciones, aula, glifos, landing) | 🟡 CASI | Falta media + checkout |
+**Certeza sin sustancia** no es solo “charla comercial”: es la **puerta del método**.  
+Formatos: keynote · taller · (guía corta). Upsell natural: **curso / práctica MCC**.
+
+| Pieza | Rol en el método | Estado | Nota |
+|---|---|---|---|
+| **Certeza** (keynote / taller) | Literacy crítica de entrada | Guion ✅ | Misma familia que MCC |
+| **Curso digital MCC** (13 lecciones, aula, glifos, landing) | Método profundo empaquetado | 🟡 CASI | Falta media + checkout |
 | **16 glifos** (plantillas prácticas) | ✅ | Dentro del curso |
 | **OUTLINE_CURSO_MCC** | ✅ | Backbone pedagógico |
 | Guía vendedor + precios curso | ✅ | Make-Taller-MCC |
