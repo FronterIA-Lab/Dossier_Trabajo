@@ -8,5 +8,6 @@
 | [`SKU2_MACS_ONEPAGER.md`](SKU2_MACS_ONEPAGER.md) | Vender la auditoría MACS |
 | [`SOW_MACS_EXPRESS.md`](SOW_MACS_EXPRESS.md) | Contrato MACS Express |
 | [`CURSO_MCC_QUE_HACER.md`](CURSO_MCC_QUE_HACER.md) | Cómo terminar el curso sin obsesionarte |
+| [`PLAYBOOK_VENTA_CERTEZA.md`](PLAYBOOK_VENTA_CERTEZA.md) | Cómo vender/publicitar Certeza → MCC (scripts + 14 días) |
 
 Antes de abrir otro documento: lee `../06_MAPA_CLARO.md`.
