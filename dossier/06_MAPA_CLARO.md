@@ -33,21 +33,22 @@ Es el **nombre del tipo de servicio**. El producto concreto que ya tienes se lla
 
 ---
 
-### ¿Debería ser presentación, charla, video, libro… todo?
+### ¿El keynote solo es grupal? ¿Y el taller / “libro” / cursos?
 
-**No todo.** Una sola idea, **tres formatos** con roles distintos:
+**El keynote es grupal** (te contrata una institución).  
+Pero la **idea Certeza** se vende en familia — detalle en `herramientas/FAMILIA_CERTEZA.md`:
 
-| Formato | ¿Es *Certeza*? | Rol | ¿Lo haces ahora? |
-|---|---|---|---|
-| **Charla / keynote** (60–90 min) | SÍ — el guion ya existe | **Producto que se cobra** | **Sí — prioridad** |
-| **Presentación (slides)** | Soporte de esa charla | 12–16 slides del guion | Sí — falta armarlas |
-| **Taller 2.5 h** | Misma charla + práctica | Misma oferta, más cara / más profunda | Cuando alguien pida “taller”, no charla |
-| **Video corto** (*La grieta…*) | Tema hermano (Grieta), no el keynote completo | Marketing gratis / audiencia | 1 video, no serie infinita |
-| **Libro** | NO — el libro es *Indio Yori…* | Otro producto | Canal de venta del PDF, no reescribir |
-| **Curso digital MCC** | NO — es el protocolo completo | Producto asíncrono | Cerrar media + pago (paralelo) |
+| Formato | ¿Grupal o individual? | Rol |
+|---|---|---|
+| **Keynote** | Grupal · te contratan | Entrada institucional |
+| **Taller Certeza** | Grupal · te contratan o cohorte con boletos | Misma idea + práctica |
+| **Guía PDF Certeza** | Individual | “Librito” corto (15–40 pp), no libro nuevo largo |
+| **Curso MCC** | Individual (asíncrono) | El método profundo — upsell |
+| **Video** | Gratis | Marketing |
+| **Libro Indio Yori** | Individual | Otra línea; no es Certeza |
 
-**Regla:** no conviertas cada formato en un proyecto nuevo.  
-Charla = se cobra. Slides = sirven a la charla. Video = trae gente. Curso = se vende mientras duermes. Libro = ya está.
+**No** armes un segundo curso largo de Certeza ni un libro de 200 pp.  
+Familia mínima Certeza = **keynote + taller + guía PDF**. El curso largo = **MCC**.
 
 ---
 
