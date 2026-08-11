@@ -39,10 +39,10 @@ El 90% no genera renta. El 100% de **una** oferta sí.
 
 | # | Frente | Acción de cierre | Ticket |
 |---|---|---|---|
-| **1** | **Puerta institucional** | Responder UNAM con memo 1 p. (Olvido→Grieta) + oferta de seminario/MACS pagado; publicar SKU 1 + SKU 2 | $20–35k MXN / MACS Express |
-| **2** | **Pipeline + envíos** | Oleada correos + Antonio + Senado; demo TEKTRON 3 min | Anticipos A2 / piloto |
+| **1** | **Charla *Certeza*** | Slides (outline listo) + one-pager + ofrecerla | $20–35k MXN |
+| **2** | **MACS** | One-pager + SOW Express listos para enviar | $35–55k MXN Express |
 
-Detalle del menú de servicios: [`05_ESTRATEGIA_SERVICIOS.md`](05_ESTRATEGIA_SERVICIOS.md).
+Curso MCC: **sí se termina**, pero en paralelo ligero (pago + media mínima). Ver [`06_MAPA_CLARO.md`](06_MAPA_CLARO.md) y `herramientas/`.
 
 **Congelar ahora (no tocar):** gabinetes predictivos, hybrid-rag-engine completo, industrial-manual-assistant completo, blog 18 temas restantes, ISD unificado, nuevos papers, más investigación de mercado, “experto en prompts” genérico.
 
@@ -52,10 +52,13 @@ Detalle del menú de servicios: [`05_ESTRATEGIA_SERVICIOS.md`](05_ESTRATEGIA_SER
 
 | Archivo | Para qué |
 |---|---|
-| [`01_MAPA_POR_AREAS.md`](01_MAPA_POR_AREAS.md) | Ver **qué tienes** organizado por área + estado |
-| [`02_INVENTARIO_REPOS.md`](02_INVENTARIO_REPOS.md) | Dónde vive cada cosa (9 repos) + duplicados |
-| [`03_PRIORIZACION_Y_CIERRES.md`](03_PRIORIZACION_Y_CIERRES.md) | Qué terminar, qué vender, qué congelar, plan 30 días |
-| [`04_GAPS_Y_FALTANTES.md`](04_GAPS_Y_FALTANTES.md) | Checklist de lo que bloquea cobro |
+| [`06_MAPA_CLARO.md`](06_MAPA_CLARO.md) | **Empieza aquí si estás mareada** — diccionario simple |
+| [`herramientas/`](herramientas/) | One-pagers, SOWs, slides, plan del curso |
+| [`01_MAPA_POR_AREAS.md`](01_MAPA_POR_AREAS.md) | Qué tienes por área + estado |
+| [`02_INVENTARIO_REPOS.md`](02_INVENTARIO_REPOS.md) | Dónde vive cada cosa + duplicados |
+| [`03_PRIORIZACION_Y_CIERRES.md`](03_PRIORIZACION_Y_CIERRES.md) | Terminar / vender / congelar |
+| [`04_GAPS_Y_FALTANTES.md`](04_GAPS_Y_FALTANTES.md) | Lo que bloquea cobro |
+| [`05_ESTRATEGIA_SERVICIOS.md`](05_ESTRATEGIA_SERVICIOS.md) | Menú de 4 SKUs |
 
 Corpus crudo (PDFs/MD originales) sigue en la raíz de este repo y en los demás repos del lab.
 

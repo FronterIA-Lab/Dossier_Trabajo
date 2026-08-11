@@ -47,13 +47,15 @@ Serie *“Sujeto no contemplado”* — sí, pero **1 pieza por semana máximo**
 
 Marca dual (ya decidida): keynote a **tu nombre**; auditoría/protocolo a **FronterIA-Lab**.
 
-### SKU 1 — Puerta (a): Alfabetización crítica
-**Nombre sugerido:** *IA sin humo: leer la máquina sin entregar el juicio*  
-**Qué es:** taller/keynote 2–2.5 h. Incluye lo básico (qué es un LLM, por qué “alucina”, diferencias entre modelos) **pero** anclado a Olvido + Grieta + 2 glifos MCC en vivo.  
-**No es:** taller genérico de prompts.  
-**Precio:** $20–35k MXN / grupo local · USD a instituciones intl.  
-**Activo listo:** keynote *Certeza sin sustancia* + demo TEKTRON 10 min.  
-**Para quién:** universidades (UNAM), medios, ONG, equipos que “usan ChatGPT sin criterio”.
+### SKU 1 — Puerta (a): Alfabetización crítica = charla *Certeza sin sustancia*
+**Nombre del producto:** *Certeza sin sustancia* (ya tiene guion).  
+**“Alfabetización crítica”** es solo la categoría, no un producto nuevo.  
+**Qué es:** keynote 60–90 min (o taller 2.5 h si piden práctica). Lo básico + lente propio.  
+**Qué NO es:** otro libro, otra serie de videos, ni el curso MCC.  
+**Formatos:** charla (se cobra) · slides (soporte) · video corto hermano *Grieta* (marketing).  
+**Precio:** $20–35k MXN · USD a instituciones intl.  
+**Activo listo:** `keynotes/CERTEZA_SIN_SUSTANCIA_guion.md` · faltan slides.  
+**Para quién:** medios, ONG, universidades, equipos que ya usan ChatGPT sin criterio.
 
 ### SKU 2 — Premium (c): MACS Express / Completa
 **Qué es:** auditoría del **mandato cognitivo de producción** (falla de mandato).  
@@ -82,20 +84,10 @@ Marca dual (ya decidida): keynote a **tu nombre**; auditoría/protocolo a **Fron
 
 ---
 
-## 5. La puerta UNAM (prioridad #1 de relación)
+## 5. Leads académicos (cuando aparezcan — no es tarea abierta)
 
-El politólogo no pidió “más teoría gratis”. Pidió **no quedarse atrás**. Eso es demanda de servicio disfrazada de pedido de PDFs.
-
-**Protocolo de respuesta (no enviar los dos papers sueltos):**
-1. Memo de **1 página**: Olvido = problema · Grieta = por qué no se cierra desde adentro · tu método = intervención externa.
-2. Adjuntar **1** paper (Grieta) + link Zenodo al otro.
-3. Cerrar con **3 opciones pagadas** (elige él):
-   - Seminario/taller institucional (SKU 1) — fecha + precio.
-   - Keynote *Certeza / Grieta* remunerada.
-   - Piloto MACS Express sobre un corpus suyo o de su área (SKU 2).
-4. Oferta de policy brief 2–3 pp **como entregable de un seminario o diagnóstico**, no como regalo abierto.
-
-Regla: **el paper es el marketing; el seminario/MACS es el producto.**
+Si alguien pide papers (ej. UNAM): el paper es marketing; cierras con charla *Certeza* o MACS pagado.  
+Protocolo y memo: solo cuando haya un correo concreto encima de la mesa.
 
 ---
 
@@ -105,11 +97,11 @@ Orden estricto (máx. 2 frentes):
 
 | Prioridad | Acción | Por qué |
 |---|---|---|
-| **1** | Responder UNAM con memo + oferta pagada | Lead caliente institucional; prueba el embudo (a)→(c) |
-| **2** | Publicar SKU 1 + SKU 2 con precio (one-pager) | Dejas de “no saber qué ofrecer” |
-| Paralelo corto | Enviar oleada correos + Antonio + Senado (ya borrados) | Pipeline que ya tenías perdido |
-| Contenido | 1 video: *La grieta que no pueden cerrar* | Alinea audiencia al framing vendible |
-| No hacer | Empezar Coeficiente de Grieta como paper / ISD completo | Primero 1 auditoría MACS; la métrica nace del piloto |
+| **1** | Armar slides + one-pager de *Certeza* y **ofrecerla** | Producto vivo ya escrito; falta empaque comercial |
+| **2** | One-pager + SOW MACS publicados / listos para enviar | Consultoría recuperada; falta precio y contrato |
+| Paralelo ligero | Curso MCC: link de pago + media mínima (no reescribir) | Escala digital; no bloquea la charla |
+| Contenido | 1 video: *La grieta que no pueden cerrar* | Framing; no es un producto nuevo |
+| No hacer | Inventar otro formato “completo” (libro de la charla, serie de 12, etc.) | Diluye |
 
 ---
 
