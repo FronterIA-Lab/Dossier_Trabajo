@@ -65,6 +65,7 @@ Curso MCC: **sí se termina**, pero en paralelo ligero (pago + media mínima). V
 | [`13_COBERTURA_VS_COMPETENCIA.md`](13_COBERTURA_VS_COMPETENCIA.md) | **¿Lo que ofreces cubre lo que ofrecen ellos?** Solo sí/parcial/no |
 | [`14_ARSENAL_COMPLETO.md`](14_ARSENAL_COMPLETO.md) | **Todo el arsenal** antes de tocar el HTML |
 | [`15_MENU_PRECIOS_PRIMER_NIVEL.md`](15_MENU_PRECIOS_PRIMER_NIVEL.md) | **Menú + precios lista** (primer nivel) |
+| [`16_ESTRUCTURA_WEB_UNIFICADA.md`](16_ESTRUCTURA_WEB_UNIFICADA.md) | Estructura home lab (estilo Indioyori, sin Códices) |
 
 Corpus crudo (PDFs/MD originales) sigue en la raíz de este repo y en los demás repos del lab.
 
