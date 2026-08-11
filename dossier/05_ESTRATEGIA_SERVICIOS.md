@@ -119,7 +119,8 @@ SKU 2  MACS (Mapa + Coeficiente de Grieta) ← premium
    ┌────┴────┐
 SKU 3 IPA   SKU 4 TEKTRON / RAG           ← recurrente / protocolo
         ↓
-| Curso MCC + Libro + (luego) diploma CLACSO / grants | Curso MCC + Libro · **MCC ya con validación CLACSO / GT EPICC** (miembro; publicado en sitio) · grants / diploma adicional solo si abre canal nuevo |
+Curso MCC + Libro
+(MCC ya validado CLACSO / GT EPICC — en sitio; grants solo si abren canal)
 ```
 
 Mezcla sana: **(a) financia tiempo · (b) da caja · (c) fija el precio y el moat.**
