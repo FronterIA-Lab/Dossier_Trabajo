@@ -61,7 +61,8 @@ Curso MCC: **sí se termina**, pero en paralelo ligero (pago + media mínima). V
 | [`05_ESTRATEGIA_SERVICIOS.md`](05_ESTRATEGIA_SERVICIOS.md) | Menú de 4 SKUs |
 | [`09_INVESTIGACION_CONSULTORIAS_IA.md`](09_INVESTIGACION_CONSULTORIAS_IA.md) | Qué es consultoría de IA y precios de mercado |
 | [`11_EVALUACION_COMPETENCIA.md`](11_EVALUACION_COMPETENCIA.md) | Competencia *percibida* (categoría “consultoría IA”) |
-| [`12_PAQUETES_OPCIONES.md`](12_PAQUETES_OPCIONES.md) | **Menú P1–P3** a partir de cómo compra el usuario promedio |
+| [`12_PAQUETES_OPCIONES.md`](12_PAQUETES_OPCIONES.md) | Menú P1–P3 (opcional; el ancla sigue siendo 4 líneas + Certeza/MACS/TEKTRON) |
+| [`13_COBERTURA_VS_COMPETENCIA.md`](13_COBERTURA_VS_COMPETENCIA.md) | **¿Lo que ofreces cubre lo que ofrecen ellos?** Solo sí/parcial/no |
 
 Corpus crudo (PDFs/MD originales) sigue en la raíz de este repo y en los demás repos del lab.
 
