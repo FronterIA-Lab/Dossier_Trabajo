@@ -39,10 +39,12 @@ El 90% no genera renta. El 100% de **una** oferta sí.
 
 | # | Frente | Acción de cierre | Ticket |
 |---|---|---|---|
-| **1** | **Efectivo formación** | Publicar oferta A1 (taller MCC 2.5 h) **o** terminar media + landing del curso digital ($99) | $12–20k MXN / $99 USD |
-| **2** | **Pipeline B2B** | 20 outreach + 5 demos TEKTRON + oferta Diagnóstico Express con anticipo | $12–25k → piloto $80–180k |
+| **1** | **Puerta institucional** | Responder UNAM con memo 1 p. (Olvido→Grieta) + oferta de seminario/MACS pagado; publicar SKU 1 + SKU 2 | $20–35k MXN / MACS Express |
+| **2** | **Pipeline + envíos** | Oleada correos + Antonio + Senado; demo TEKTRON 3 min | Anticipos A2 / piloto |
 
-**Congelar ahora (no tocar):** gabinetes predictivos, hybrid-rag-engine completo, industrial-manual-assistant completo, blog 18 temas restantes, ISD unificado, nuevos papers, más investigación de mercado.
+Detalle del menú de servicios: [`05_ESTRATEGIA_SERVICIOS.md`](05_ESTRATEGIA_SERVICIOS.md).
+
+**Congelar ahora (no tocar):** gabinetes predictivos, hybrid-rag-engine completo, industrial-manual-assistant completo, blog 18 temas restantes, ISD unificado, nuevos papers, más investigación de mercado, “experto en prompts” genérico.
 
 ---
 

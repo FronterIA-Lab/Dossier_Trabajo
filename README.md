@@ -13,6 +13,7 @@ Este repo guarda el corpus de trabajo **y** el dossier maestro para dejar de pro
 | [`dossier/02_INVENTARIO_REPOS.md`](dossier/02_INVENTARIO_REPOS.md) | Qué hay en cada repo + canónicas ante duplicados |
 | [`dossier/03_PRIORIZACION_Y_CIERRES.md`](dossier/03_PRIORIZACION_Y_CIERRES.md) | Terminar / vender / congelar + plan 30 días |
 | [`dossier/04_GAPS_Y_FALTANTES.md`](dossier/04_GAPS_Y_FALTANTES.md) | Checklist de lo que bloquea cobro |
+| [`dossier/05_ESTRATEGIA_SERVICIOS.md`](dossier/05_ESTRATEGIA_SERVICIOS.md) | Menú de 4 SKUs, framing Grieta, puerta UNAM, orden semanal |
 
 ## Regla operativa
 
