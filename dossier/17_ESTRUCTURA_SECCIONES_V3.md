@@ -7,6 +7,29 @@
 
 ---
 
+## Gramática de identidad (antes de las secciones)
+
+Tres obras anclan **quién es FronterIA-Lab** — no son “más menú”; son la lengua del lab:
+
+| Pilar | Obra | Función en la identidad |
+|---|---|---|
+| **Método estrella** | **MCC** — Protocolo de Calibración Contextual | Cómo intervenimos la gramática computacional: certeza sin sustancia, optimización silenciosa, sesgo de contexto. 4 capas · 16 glifos. Producto y sello técnico del lab. |
+| **Cosmogonía / territorio** | **Código Fuente del Sexto Sol** — Cibernética del Tonalli | De dónde hablamos: Anáhuac, Tonalli, reciprocidad, anti-extractivismo cognitivo. Da el *por qué* territorial (yoreme·ódami, Abya Yala), no decoración. |
+| **Regulación / derechos** | **Soberanía Cognitiva y Neuroderechos** | Cómo defendemos el derecho a pensar distinto: Olvido Estructural, Sexto Neuroderecho (inoptimizabilidad), puente a gobernanza (MACS/IPA, Chapultepec, neuroderechos). |
+
+**Cómo se traduce a la web (sin saturar la home):**
+
+- **Hero / Sobre nosotros:** una frase de territorio (Sexto Sol) + una de método (MCC) + sello CLACSO — no el paper entero.  
+- **Empresas:** MCC es el método estrella visible (formación + motor de abstención en RAG). Certeza es la puerta hacia MCC.  
+- **Arquitectura:** el pipeline técnico *ejecuta* MCC (abstención auditada), no al revés.  
+- **Soberanía:** lenguaje de neuroderechos / perímetro / no ceder el juicio (regulación + práctica).  
+- **Academia:** los tres papers (y DOI) como corpus; Sexto Sol y Neuroderechos viven aquí con más profundidad; MCC también, además de su bloque comercial.  
+- **Laboratorio:** piezas que enseñan LLM/RAG *en esta gramática* (no tutorial Silicon Valley).
+
+Regla: el visitante corporativo lee claridad de oferta; la cosmogonía y los neuroderechos **orientan el tono y la Academia**, no reemplazan la página de precios.
+
+---
+
 ## Problema de la estructura que pegaste
 
 Todo lo de “Postura” mezcla **4 cosas distintas**:
@@ -59,7 +82,7 @@ Cada servicio = **bloque propio** (título · para quién · qué es · qué no 
 | Bloque | Contenido |
 |---|---|
 | **Formación — Certeza sin sustancia** | Keynote / taller · literacy crítica · precios lista |
-| **Método — MCC** | Curso / in-company · validación CLACSO · (aquí o link a Academia para A–D) |
+| **Método estrella — MCC** | Protocolo / curso / in-company · validación CLACSO · promesa comercial clara; detalle A–D + 16 glifos → Academia |
 | **Diagnóstico — MACS** | Express / Completa · mandato cognitivo · precios |
 | **Gobernanza — IPA** | Solo post-MACS · precios |
 | **Implementación — Sistemas RAG soberanos** | Docs propios · abogados / investigadores / empresas · cotización + bandas |
