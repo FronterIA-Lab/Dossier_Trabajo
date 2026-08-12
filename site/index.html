@@ -4,819 +4,628 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FronterIA-Lab · Consultoría e infraestructura de IA soberana</title>
-  <meta name="description" content="Laboratorio de IA soberana: formación crítica (Certeza · MCC), auditoría MACS, protocolos IPA y sistemas RAG dedicados a tus documentos. CLACSO · NVIDIA Inception · territorio Anáhuac." />
+  <meta name="description" content="Laboratorio de IA soberana: Certeza, MCC (método estrella, validación CLACSO), auditoría MACS, IPA y sistemas RAG dedicados a tus documentos. NVIDIA Inception · GT EPICC-CLACSO." />
   <link rel="canonical" href="https://fronteria-lab.com/" />
   <meta property="og:title" content="FronterIA-Lab · IA soberana para empresas" />
-  <meta property="og:description" content="Criterio, mandato cognitivo y sistemas que se quedan donde vive tu información." />
+  <meta property="og:description" content="Consultoría e infraestructura de IA soberana: criterio, mandato cognitivo y perímetro propio." />
   <meta property="og:url" content="https://fronteria-lab.com/" />
   <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,700,800|space-mono:400,700" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,700|space-mono:400,700" rel="stylesheet" />
   <style>
     :root {
-      --color-bg: #030303;
-      --color-surface: #0a0a0a;
-      --color-surface-2: #121212;
-      --color-stone: #252525;
-      --color-text: #DAD7D2;
-      --color-text-secondary: #a5a5a5;
-      --color-text-muted: #595959;
-      --color-accent: #B5B5B5;
-      --color-jade: #5a8f72;
-      --color-signal: rgba(90, 143, 114, 0.45);
-      --font: "JetBrains Mono", "Space Mono", ui-monospace, Menlo, Consolas, monospace;
-      --max-width: 1280px;
-      --header-height: 72px;
-      --ease: cubic-bezier(0.6, 0, 0.4, 1);
+      --bg: #F7F6F3;
+      --bg-tone: #EFEDE8;
+      --bg-ink: #141413;
+      --typ: #1C1B1B;
+      --typ-tone: #6B6B6B;
+      --typ-content: #2E2E2C;
+      --brd: #DDDBD4;
+      --brand: #141413;
+      --accent: #3D5C4A;
+      --accent-soft: #E4EBE6;
+      --font: "Space Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+      --display: "JetBrains Mono", "Space Mono", ui-monospace, monospace;
+      --max: 1080px;
+      --header-h: 64px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--color-bg);
-      color: var(--color-text);
       font-family: var(--font);
+      background: var(--bg);
+      color: var(--typ);
       line-height: 1.65;
-      padding-top: calc(var(--header-height) + 28px);
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
     body::before {
       content: "";
-      position: fixed; inset: 0; pointer-events: none; z-index: 9999;
-      opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-      background-size: 280px; mix-blend-mode: overlay;
+      position: fixed; inset: 0; pointer-events: none; z-index: 10000; opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 240px; mix-blend-mode: multiply;
     }
-    ::selection { background: var(--color-accent); color: var(--color-bg); }
-    a { color: var(--color-accent); text-decoration: none; transition: color .35s ease; }
-    a:hover { color: #fff; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--bg-ink); }
     img { max-width: 100%; display: block; }
-    .container { width: min(100% - 3rem, var(--max-width)); margin-inline: auto; }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
 
-    /* Indioyori strip — thin, not the whole page */
     .sysbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
-      height: 28px; display: flex; align-items: center;
-      background: #000; border-bottom: 1px solid #1a1a1a;
-      font-size: 0.62rem; letter-spacing: 0.06em; color: #8a8a8a;
+      background: var(--bg-ink); color: #B8B6B0;
+      font-size: 0.65rem; letter-spacing: 0.04em; padding: 0.4rem 0;
     }
-    .sysbar .inner { width: min(100% - 3rem, var(--max-width)); margin: 0 auto; display: flex; gap: .5rem; flex-wrap: wrap; }
-    .sysbar .prompt { color: #e8e4dc; font-weight: 700; }
-    .sysbar .sep { opacity: .35; }
-    .sysbar b { color: var(--color-jade); font-weight: 600; }
-    .sysbar .cursor {
-      width: 0.5ch; height: 0.9em; background: var(--color-jade);
-      display: inline-block; animation: tc-blink 1.1s steps(1) infinite;
-    }
-    @keyframes tc-blink { 50% { opacity: 0; } }
+    .sysbar .row { display: flex; flex-wrap: wrap; gap: 0.35rem 0.65rem; align-items: center; }
+    .sysbar .prompt { color: #F7F6F3; font-weight: 700; }
+    .sysbar .sep { opacity: 0.35; }
+    .sysbar b { color: #A8C4B4; font-weight: 600; }
 
     .site-header {
-      position: fixed; top: 28px; left: 0; right: 0; z-index: 1000;
-      height: var(--header-height);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2.5rem;
-      background: rgba(0,0,0,0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(30,30,30,0.6);
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--brd);
     }
-    .brand { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--color-text); }
-    .brand span { color: var(--color-accent); }
-    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; }
-    .nav-toggle span { display: block; width: 1.3rem; height: 1px; background: var(--color-text); margin: 5px 0; }
-    .nav-links { list-style: none; display: flex; gap: 0.15rem 1.1rem; flex-wrap: wrap; }
+    .header-row {
+      min-height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .brand {
+      font-family: var(--display); font-weight: 700; font-size: 0.95rem;
+      letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand);
+      text-decoration: none;
+    }
+    .brand span { color: var(--typ-tone); }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.35rem; }
+    .nav-toggle span { display: block; width: 1.2rem; height: 1px; background: var(--typ); margin: 5px 0; }
+    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.15rem 0.85rem; }
     .nav-links a {
-      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--color-text-muted);
+      font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--typ-tone); text-decoration: none;
     }
-    .nav-links a:hover, .nav-links a.ext { color: var(--color-text); }
-    .nav-links a.ext { border-bottom: 1px solid var(--color-jade); padding-bottom: 2px; }
+    .nav-links a:hover { color: var(--typ); }
+    .nav-links a.ext { color: var(--accent); }
 
-    /* HERO — full bleed mineral */
-    #hero {
-      position: relative;
-      min-height: calc(100vh - var(--header-height) - 28px);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden; border-bottom: 1px solid var(--color-stone);
+    /* Hero — one composition */
+    .hero {
+      position: relative; min-height: min(88vh, 760px);
+      display: flex; align-items: flex-end;
+      border-bottom: 1px solid var(--brd);
+      overflow: hidden;
     }
-    .hero-bg {
+    .hero-atmosphere {
       position: absolute; inset: 0;
-      background: url("assets/mineral-2.jpg") center / cover no-repeat;
-      filter: contrast(1.06) brightness(0.95);
-      transform: scale(1.03);
-      animation: heroDrift 32s var(--ease) infinite alternate;
-    }
-    @keyframes heroDrift {
-      from { transform: scale(1.03) translate3d(0,0,0); }
-      to { transform: scale(1.08) translate3d(-1.5%, -1.2%, 0); }
-    }
-    .hero-bg::after {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
       background:
-        linear-gradient(180deg, rgba(3,3,3,0.25) 0%, transparent 30%, transparent 55%, rgba(3,3,3,0.72) 100%),
-        radial-gradient(ellipse 70% 55% at 50% 45%, transparent 35%, rgba(3,3,3,0.45) 100%);
-      mix-blend-mode: multiply;
+        linear-gradient(180deg, rgba(247,246,243,0.55) 0%, rgba(247,246,243,0.82) 55%, var(--bg) 100%),
+        url("assets/atmosphere.jpg") center / cover no-repeat;
+      opacity: 0.55;
+      animation: drift 36s var(--ease) infinite alternate;
     }
-    .hero-content {
-      position: relative; z-index: 5;
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; gap: clamp(14px, 2vw, 22px);
-      padding: 0 5vw; max-width: 52rem;
-      animation: rise 1.1s var(--ease) both;
+    @keyframes drift {
+      from { transform: scale(1.02); }
+      to { transform: scale(1.07) translate3d(-1%, -0.8%, 0); }
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      width: min(100% - 2.5rem, var(--max));
+      margin: 0 auto 3.5rem;
+      max-width: 34rem;
+      animation: rise 0.85s var(--ease) both;
     }
     @keyframes rise {
-      from { opacity: 0; transform: translateY(22px); }
+      from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: none; }
     }
-    .engraved-main {
-      font-weight: 800;
-      font-size: clamp(2rem, 1.2rem + 4vw, 4.2rem);
-      letter-spacing: -0.02em;
-      color: #DAD7D2;
-      text-shadow: 0 1.5px 0 rgba(0,0,0,.7), 0 -1px 0 rgba(255,255,255,.05), 0 0 40px rgba(218,215,210,.08);
-      line-height: 1.05;
+    .hero-brand {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -0.03em;
+      line-height: 1.05; margin-bottom: 1rem; color: var(--brand);
     }
-    .engraved-sub {
-      font-weight: 600;
-      font-size: clamp(1rem, 0.85rem + 1.2vw, 1.65rem);
-      letter-spacing: 0.04em; text-transform: uppercase;
-      color: #E9EBED;
-      text-shadow: 0 1.5px 0 rgba(0,0,0,.85), 0 0 18px rgba(0,0,0,.5);
-      max-width: 22ch; line-height: 1.2;
+    .hero-brand span { color: var(--typ-tone); }
+    .hero-line {
+      font-family: var(--display); font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.65rem;
+      max-width: 22ch; color: var(--typ);
     }
-    .hero-support {
-      max-width: 38ch; font-size: 0.9rem; color: var(--color-text-secondary);
-      text-shadow: 0 1px 8px rgba(0,0,0,.8);
+    .hero-support { font-size: 0.9rem; color: var(--typ-tone); max-width: 36ch; margin-bottom: 1.75rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1.5rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.75rem 1.1rem; font: inherit; font-size: 0.72rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s;
     }
-    .hero-status {
-      display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center;
-      gap: 0.35rem 0.65rem; margin-top: 0.2rem;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid rgba(90,143,114,0.25);
-      border-radius: 3px; background: rgba(3,3,3,0.5);
-      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--color-text-muted);
-    }
-    .live-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--color-jade); box-shadow: 0 0 10px var(--color-jade);
-      animation: nodePulse 2.4s ease-in-out infinite;
-    }
-    @keyframes nodePulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.55; transform: scale(0.85); }
-    }
-    .hero-status strong { color: var(--color-jade); font-weight: 600; }
-    .hero-status .sep { opacity: 0.35; }
-    .hero-links { display: flex; gap: clamp(20px, 4vw, 44px); margin-top: 8px; flex-wrap: wrap; justify-content: center; }
-    .hero-link {
-      font-weight: 700; font-size: 0.88rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: #E9EBED; position: relative; padding-bottom: 6px;
-      text-shadow: 0 2px 0 rgba(0,0,0,.9), 0 0 14px rgba(0,0,0,.6);
-    }
-    .hero-link::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
-      background: rgba(233,235,237,.35); transition: background .35s;
-    }
-    .hero-link:hover { color: #fff; }
-    .hero-link:hover::after { background: rgba(255,255,255,.7); }
-    .hero-badges {
-      display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: 0.5rem;
-    }
-    .hero-badges span {
-      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(218,215,210,0.22); color: #c8c4bc;
-      padding: 0.28rem 0.5rem; background: rgba(0,0,0,0.35);
-    }
-    .hero-seal {
-      position: absolute; left: 50%; bottom: clamp(18px, 3.5vh, 40px);
-      transform: translateX(-50%); z-index: 5;
-      padding: 6px 0; border-top: 1px solid rgba(233,235,237,.22);
-      border-bottom: 1px solid rgba(233,235,237,.22);
-      font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #E9EBED; opacity: 0.7; white-space: nowrap;
-      text-shadow: 0 1.5px 0 rgba(0,0,0,.85);
+    .btn-primary { background: var(--brand); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent); color: #fff; }
+    .btn-line { background: transparent; border-color: var(--brd); color: var(--typ); }
+    .btn-line:hover { border-color: var(--typ); color: var(--typ); }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .badge {
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--brd); color: var(--typ-tone); padding: 0.3rem 0.5rem;
+      background: color-mix(in srgb, var(--bg) 70%, transparent);
     }
 
-    /* sections */
-    .section-padding { padding: clamp(4.5rem, 9vw, 7.5rem) 0; position: relative; }
-    .section-meta-bar {
-      display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.5rem;
-      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--color-text-muted); margin-bottom: 1rem;
+    section { padding: 4.75rem 0; border-bottom: 1px solid var(--brd); }
+    .kicker {
+      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.85rem; font-weight: 700;
     }
-    .section-meta-bar .meta-sep { opacity: 0.35; }
-    .section-meta-bar .meta-live { color: var(--color-jade); display: inline-flex; align-items: center; gap: 0.35rem; }
-    .section-meta-bar .meta-live::before {
-      content: ""; width: 5px; height: 5px; border-radius: 50%;
-      background: var(--color-jade); box-shadow: 0 0 6px var(--color-jade);
-    }
-    .section-label {
-      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--color-text-muted); border-bottom: 1px solid var(--color-stone);
-      padding-bottom: 0.8rem; margin-bottom: 2rem; display: inline-block;
-    }
-    .section-label .label-prefix { color: var(--color-jade); font-weight: 600; margin-right: 0.35rem; }
     h2 {
-      font-size: clamp(1.85rem, 3.5vw, 3.2rem); font-weight: 600;
-      letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 1.25rem;
-      max-width: 18ch;
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(1.55rem, 3vw, 2.15rem); letter-spacing: -0.03em;
+      line-height: 1.15; margin-bottom: 0.85rem; max-width: 20ch; color: var(--brand);
     }
-    .lede { max-width: 54ch; color: var(--color-text-secondary); font-size: 1.02rem; margin-bottom: 2.25rem; }
+    .lede { color: var(--typ-content); max-width: 52ch; margin-bottom: 2rem; font-size: 0.95rem; }
+    .tone { background: var(--bg-tone); }
 
-    /* postura with mineral panel */
-    #postura { background: var(--color-bg); border-bottom: 1px solid var(--color-stone); }
-    .postura-split {
-      display: grid; grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(2rem, 5vw, 4rem); align-items: stretch;
-    }
-    .postura-body p {
-      color: var(--color-text); font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.35rem;
-    }
-    .postura-signal {
-      color: var(--color-text-secondary); font-size: 0.92rem;
-      border-left: 2px solid var(--color-jade); padding-left: 0.9rem;
-      margin-top: 1.5rem; line-height: 1.65;
-    }
-    .mineral-panel {
-      position: relative; min-height: 320px; border: 1px solid var(--color-stone);
-      background: url("assets/mineral-6.jpg") center / cover no-repeat;
-      overflow: hidden;
-    }
-    .mineral-panel::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(3,3,3,0.15), rgba(3,3,3,0.65));
-    }
-    .mineral-panel .cap {
-      position: absolute; z-index: 1; left: 1rem; bottom: 1rem; right: 1rem;
-      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: #cfcbc3;
-    }
-
-    /* four lines — dense lab grid, not soft cards */
-    #servicios { border-bottom: 1px solid var(--color-stone); }
-    .lines-grid {
+    .creds {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--color-stone); background: var(--color-stone); gap: 1px;
+      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 2.25rem;
     }
-    .line-cell {
-      background: var(--color-surface); padding: 1.5rem 1.25rem 1.65rem;
-      text-decoration: none; color: inherit; display: block;
-      position: relative; overflow: hidden;
-      transition: background .35s var(--ease);
-    }
-    .line-cell::before {
-      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
-      background: transparent; transition: background .35s;
-    }
-    .line-cell:hover { background: var(--color-surface-2); color: inherit; }
-    .line-cell:hover::before { background: var(--color-jade); }
-    .line-cell .n { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--color-jade); margin-bottom: 1rem; }
-    .line-cell h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.55rem; color: var(--color-text); }
-    .line-cell p { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.55; }
+    .cred { background: var(--bg); padding: 1.15rem 1rem; }
+    .cred strong { display: block; font-family: var(--display); font-size: 0.75rem; margin-bottom: 0.25rem; }
+    .cred span { font-size: 0.72rem; color: var(--typ-tone); }
+    .inception { height: 36px; width: auto; margin-top: 0.45rem; filter: grayscale(1); opacity: 0.85; }
 
-    /* offers */
-    .offer-stack { display: flex; flex-direction: column; }
-    .offer {
-      display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem;
-      padding: 1.5rem 0; border-top: 1px solid var(--color-stone);
+    /* Service blocks — clarity first */
+    .service {
+      padding: 2rem 0;
+      border-top: 1px solid var(--brd);
+      display: grid; grid-template-columns: 1fr 11rem; gap: 1.25rem 2rem;
       align-items: start;
     }
-    .offer:last-child { border-bottom: 1px solid var(--color-stone); }
-    .offer h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
-    .offer p { color: var(--color-text-secondary); font-size: 0.9rem; max-width: 48ch; }
-    .offer .meta { margin-top: 0.45rem; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--color-text-muted); text-transform: uppercase; }
-    .price {
-      font-weight: 700; font-size: 0.95rem; color: var(--color-text);
-      text-align: right; white-space: nowrap;
+    .service:last-of-type { border-bottom: 1px solid var(--brd); }
+    .service .eyebrow {
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: 0.45rem;
     }
-    .price small { display: block; font-weight: 400; color: var(--color-text-muted); font-size: 0.68rem; margin-top: 0.25rem; letter-spacing: 0.04em; }
+    .service h3 {
+      font-family: var(--display); font-size: 1.15rem; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 0.55rem;
+    }
+    .service p { color: var(--typ-content); font-size: 0.9rem; max-width: 52ch; margin-bottom: 0.55rem; }
+    .service .not { color: var(--typ-tone); font-size: 0.8rem; }
+    .service .meta { margin-top: 0.65rem; font-size: 0.72rem; color: var(--typ-tone); }
+    .service .star {
+      display: inline-block; margin-left: 0.35rem; font-size: 0.58rem;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+      border: 1px solid var(--accent); padding: 0.1rem 0.35rem; vertical-align: 0.15em;
+    }
+    .price-col { text-align: right; }
+    .price-col .p {
+      font-family: var(--display); font-weight: 700; font-size: 0.95rem; color: var(--brand);
+    }
+    .price-col small { display: block; margin-top: 0.3rem; font-size: 0.68rem; color: var(--typ-tone); font-weight: 400; }
+    .price-list { list-style: none; margin-top: 0.75rem; font-size: 0.8rem; color: var(--typ-content); }
+    .price-list li { padding: 0.25rem 0; border-top: 1px solid var(--brd); display: flex; justify-content: space-between; gap: 1rem; }
+    .price-list li:last-child { border-bottom: 1px solid var(--brd); }
+    .price-list b { font-family: var(--display); white-space: nowrap; }
 
-    #formacion {
-      background:
-        linear-gradient(180deg, rgba(3,3,3,0.92), rgba(3,3,3,0.97)),
-        url("assets/mineral-1.jpg") center / cover no-repeat;
-      border-bottom: 1px solid var(--color-stone);
+    .pipeline {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 1.5rem;
     }
-    #macs { border-bottom: 1px solid var(--color-stone); }
-    .two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 4vw, 3.5rem); }
-    .jade-note {
-      margin-top: 1.25rem; padding: 1.1rem 1.15rem;
-      border: 1px solid rgba(90,143,114,0.35);
-      background: rgba(90,143,114,0.06);
-      font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.65;
+    .pipe { background: var(--bg); padding: 1.25rem 1rem; }
+    .pipe .n { font-family: var(--display); font-size: 0.7rem; color: var(--accent); font-weight: 700; margin-bottom: 0.45rem; }
+    .pipe h3 { font-family: var(--display); font-size: 0.88rem; margin-bottom: 0.35rem; }
+    .pipe p { font-size: 0.75rem; color: var(--typ-tone); }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
+    .chip {
+      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--brd); padding: 0.35rem 0.55rem; color: var(--typ-tone); background: var(--bg);
     }
-    .jade-note strong { color: var(--color-jade); font-weight: 600; }
 
-    #rag {
-      position: relative; border-bottom: 1px solid var(--color-stone);
-      overflow: hidden;
-    }
-    #rag .rag-bg {
-      position: absolute; inset: 0; opacity: 0.18;
-      background: url("assets/mineral-7.jpg") center / cover no-repeat;
-      filter: grayscale(0.3) contrast(1.1);
-    }
-    #rag .container { position: relative; z-index: 1; }
-
-    /* process */
-    #metodo { border-bottom: 1px solid var(--color-stone); background: var(--color-surface); }
-    .steps {
+    .pillars {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--color-stone); gap: 1px; background: var(--color-stone);
-      margin-top: 2rem;
+      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 1.5rem;
     }
-    .step { background: var(--color-bg); padding: 1.75rem 1.35rem; position: relative; }
-    .step .n {
-      font-size: 2.5rem; font-weight: 800; color: rgba(218,215,210,0.08);
-      position: absolute; right: 0.8rem; top: 0.4rem; line-height: 1;
-    }
-    .step h3 { font-size: 1.05rem; margin: 0.5rem 0 0.55rem; }
-    .step p { font-size: 0.82rem; color: var(--color-text-muted); }
-    .step .tag { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--color-jade); text-transform: uppercase; }
+    .pillar { background: var(--bg); padding: 1.35rem 1.15rem; }
+    .pillar .n { font-size: 0.65rem; color: var(--accent); font-weight: 700; letter-spacing: 0.1em; }
+    .pillar h3 { font-family: var(--display); font-size: 0.92rem; margin: 0.45rem 0 0.4rem; }
+    .pillar p { font-size: 0.78rem; color: var(--typ-tone); }
 
-    /* portfolio */
-    #portafolio { border-bottom: 1px solid var(--color-stone); }
-    .folio-grid {
-      display: grid; grid-template-columns: 1.2fr 1fr; gap: 1px;
-      background: var(--color-stone); border: 1px solid var(--color-stone);
+    .papers {
+      display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 0.5rem;
     }
-    .folio {
-      background: var(--color-surface); min-height: 220px;
-      display: grid; grid-template-rows: 1fr auto;
-      text-decoration: none; color: inherit; overflow: hidden;
-      transition: background .35s;
+    .paper {
+      display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem;
+      padding: 1.35rem 0; border-top: 1px solid var(--brd); text-decoration: none; color: inherit;
     }
-    .folio:hover { background: var(--color-surface-2); color: inherit; }
-    .folio.featured { grid-row: span 2; min-height: 450px; }
-    .folio-media {
-      background-size: cover; background-position: center; min-height: 140px;
-      position: relative;
+    .paper:last-child { border-bottom: 1px solid var(--brd); }
+    .paper:hover h3 { color: var(--accent); }
+    .paper .role {
+      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700;
     }
-    .folio.featured .folio-media { min-height: 280px; }
-    .folio-media::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 30%, rgba(3,3,3,0.85) 100%);
+    .paper h3 { font-family: var(--display); font-size: 1rem; margin: 0.2rem 0 0.4rem; }
+    .paper p { font-size: 0.82rem; color: var(--typ-tone); max-width: 52ch; }
+
+    .lab-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 1.5rem;
     }
-    .folio-body { padding: 1.25rem 1.35rem 1.5rem; }
-    .folio-body .tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-jade); }
-    .folio-body h3 { font-size: 1.05rem; margin: 0.45rem 0 0.4rem; font-weight: 600; }
-    .folio-body p { font-size: 0.8rem; color: var(--color-text-muted); }
+    .lab-card {
+      background: var(--bg); padding: 1.35rem 1.15rem; text-decoration: none; color: inherit;
+      transition: background .2s;
+    }
+    .lab-card:hover { background: var(--accent-soft); }
+    .lab-card .tag { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--typ-tone); }
+    .lab-card h3 { font-family: var(--display); font-size: 0.95rem; margin: 0.5rem 0 0.4rem; }
+    .lab-card p { font-size: 0.78rem; color: var(--typ-tone); }
 
     .bridge {
-      border-bottom: 1px solid var(--color-stone);
-      background:
-        linear-gradient(90deg, rgba(3,3,3,0.88), rgba(3,3,3,0.55)),
-        url("assets/mineral-4.jpg") center / cover no-repeat;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: end;
     }
-    .bridge .inner {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;
-      align-items: end; padding: clamp(3rem, 6vw, 4.5rem) 0;
-    }
-    .bridge h2 { margin: 0 0 0.6rem; max-width: 16ch; }
-    .bridge p { color: var(--color-text-secondary); max-width: 36ch; font-size: 0.92rem; }
-    .bridge-link {
-      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;
-      color: #E9EBED; border-bottom: 1px solid var(--color-jade); padding-bottom: 4px;
-    }
+    .bridge p { max-width: 40ch; color: var(--typ-content); font-size: 0.9rem; }
 
-    #credenciales { border-bottom: 1px solid var(--color-stone); }
-    .cred-row {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-      background: var(--color-stone); border: 1px solid var(--color-stone); margin-top: 1.5rem;
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.05fr; gap: 2.5rem; align-items: start;
     }
-    .cred-item { background: var(--color-surface); padding: 1.35rem 1.15rem; }
-    .cred-item strong { display: block; font-size: 0.78rem; letter-spacing: 0.06em; margin-bottom: 0.35rem; color: var(--color-text); }
-    .cred-item span { font-size: 0.75rem; color: var(--color-text-muted); }
-    .inception { height: 40px; width: auto; margin-top: 0.5rem; filter: grayscale(1) brightness(1.2); opacity: 0.9; }
-
-    /* contact terminal — keep lab DNA */
-    #contacto { background: var(--color-bg); }
-    .contact-split { display: grid; grid-template-columns: 1fr 1.05fr; gap: 2.5rem; align-items: start; }
-    .terminal-contact {
-      background: #050505; border: 1px solid var(--color-stone);
-      padding: 1.5rem 1.35rem 1.4rem; font-size: 0.82rem; color: #c8c8c8;
-      box-shadow: inset 0 0 40px rgba(90,143,114,0.04);
+    .terminal {
+      background: var(--bg-ink); color: #C9C7C1; padding: 1.4rem 1.25rem;
+      border: 1px solid #2A2927; font-size: 0.82rem;
     }
-    .tc-line { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; margin-bottom: 0.9rem; }
-    .tc-comment { color: #555; }
-    .tc-prompt { color: var(--color-jade); font-weight: 700; }
-    .tc-label { color: #888; min-width: 4.5rem; }
+    .tc-line { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; margin-bottom: 0.85rem; }
+    .tc-comment { color: #6A6862; width: 100%; }
+    .tc-prompt { color: #A8C4B4; font-weight: 700; }
+    .tc-label { color: #8A8882; min-width: 4.5rem; }
     .tc-input {
       flex: 1; min-width: 12rem; background: transparent; border: 0;
-      border-bottom: 1px solid #2a2a2a; color: #f0f0f0; font: inherit;
-      padding: 0.35rem 0; outline: none;
+      border-bottom: 1px solid #33322E; color: #F7F6F3; font: inherit; padding: 0.35rem 0; outline: none;
     }
-    .tc-input:focus { border-bottom-color: var(--color-jade); }
-    .tc-textarea { min-height: 5.5rem; resize: vertical; width: 100%; }
-    .tc-message-line { align-items: flex-start; }
+    .tc-input:focus { border-bottom-color: #A8C4B4; }
+    .tc-textarea { min-height: 5.5rem; width: 100%; resize: vertical; }
+    .tc-message { align-items: flex-start; }
     .tc-submit {
-      background: var(--color-jade); color: #04120c; border: 0; font: inherit;
-      font-weight: 700; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      background: #A8C4B4; color: #141413; border: 0; font: inherit;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
       padding: 0.6rem 1rem; cursor: pointer;
     }
-    .tc-submit:hover { filter: brightness(1.1); }
-    .tc-cursor { color: var(--color-jade); animation: tc-blink 1.1s steps(1) infinite; margin-left: 0.35rem; }
-    .tc-hint { color: #555; font-size: 0.65rem; margin-left: 0.45rem; }
-    .confirm-msg { display: none; color: var(--color-jade); margin-top: 0.75rem; }
-    .confirm-msg.show { display: block; }
-    .fine { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1.25rem; line-height: 1.7; }
+    .tc-submit:hover { filter: brightness(1.05); }
+    .confirm { display: none; color: #A8C4B4; margin-top: 0.75rem; }
+    .confirm.show { display: block; }
+    .fine { font-size: 0.75rem; color: var(--typ-tone); margin-top: 1.1rem; line-height: 1.7; }
 
     footer {
-      padding: 2.25rem 0 2.75rem; border-top: 1px solid var(--color-stone);
-      font-size: 0.68rem; letter-spacing: 0.06em; color: var(--color-text-muted);
+      padding: 2rem 0 2.5rem; font-size: 0.7rem; color: var(--typ-tone);
     }
     .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
     .reveal.in { opacity: 1; transform: none; }
 
-    @media (max-width: 980px) {
-      .lines-grid, .cred-row { grid-template-columns: 1fr 1fr; }
-      .postura-split, .two-col, .contact-split, .folio-grid, .steps { grid-template-columns: 1fr; }
-      .folio.featured { grid-row: auto; min-height: 280px; }
+    @media (max-width: 900px) {
+      .creds, .pipeline, .pillars, .lab-grid { grid-template-columns: 1fr 1fr; }
+      .pipeline { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .service { grid-template-columns: 1fr; }
+      .price-col { text-align: left; }
+      .paper { grid-template-columns: 1fr; gap: 0.35rem; }
     }
     @media (max-width: 720px) {
-      .site-header { padding: 0 1.25rem; }
       .nav-toggle { display: block; }
       .nav-links {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--color-stone);
-        flex-direction: column; padding: 1rem 1.25rem 1.25rem; gap: 0.85rem;
+        display: none; position: absolute; left: 0; right: 0; top: 100%;
+        background: var(--bg); border-bottom: 1px solid var(--brd);
+        flex-direction: column; padding: 0.85rem 1.25rem 1.1rem; gap: 0.75rem;
       }
       .nav-links.open { display: flex; }
-      .lines-grid, .cred-row { grid-template-columns: 1fr; }
-      .offer { grid-template-columns: 1fr; }
-      .price { text-align: left; }
-      .hero-seal { letter-spacing: 0.14em; font-size: 0.58rem; }
-      .container { width: min(100% - 2rem, var(--max-width)); }
+      .creds, .pipeline, .pillars, .lab-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 78vh; }
     }
   </style>
 </head>
 <body>
-  <div class="sysbar" aria-hidden="true">
-    <div class="inner">
+  <div class="sysbar">
+    <div class="wrap row">
       <span class="prompt">indioyori@anáhuac:~$</span>
       <span>soberanía_cognitiva</span>
       <span class="sep">·</span>
-      <span>lab empresas</span>
+      <span>lab · empresas</span>
       <span class="sep">·</span>
-      <span><b>edge-rag</b> operativo</span>
-      <span class="cursor"></span>
+      <span><b>MCC</b> método estrella</span>
     </div>
   </div>
 
   <header class="site-header">
-    <a class="brand" href="#hero">FRONTERIA<span>—</span>LAB</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#formacion">Formación</a></li>
-      <li><a href="#macs">MACS</a></li>
-      <li><a href="#rag">RAG</a></li>
-      <li><a href="#portafolio">Portafolio</a></li>
-      <li><a class="ext" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Indioyori</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+    <div class="wrap header-row">
+      <a class="brand" href="#hero">FronterIA<span>—</span>Lab</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre nosotros</a></li>
+        <li><a href="#empresas">Empresas</a></li>
+        <li><a href="#arquitectura">Arquitectura</a></li>
+        <li><a href="#soberania">Soberanía</a></li>
+        <li><a href="#academia">Academia</a></li>
+        <li><a href="#laboratorio">Laboratorio</a></li>
+        <li><a class="ext" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Archivo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
   </header>
 
   <main>
-    <section id="hero">
-      <div class="hero-bg" role="img" aria-label="Textura mineral / territorio"></div>
-      <div class="hero-content">
-        <div class="engraved-main">FRONTERIA-LAB</div>
-        <div class="engraved-sub">Infraestructura y consultoría de IA soberana</div>
-        <p class="hero-support">Criterio, mandato cognitivo y sistemas que se quedan donde vive tu información.</p>
-        <div class="hero-status">
-          <span class="live-dot"></span>
-          <span><strong>lab</strong> · operativo</span>
-          <span class="sep">·</span>
-          <span>territorio anáhuac</span>
-          <span class="sep">·</span>
-          <span>yoreme·ódami</span>
+    <section class="hero" id="hero" aria-label="Inicio">
+      <div class="hero-atmosphere" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-brand">FronterIA<span>—</span>Lab</p>
+        <p class="hero-line">Consultoría e infraestructura de IA soberana.</p>
+        <p class="hero-support">Criterio, mandato cognitivo y sistemas que operan dentro de tu perímetro.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#empresas">Ver servicios</a>
+          <a class="btn btn-line" href="#contacto">Solicitar diagnóstico</a>
         </div>
-        <div class="hero-links">
-          <a class="hero-link" href="#contacto">Solicitar diagnóstico</a>
-          <a class="hero-link" href="#servicios">Ver servicios</a>
-        </div>
-        <div class="hero-badges">
-          <span>GT EPICC · CLACSO</span>
-          <span>MCC validado CLACSO</span>
-          <span>NVIDIA Inception</span>
-          <span>Zenodo DOI</span>
-        </div>
-      </div>
-      <div class="hero-seal">Territorio Anáhuac</div>
-    </section>
-
-    <section id="postura" class="section-padding">
-      <div class="container reveal">
-        <div class="section-meta-bar">
-          <span>PERIMETER: local</span><span class="meta-sep">·</span>
-          <span class="meta-live">LFPDPPP</span><span class="meta-sep">·</span>
-          <span>NOM-151</span><span class="meta-sep">·</span>
-          <span>NVIDIA Inception</span>
-        </div>
-        <span class="section-label"><span class="label-prefix">SYS.01 //</span> Postura</span>
-        <h2>Infraestructura que se queda donde vive tu información.</h2>
-        <div class="postura-split">
-          <div class="postura-body">
-            <p>Construimos sistemas de IA que operan dentro de tu perímetro — nube privada, on-premise o air-gap. Tus datos no entrenan modelos ajenos. Cada respuesta cita el documento de origen; cuando el corpus no sostiene, el sistema se abstiene.</p>
-            <p>No vendemos magia de prompts. Operamos como laboratorio: formación crítica, auditoría de mandato e implementación soberana — cobrado en pesos, bajo LFPDPPP y NOM-151 cuando aplica.</p>
-            <p class="postura-signal">Ingeniería RAG de borde desde territorio Anáhuac — linaje yoreme y ódami — con el rigor de quien indexa corpus reales y responde ante auditoría, no ante un demo.</p>
-          </div>
-          <div class="mineral-panel" role="img" aria-label="Textura mineral del lab">
-            <div class="cap">MCC.protocolov1 · abstención auditada · GT EPICC-CLACSO</div>
-          </div>
+        <div class="badges">
+          <span class="badge">GT EPICC · CLACSO</span>
+          <span class="badge">MCC validado</span>
+          <span class="badge">NVIDIA Inception</span>
+          <span class="badge">Zenodo DOI</span>
         </div>
       </div>
     </section>
 
-    <section id="servicios" class="section-padding">
-      <div class="container reveal">
-        <div class="section-meta-bar">
-          <span>MENU: 4 líneas</span><span class="meta-sep">·</span>
-          <span class="meta-live">primer nivel</span><span class="meta-sep">·</span>
-          <span>sin prompts commodity</span>
-        </div>
-        <span class="section-label"><span class="label-prefix">SYS.02 //</span> Qué hacemos</span>
-        <h2>Cuatro líneas. Un laboratorio.</h2>
-        <p class="lede">Misma categoría que “consultoría de IA”. Otro manual: criterio, mandato, perímetro.</p>
-        <div class="lines-grid">
-          <a class="line-cell" href="#formacion">
-            <div class="n">01 · Formación</div>
-            <h3>Certeza + MCC</h3>
-            <p>Literacy crítica y método. Validación CLACSO / GT EPICC.</p>
-          </a>
-          <a class="line-cell" href="#macs">
-            <div class="n">02 · Diagnóstico</div>
-            <h3>MACS</h3>
-            <p>Auditoría del mandato cognitivo de producción.</p>
-          </a>
-          <a class="line-cell" href="#gobernanza">
-            <div class="n">03 · Gobernanza</div>
-            <h3>MACS + IPA</h3>
-            <p>Del diagnóstico al protocolo de instrucción.</p>
-          </a>
-          <a class="line-cell" href="#rag">
-            <div class="n">04 · Implementación</div>
-            <h3>RAG soberanos</h3>
-            <p>Sistemas dedicados a tus documentos.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="formacion" class="section-padding">
-      <div class="container reveal">
-        <div class="section-meta-bar">
-          <span>MÉTODO</span><span class="meta-sep">·</span>
-          <span class="meta-live">CLACSO</span><span class="meta-sep">·</span>
-          <span>keynote · taller · curso</span>
-        </div>
-        <span class="section-label"><span class="label-prefix">SYS.03 //</span> Formación y método</span>
-        <h2>Certeza sin sustancia · MCC</h2>
-        <p class="lede">Certeza es la puerta. MCC es el método profundo — con validación CLACSO. No es un catálogo de herramientas.</p>
-        <div class="offer-stack">
-          <div class="offer">
-            <div>
-              <h3>Certeza sin sustancia — Keynote</h3>
-              <p>60–90 min. El equipo deja de confundir fluidez con verdad.</p>
-              <div class="meta">Directivos · medios · universidades · ONG</div>
-            </div>
-            <div class="price">$32,000 MXN<small>intl $1,900 USD</small></div>
-          </div>
-          <div class="offer">
-            <div>
-              <h3>Certeza sin sustancia — Taller</h3>
-              <p>Formación in-company. Criterio + práctica. Sin temario de prompts.</p>
-              <div class="meta">½ día · día completo</div>
-            </div>
-            <div class="price">$55,000 · $85,000 MXN<small>hasta 20 / 25 personas</small></div>
-          </div>
-          <div class="offer">
-            <div>
-              <h3>Curso MCC (digital)</h3>
-              <p>Método de Calibración Contextual. Usar la IA sin ceder el juicio.</p>
-              <div class="meta">Validación CLACSO · GT EPICC</div>
-            </div>
-            <div class="price">$149 USD<small>lista</small></div>
-          </div>
-        </div>
-        <p class="fine">Archivo y voz → <a href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">indioyori.fronteria-lab.com</a></p>
-      </div>
-    </section>
-
-    <section id="macs" class="section-padding">
-      <div class="container reveal">
-        <div class="two-col">
-          <div>
-            <div class="section-meta-bar">
-              <span>AUDITORÍA</span><span class="meta-sep">·</span>
-              <span class="meta-live">instrumento v1.0</span>
-            </div>
-            <span class="section-label"><span class="label-prefix">SYS.04 //</span> Diagnóstico</span>
-            <h2>MACS — mandato cognitivo situado</h2>
-            <p class="lede">No es readiness de growth ni checklist de tools. Es inspección de cómo la organización produce con IA — y dónde falla el mandato.</p>
-            <div class="offer-stack">
-              <div class="offer">
-                <div>
-                  <h3>MACS Express</h3>
-                  <p>Alcance acotado · informe · sesión ejecutiva. ~2 semanas.</p>
-                </div>
-                <div class="price">$65,000 MXN<small>$3,800 USD</small></div>
-              </div>
-              <div class="offer">
-                <div>
-                  <h3>MACS Completa</h3>
-                  <p>Multi-área · Mapa de Grieta · puente a IPA / RAG.</p>
-                </div>
-                <div class="price">$145,000 MXN<small>$8,500 USD</small></div>
-              </div>
-            </div>
-          </div>
-          <div id="gobernanza">
-            <div class="section-meta-bar">
-              <span>PROTOCOLO</span><span class="meta-sep">·</span>
-              <span>solo post-MACS</span>
-            </div>
-            <span class="section-label"><span class="label-prefix">SYS.05 //</span> Gobernanza</span>
-            <h2>IPA</h2>
-            <p class="lede">Protocolo de instrucción anticolonial. Se abre después del diagnóstico.</p>
-            <div class="jade-note">
-              Express <strong>$55,000 MXN</strong> · Completa <strong>$110,000 MXN</strong>.<br />
-              Bundle MACS Express + IPA Express: <strong>$110,000 MXN</strong>.
-            </div>
-            <div class="mineral-panel" style="margin-top:1.75rem;min-height:200px;background-image:url('assets/mineral-3.jpg')">
-              <div class="cap">falla de mandato → protocolo · no brochure de ética</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="rag" class="section-padding">
-      <div class="rag-bg" aria-hidden="true"></div>
-      <div class="container reveal">
-        <div class="section-meta-bar">
-          <span>IMPLEMENTACIÓN</span><span class="meta-sep">·</span>
-          <span class="meta-live">cotización</span><span class="meta-sep">·</span>
-          <span>motor TEKTRON</span>
-        </div>
-        <span class="section-label"><span class="label-prefix">SYS.06 //</span> Sistemas RAG soberanos</span>
-        <h2>Dedicados a tus documentos.</h2>
-        <p class="lede">Para abogados, investigadores y empresas. Indexados sobre corpus propio, en perímetro controlado. Cotización personalizada.</p>
-        <div class="offer-stack">
-          <div class="offer">
-            <div>
-              <h3>Diagnóstico técnico</h3>
-              <p>Viabilidad, corpus, perímetro, alcance. Acreditable al piloto (60 días).</p>
-            </div>
-            <div class="price">desde $35,000 MXN</div>
-          </div>
-          <div class="offer">
-            <div>
-              <h3>Piloto soberano</h3>
-              <p>Un corpus · un entorno · citas · abstención MCC cuando no hay evidencia.</p>
-            </div>
-            <div class="price">desde $150,000 MXN</div>
-          </div>
-          <div class="offer">
-            <div>
-              <h3>Especializado · operación</h3>
-              <p>Legal / research / vertical. Retainer de operación y re-indexación.</p>
-            </div>
-            <div class="price">desde $220,000 MXN<small>retainer desde $18,000 / mes</small></div>
-          </div>
-        </div>
-        <p class="fine">IVA 16% no incluido · 50% anticipo · SPEI / Stripe / Mercado Pago · CFDI 4.0</p>
-      </div>
-    </section>
-
-    <section id="metodo" class="section-padding">
-      <div class="container reveal">
-        <div class="section-meta-bar"><span>SECUENCIA</span><span class="meta-sep">·</span><span class="meta-live">operativa</span></div>
-        <span class="section-label"><span class="label-prefix">SYS.07 //</span> Cómo trabajamos</span>
-        <h2>Criterio → mandato → perímetro</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="n">01</div>
-            <div class="tag">Formación</div>
-            <h3>Criterio</h3>
-            <p>Certeza / MCC. El equipo deja de firmar fluidez vacía.</p>
-          </div>
-          <div class="step">
-            <div class="n">02</div>
-            <div class="tag">Auditoría</div>
-            <h3>Mandato</h3>
-            <p>MACS (+ IPA). Quién manda sobre el modelo — y con qué protocolo.</p>
-          </div>
-          <div class="step">
-            <div class="n">03</div>
-            <div class="tag">Infra</div>
-            <h3>Perímetro</h3>
-            <p>RAG soberano. El conocimiento se queda en casa.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portafolio" class="section-padding">
-      <div class="container reveal">
-        <div class="section-meta-bar">
-          <span>OBRA</span><span class="meta-sep">·</span>
-          <span>no catálogo de agentes</span><span class="meta-sep">·</span>
-          <span class="meta-live">selección</span>
-        </div>
-        <span class="section-label"><span class="label-prefix">SYS.08 //</span> Portafolio</span>
-        <h2>Método, teoría, instrumento.</h2>
-        <p class="lede">Lo que sostiene el lab — no una vitrina de códices comerciales.</p>
-        <div class="folio-grid">
-          <a class="folio featured" href="https://doi.org/10.5281/zenodo.17728016" target="_blank" rel="noopener">
-            <div class="folio-media" style="background-image:url('assets/mineral-5.jpg')"></div>
-            <div class="folio-body">
-              <div class="tag">Método · CLACSO · Zenodo</div>
-              <h3>MCC — Calibración Contextual</h3>
-              <p>Protocolo y praxis. Validación GT EPICC-CLACSO. DOI 10.5281/zenodo.17728016.</p>
-            </div>
-          </a>
-          <a class="folio" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">
-            <div class="folio-media" style="background-image:url('assets/mineral-8.jpg')"></div>
-            <div class="folio-body">
-              <div class="tag">Literacy crítica</div>
-              <h3>Certeza sin sustancia</h3>
-              <p>Keynote y taller. Fluidez ≠ verdad.</p>
-            </div>
-          </a>
-          <a class="folio" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">
-            <div class="folio-media" style="background-image:url('assets/mineral-4.jpg')"></div>
-            <div class="folio-body">
-              <div class="tag">Teoría</div>
-              <h3>Grieta / Olvido Estructural</h3>
-              <p>Poder, colonialidad y soberanía cognitiva en LLMs.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="bridge">
-      <div class="container inner reveal">
-        <div>
-          <span class="section-label" style="border:0;padding:0;margin-bottom:1rem"><span class="label-prefix">VOZ //</span> Indioyori</span>
-          <h2>El lab opera. Indioyori piensa en público.</h2>
-          <p>Misma línea epistémica. El archivo, los ensayos y la comunidad viven en Ghost.</p>
-        </div>
-        <a class="bridge-link" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Ir al archivo Indioyori →</a>
-      </div>
-    </div>
-
-    <section id="credenciales" class="section-padding">
-      <div class="container reveal">
-        <span class="section-label"><span class="label-prefix">SYS.09 //</span> Credenciales</span>
-        <h2>Sellos que ya están.</h2>
-        <div class="cred-row">
-          <div class="cred-item"><strong>GT EPICC · CLACSO</strong><span>Investigación en soberanía cognitiva</span></div>
-          <div class="cred-item"><strong>MCC validado</strong><span>Método con respaldo CLACSO</span></div>
-          <div class="cred-item"><strong>Zenodo</strong><span>DOI 10.5281/zenodo.17728016</span></div>
-          <div class="cred-item">
+    <section id="sobre">
+      <div class="wrap reveal">
+        <p class="kicker">Sobre nosotros</p>
+        <h2>Un laboratorio, no una promesa opaca.</h2>
+        <p class="lede">Construimos sistemas de IA que operan dentro de tu perímetro — nube privada, on-premise o air-gap. Tus datos no entrenan modelos ajenos. Cada respuesta cita su origen; cuando el corpus no alcanza, el sistema se abstiene.</p>
+        <p class="lede" style="margin-top:-1rem">No somos una startup camino a una salida. Somos un laboratorio de infraestructura y método, cobrado en pesos, bajo LFPDPPP y NOM-151 cuando aplica. Trabajo desde territorio Anáhuac — linaje yoreme y ódami — con el rigor de corpus reales y auditoría, no de demos.</p>
+        <div class="creds">
+          <div class="cred"><strong>Lab soberano</strong><span>Infraestructura y método</span></div>
+          <div class="cred"><strong>GT EPICC · CLACSO</strong><span>Investigación afiliada</span></div>
+          <div class="cred"><strong>Zenodo</strong><span>DOI 10.5281/zenodo.17728016</span></div>
+          <div class="cred">
             <strong>NVIDIA Inception</strong>
-            <img class="inception" src="assets/nvidia-inception.png" alt="NVIDIA Inception Member" width="140" height="42" />
+            <img class="inception" src="assets/nvidia-inception.png" alt="NVIDIA Inception" width="120" height="36" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="section-padding">
-      <div class="container reveal">
-        <div class="contact-split">
+    <section id="empresas" class="tone">
+      <div class="wrap reveal">
+        <p class="kicker">Empresas</p>
+        <h2>Qué ofrecemos a organizaciones.</h2>
+        <p class="lede">Consultoría de IA soberana: formación crítica, método MCC, auditoría de mandato, protocolo de instrucción e implementación RAG sobre tus documentos. Cada oferta tiene alcance y precio claros.</p>
+
+        <article class="service" id="svc-certeza">
           <div>
-            <div class="section-meta-bar"><span>CONTACTO</span><span class="meta-sep">·</span><span class="meta-live">México · LatAm</span></div>
-            <span class="section-label"><span class="label-prefix">SYS.10 //</span> Diagnóstico</span>
+            <div class="eyebrow">Formación</div>
+            <h3>Certeza sin sustancia</h3>
+            <p>Puerta del método. Literacy crítica para que el equipo deje de confundir fluidez con verdad — y no ceda el juicio a un modelo que suena seguro.</p>
+            <p class="not">No es un taller de prompts ni un catálogo de herramientas.</p>
+            <p class="meta">Para: directivos, medios, universidades, ONG y equipos que ya usan IA.</p>
+            <ul class="price-list">
+              <li><span>Keynote 60–90 min</span><b>$32,000 MXN</b></li>
+              <li><span>Taller ½ día</span><b>$55,000 MXN</b></li>
+              <li><span>Taller día completo</span><b>$85,000 MXN</b></li>
+            </ul>
+          </div>
+          <div class="price-col">
+            <div class="p">desde $32,000</div>
+            <small>MXN · IVA no incl.</small>
+            <p class="meta" style="margin-top:1rem"><a href="#contacto">Solicitar →</a></p>
+          </div>
+        </article>
+
+        <article class="service" id="svc-mcc">
+          <div>
+            <div class="eyebrow">Método estrella</div>
+            <h3>MCC — Calibración Contextual <span class="star">estrella</span></h3>
+            <p>Protocolo para intervenir la gramática computacional de los LLM: certeza sin sustancia, optimización silenciosa y sesgo de contexto. Validación CLACSO / GT EPICC. Es el núcleo técnico y formativo del lab — también la abstención auditada en nuestros sistemas RAG.</p>
+            <p class="not">No es “prompt engineering” genérico. Detalle de capas y glifos en Academia.</p>
+            <p class="meta">Para: equipos que ya tienen criterio o vienen de Certeza · investigadores · orgs que adoptan el método.</p>
+            <ul class="price-list">
+              <li><span>Curso digital MCC</span><b>$149 USD</b></li>
+              <li><span>Programa in-company</span><b>desde $120,000 MXN</b></li>
+            </ul>
+          </div>
+          <div class="price-col">
+            <div class="p">método</div>
+            <small>CLACSO · GT EPICC</small>
+            <p class="meta" style="margin-top:1rem"><a href="#academia">Ver protocolo →</a></p>
+          </div>
+        </article>
+
+        <article class="service" id="svc-macs">
+          <div>
+            <div class="eyebrow">Diagnóstico</div>
+            <h3>MACS — Mandato cognitivo situado</h3>
+            <p>Auditoría de cómo la organización produce con IA: dónde falla el mandato, dónde se cede el juicio, dónde el riesgo es epistémico y operativo. Informe + sesión ejecutiva.</p>
+            <p class="not">No es readiness de growth ni checklist de tools. No se llama “auditoría MCC”.</p>
+            <p class="meta">Para: organizaciones con IA en decisión o producción.</p>
+            <ul class="price-list">
+              <li><span>MACS Express (~2 sem.)</span><b>$65,000 MXN</b></li>
+              <li><span>MACS Completa (4–8 sem.)</span><b>$145,000 MXN</b></li>
+            </ul>
+          </div>
+          <div class="price-col">
+            <div class="p">desde $65,000</div>
+            <small>MXN · 50% anticipo</small>
+            <p class="meta" style="margin-top:1rem"><a href="#contacto">Agendar →</a></p>
+          </div>
+        </article>
+
+        <article class="service" id="svc-ipa">
+          <div>
+            <div class="eyebrow">Gobernanza</div>
+            <h3>IPA — Protocolo de instrucción</h3>
+            <p>Después de MACS: reglas de cómo la organización instruye a sus sistemas — para no reproducir extractivismo cognitivo ni menús opacos de “uso responsable” de brochure.</p>
+            <p class="not">Solo se abre post-diagnóstico MACS.</p>
+            <ul class="price-list">
+              <li><span>IPA Express</span><b>$55,000 MXN</b></li>
+              <li><span>IPA Completa</span><b>$110,000 MXN</b></li>
+              <li><span>Bundle MACS Express + IPA Express</span><b>$110,000 MXN</b></li>
+            </ul>
+          </div>
+          <div class="price-col">
+            <div class="p">post-MACS</div>
+            <small>gobernanza operativa</small>
+          </div>
+        </article>
+
+        <article class="service" id="svc-rag">
+          <div>
+            <div class="eyebrow">Implementación</div>
+            <h3>Sistemas RAG soberanos</h3>
+            <p>Sistema dedicado, indexado sobre <strong>documentos propios</strong>, en perímetro controlado. Respuestas con cita; abstención cuando el corpus no sostiene (MCC). Motor de laboratorio: TEKTRON.</p>
+            <p class="not">No es chatbot de ventas genérico ni SaaS multi-tenant barato.</p>
+            <p class="meta">Para: abogados, investigadores y empresas con conocimiento sensible.</p>
+            <ul class="price-list">
+              <li><span>Diagnóstico técnico (acreditable)</span><b>desde $35,000 MXN</b></li>
+              <li><span>Piloto soberano</span><b>desde $150,000 MXN</b></li>
+              <li><span>Especializado (legal / research)</span><b>desde $220,000 MXN</b></li>
+              <li><span>Retainer de operación</span><b>desde $18,000 MXN/mes</b></li>
+            </ul>
+          </div>
+          <div class="price-col">
+            <div class="p">cotización</div>
+            <small>personalizada</small>
+            <p class="meta" style="margin-top:1rem"><a href="#contacto">Cotizar →</a></p>
+          </div>
+        </article>
+
+        <p class="fine">IVA 16% no incluido · Anticipo 50% · SPEI / Stripe / Mercado Pago · CFDI 4.0 · Institucional intl. en USD</p>
+      </div>
+    </section>
+
+    <section id="arquitectura">
+      <div class="wrap reveal">
+        <p class="kicker">Arquitectura</p>
+        <h2>Del corpus a la cita.</h2>
+        <p class="lede">Base de todos los sistemas del lab — presentes y futuros. Retrieval híbrido, generación local y abstención MCC cuando no hay evidencia.</p>
+        <div class="pipeline">
+          <div class="pipe"><div class="n">01</div><h3>Ingesta</h3><p>Documentos → chunks limpios</p></div>
+          <div class="pipe"><div class="n">02</div><h3>Indexación</h3><p>Híbrida FAISS + BM25</p></div>
+          <div class="pipe"><div class="n">03</div><h3>Reranking</h3><p>Cross-encoder</p></div>
+          <div class="pipe"><div class="n">04</div><h3>Generación</h3><p>Modelo local · on-prem</p></div>
+          <div class="pipe"><div class="n">05</div><h3>Respuesta</h3><p>Cita + sección · MCC</p></div>
+        </div>
+        <div class="chips">
+          <span class="chip">Hybrid RAG</span>
+          <span class="chip">FAISS + BM25</span>
+          <span class="chip">Cross-encoder</span>
+          <span class="chip">Docker Edge</span>
+          <span class="chip">MCC.protocolo</span>
+          <span class="chip">Air-gap ready</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="soberania" class="tone">
+      <div class="wrap reveal">
+        <p class="kicker">Soberanía</p>
+        <h2>Diseñado para datos que no pueden salir de casa.</h2>
+        <p class="lede">Soberanía cognitiva en la práctica: perímetro, trazabilidad y el derecho a no ceder el juicio — en línea con neuroderechos y gobernanza situada.</p>
+        <div class="pillars">
+          <div class="pillar"><div class="n">01</div><h3>Perímetro propio</h3><p>Modelo e índice dentro de tu red; sin nube extranjera obligatoria.</p></div>
+          <div class="pillar"><div class="n">02</div><h3>Trazabilidad</h3><p>Cada fragmento cita documento y sección.</p></div>
+          <div class="pillar"><div class="n">03</div><h3>Contexto local</h3><p>Afinado a tu industria y normativa.</p></div>
+          <div class="pillar"><div class="n">04</div><h3>Cumplimiento MX</h3><p>LFPDPPP y NOM-151 cuando el caso lo exige.</p></div>
+          <div class="pillar"><div class="n">05</div><h3>Costos en pesos</h3><p>Predecibles; sin factura variable en dólares.</p></div>
+          <div class="pillar"><div class="n">06</div><h3>Air-gap</h3><p>Máxima sensibilidad, desconectado de redes externas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="academia">
+      <div class="wrap reveal">
+        <p class="kicker">Academia e investigación</p>
+        <h2>La gramática del laboratorio.</h2>
+        <p class="lede">Tres obras sostienen la identidad de FronterIA-Lab: método, cosmogonía y regulación. Aquí el rigor; en Empresas, la oferta.</p>
+        <div class="papers">
+          <a class="paper" href="https://doi.org/10.5281/zenodo.17728016" target="_blank" rel="noopener">
+            <div class="role">Método estrella</div>
+            <div>
+              <h3>MCC — Protocolo de Calibración Contextual</h3>
+              <p>Especificación de cuatro capas y dieciséis operaciones sobre la gramática computacional de los LLM. Validación empírica multi-modelo. GT EPICC — CLACSO. DOI Zenodo.</p>
+            </div>
+          </a>
+          <div class="paper">
+            <div class="role">Cosmogonía</div>
+            <div>
+              <h3>Código Fuente del Sexto Sol</h3>
+              <p>Cibernética del Tonalli e insurgencia del silicio. Ontología anahuaca, reciprocidad y soberanía cognitiva en Abya Yala — el de dónde habla el lab.</p>
+            </div>
+          </div>
+          <div class="paper">
+            <div class="role">Regulación</div>
+            <div>
+              <h3>Soberanía cognitiva y neuroderechos</h3>
+              <p>Marco decolonial: Olvido Estructural y el derecho a la inoptimizabilidad. Puente entre gobernanza, MACS/IPA y la protección del pensamiento situado.</p>
+            </div>
+          </div>
+        </div>
+        <p class="fine" style="margin-top:1.25rem">Más archivo y ensayos → <a href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">indioyori.fronteria-lab.com</a></p>
+      </div>
+    </section>
+
+    <section id="laboratorio" class="tone">
+      <div class="wrap reveal">
+        <p class="kicker">Laboratorio</p>
+        <h2>Entender la máquina sin tragarse el manual SV.</h2>
+        <p class="lede">Piezas claras sobre LLM, RAG y perímetro — en la gramática de FronterIA-Lab. El contenido se publica y actualiza en Ghost (tag laboratorio); esta sección solo destaca.</p>
+        <div class="lab-grid">
+          <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
+            <div class="tag">Base</div>
+            <h3>Qué es un LLM</h3>
+            <p>Sin humo: probabilidad, no oráculo.</p>
+          </a>
+          <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
+            <div class="tag">Infra</div>
+            <h3>Qué es un sistema RAG</h3>
+            <p>Corpus, cita y límites del perímetro.</p>
+          </a>
+          <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
+            <div class="tag">Método</div>
+            <h3>Por qué “suena cierto” no es saber</h3>
+            <p>Certeza sin sustancia, en una página.</p>
+          </a>
+        </div>
+        <p class="fine" style="margin-top:1.25rem"><a href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">Ver todo el laboratorio en Ghost →</a> · crea el tag <code>laboratorio</code> y publica ahí; no hace falta tocar este HTML.</p>
+      </div>
+    </section>
+
+    <section id="archivo">
+      <div class="wrap bridge reveal">
+        <div>
+          <p class="kicker">Archivo / Blog</p>
+          <h2>Indioyori piensa en público.</h2>
+          <p>El lab opera ofertas y sistemas. La voz, el archivo y la comunidad viven en Ghost.</p>
+        </div>
+        <a class="btn btn-primary" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Ir a Indioyori →</a>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap reveal">
+        <div class="contact-grid">
+          <div>
+            <p class="kicker">Contacto</p>
             <h2>Cuéntanos el perímetro.</h2>
-            <p class="lede">Sector, datos sensibles y si buscas formación, MACS o RAG. Sin compromiso de alcance.</p>
+            <p class="lede">Indica si buscas formación (Certeza/MCC), MACS, IPA o RAG soberano. Sector y restricciones de datos ayudan a responder con precisión.</p>
             <p class="fine">
               Outreach: <a href="mailto:indioyori@fronteria-lab.com">indioyori@fronteria-lab.com</a><br />
               Infra: <a href="mailto:ragflow@fronteria-lab.com">ragflow@fronteria-lab.com</a><br />
-              50% anticipo · IVA aparte
+              50% anticipo · IVA aparte · México / LatAm
             </p>
           </div>
-          <form class="terminal-contact" id="contactForm" action="contact.php" method="POST" novalidate>
-            <div class="tc-line tc-comment"># formación · MACS · RAG soberano · sin compromiso</div>
-            <div class="tc-line tc-comment"># indioyori@fronteria-lab.com · territorio anáhuac</div>
+          <form class="terminal" id="contactForm" action="contact.php" method="POST" novalidate>
+            <div class="tc-line tc-comment"># certeza · mcc · macs · ipa · rag · sin compromiso</div>
             <div class="tc-line">
               <span class="tc-prompt">$</span><span class="tc-label">correo</span>
               <input class="tc-input" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email" />
             </div>
-            <div class="tc-line tc-message-line">
+            <div class="tc-line tc-message">
               <span class="tc-prompt">$</span><span class="tc-label">mensaje</span>
-              <textarea class="tc-input tc-textarea" name="mensaje" placeholder="sector, necesidad, restricciones de datos..." required></textarea>
+              <textarea class="tc-input tc-textarea" name="mensaje" placeholder="sector, servicio de interés, datos sensibles..." required></textarea>
             </div>
             <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true">
               <label>Sitio web<input type="text" name="empresa_web" tabindex="-1" autocomplete="off" /></label>
             </div>
             <div class="tc-line">
-              <button type="submit" class="tc-submit">enviar</button><span class="tc-cursor">_</span>
-              <span class="tc-hint">↵ Enter también envía</span>
+              <button type="submit" class="tc-submit">enviar</button>
             </div>
-            <div class="confirm-msg" id="confirmMsg">Gracias — recibimos tu mensaje.</div>
+            <div class="confirm" id="confirmMsg">Gracias — recibimos tu mensaje.</div>
           </form>
         </div>
       </div>
@@ -824,9 +633,9 @@
   </main>
 
   <footer>
-    <div class="container footer-row">
+    <div class="wrap footer-row">
       <div>© <span id="y"></span> FronterIA-Lab · Indioyori · territorio Anáhuac</div>
-      <div><a href="https://indioyori.fronteria-lab.com">Archivo</a> · precios lista · RAG a cotización</div>
+      <div>MCC · Sexto Sol · Neuroderechos · precios lista</div>
     </div>
   </footer>
 
@@ -846,7 +655,6 @@
       entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
     const form = document.getElementById("contactForm");
     const confirmMsg = document.getElementById("confirmMsg");
     form.addEventListener("submit", async (ev) => {

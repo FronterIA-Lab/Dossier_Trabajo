@@ -67,6 +67,7 @@ Curso MCC: **sí se termina**, pero en paralelo ligero (pago + media mínima). V
 | [`15_MENU_PRECIOS_PRIMER_NIVEL.md`](15_MENU_PRECIOS_PRIMER_NIVEL.md) | **Menú + precios lista** (primer nivel) |
 | [`16_ESTRUCTURA_WEB_UNIFICADA.md`](16_ESTRUCTURA_WEB_UNIFICADA.md) | Estructura home lab (estilo Indioyori, sin Códices) |
 | [`17_ESTRUCTURA_SECCIONES_V3.md`](17_ESTRUCTURA_SECCIONES_V3.md) | Secciones v3 (definir antes de construir) |
+| [`18_COPY_SECCIONES_WEB.md`](18_COPY_SECCIONES_WEB.md) | Copy web v3 |
 | [`site/`](../site/) | **HTML nuevo** listo para subir al hosting |
 
 Corpus crudo (PDFs/MD originales) sigue en la raíz de este repo y en los demás repos del lab.

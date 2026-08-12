@@ -1,6 +1,6 @@
 # Estructura de secciones v3 — fronteria-lab.com (solo definición)
 
-**Estado:** en discusión — **no construir HTML hasta aprobar.**  
+**Estado:** D1–D4 + paleta jade mate **cerrados** · HTML v3 en `site/index.html` (build con rigor).  
 **Objetivo:** que un visitante de empresa entienda en 30 segundos qué es el lab, qué compra y a quién contactar.  
 **Look:** mate, limpio, tecnológico; guiado por el blog Indioyori (no plantilla blanca plana ni demo SYS saturado).  
 **Referencia de claridad (no de copy):** cómo 100x/Seedup/Magokoro ordenan oferta — aquí con tu menú.
@@ -212,11 +212,10 @@ Formulario / correos · 50% anticipo · IVA · qué pedir en el mensaje (formaci
 | **D3** | Cómo vive Laboratorio | Tag/colección **Ghost** (`laboratorio` / lab-notes). Sin WordPress nuevo en cPanel. Home solo destaca + “ver todo”. | ✅ confirmado |
 | **D4** | Precios en Empresas | **Sí, precios lista** por servicio (primer nivel). RAG: bandas + “cotización personalizada”. | ✅ confirmado |
 
-### Paquete si dices “ok a todo”
+### Paquete cerrado
 
 - Nav: `Sobre nosotros` · `Empresas` · `Arquitectura` · `Soberanía` · `Academia` · `Laboratorio` · `Archivo` · `Contacto`
 - Identidad: MCC estrella · Sexto Sol (territorio) · Neuroderechos (regulación)
-- Look: mate, limpio, tecnológico, guiado por el blog
-- Siguiente paso tras confirmar: **copy sección por sección** (aún sin HTML)
-
-Respuesta útil: `ok a todo` **o** `D2=Empresas`, etc.
+- Look: paleta mate arriba · tipografía blog
+- **Pendiente de color:** ¿mantener acento jade `#3D5C4A` o ir **100% monocromo** como Ghost (solo negros/grises)?
+- Siguiente: **copy sección por sección** (aún sin HTML)
