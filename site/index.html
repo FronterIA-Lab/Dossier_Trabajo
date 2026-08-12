@@ -4,313 +4,418 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FronterIA-Lab · Consultoría e infraestructura de IA soberana</title>
-  <meta name="description" content="Laboratorio de IA soberana: Certeza, MCC (método estrella, validación CLACSO), auditoría MACS, IPA y sistemas RAG dedicados a tus documentos. NVIDIA Inception · GT EPICC-CLACSO." />
+  <meta name="description" content="Laboratorio de IA soberana: Certeza, MCC, MACS, IPA y sistemas RAG. TEKTRON. CLACSO · NVIDIA Inception. Territorio Anáhuac." />
   <link rel="canonical" href="https://fronteria-lab.com/" />
-  <meta property="og:title" content="FronterIA-Lab · IA soberana para empresas" />
-  <meta property="og:description" content="Consultoría e infraestructura de IA soberana: criterio, mandato cognitivo y perímetro propio." />
-  <meta property="og:url" content="https://fronteria-lab.com/" />
   <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,700|space-mono:400,700" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,700,800|space-mono:400,700" rel="stylesheet" />
   <style>
     :root {
-      --bg: #F7F6F3;
-      --bg-tone: #EFEDE8;
-      --bg-ink: #141413;
-      --typ: #1C1B1B;
-      --typ-tone: #6B6B6B;
-      --typ-content: #2E2E2C;
-      --brd: #DDDBD4;
-      --brand: #141413;
-      --accent: #3D5C4A;
-      --accent-soft: #E4EBE6;
-      --font: "Space Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+      --obsidian: #0B0B0A;
+      --obsidian-2: #121211;
+      --obsidian-3: #1A1917;
+      --bone: #F4F2EC;
+      --bone-2: #E9E6DE;
+      --mist: #A8A59C;
+      --line-d: #2A2926;
+      --line-l: #D4D0C6;
+      --jade: #5F7F6C;
+      --jade-soft: #A8C4B4;
+      --gold: #C4A574;
+      --font: "Space Mono", ui-monospace, Menlo, Consolas, monospace;
       --display: "JetBrains Mono", "Space Mono", ui-monospace, monospace;
-      --max: 1080px;
-      --header-h: 64px;
+      --max: 1120px;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--font);
-      background: var(--bg);
-      color: var(--typ);
+      background: var(--obsidian);
+      color: var(--bone);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
     body::before {
-      content: "";
-      position: fixed; inset: 0; pointer-events: none; z-index: 10000; opacity: 0.028;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 240px; mix-blend-mode: multiply;
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 220px; mix-blend-mode: overlay;
     }
-    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    a:hover { color: var(--bg-ink); }
+    a { color: var(--jade-soft); text-underline-offset: 3px; }
+    a:hover { color: #fff; }
     img { max-width: 100%; display: block; }
     .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+    code, .mono { font-family: var(--display); }
 
+    /* sysbar */
     .sysbar {
-      background: var(--bg-ink); color: #B8B6B0;
-      font-size: 0.65rem; letter-spacing: 0.04em; padding: 0.4rem 0;
+      background: #050505; border-bottom: 1px solid var(--line-d);
+      font-size: 0.62rem; letter-spacing: 0.05em; color: var(--mist);
+      padding: 0.45rem 0;
     }
-    .sysbar .row { display: flex; flex-wrap: wrap; gap: 0.35rem 0.65rem; align-items: center; }
-    .sysbar .prompt { color: #F7F6F3; font-weight: 700; }
+    .sysbar .row { display: flex; flex-wrap: wrap; gap: 0.4rem 0.7rem; align-items: center; }
+    .sysbar .prompt { color: var(--bone); font-weight: 700; }
+    .sysbar .ok { color: var(--jade-soft); }
     .sysbar .sep { opacity: 0.35; }
-    .sysbar b { color: #A8C4B4; font-weight: 600; }
+    .blink {
+      display: inline-block; width: 0.55ch; height: 0.95em; background: var(--jade-soft);
+      vertical-align: -0.1em; animation: blink 1.1s steps(1) infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
 
+    /* header */
     .site-header {
-      position: sticky; top: 0; z-index: 50;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--brd);
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(11,11,10,0.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line-d);
     }
     .header-row {
-      min-height: var(--header-h);
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     }
     .brand {
-      font-family: var(--display); font-weight: 700; font-size: 0.95rem;
-      letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand);
-      text-decoration: none;
+      font-family: var(--display); font-weight: 800; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--bone); text-decoration: none; font-size: 0.95rem;
     }
-    .brand span { color: var(--typ-tone); }
-    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.35rem; }
-    .nav-toggle span { display: block; width: 1.2rem; height: 1px; background: var(--typ); margin: 5px 0; }
-    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.15rem 0.85rem; }
+    .brand span { color: var(--gold); opacity: 0.85; }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; }
+    .nav-toggle span { display: block; width: 1.2rem; height: 1px; background: var(--bone); margin: 5px 0; }
+    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; }
     .nav-links a {
-      font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--typ-tone); text-decoration: none;
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--mist); text-decoration: none;
     }
-    .nav-links a:hover { color: var(--typ); }
-    .nav-links a.ext { color: var(--accent); }
+    .nav-links a:hover { color: var(--bone); }
 
-    /* Hero — one composition */
+    /* HERO — pyramid 3D back + terminal */
     .hero {
-      position: relative; min-height: min(88vh, 760px);
-      display: flex; align-items: flex-end;
-      border-bottom: 1px solid var(--brd);
-      overflow: hidden;
+      position: relative; min-height: min(94vh, 860px);
+      display: grid; place-items: center;
+      overflow: hidden; border-bottom: 1px solid var(--line-d);
     }
-    .hero-atmosphere {
-      position: absolute; inset: 0;
+    .hero-pyramid {
+      position: absolute; inset: -4% -2% -8%;
       background:
-        linear-gradient(180deg, rgba(247,246,243,0.55) 0%, rgba(247,246,243,0.82) 55%, var(--bg) 100%),
-        url("assets/atmosphere.jpg") center / cover no-repeat;
-      opacity: 0.55;
-      animation: drift 36s var(--ease) infinite alternate;
+        radial-gradient(ellipse 55% 45% at 50% 58%, transparent 0%, rgba(11,11,10,0.25) 55%, rgba(11,11,10,0.92) 100%),
+        linear-gradient(180deg, rgba(11,11,10,0.35) 0%, transparent 35%, rgba(11,11,10,0.55) 100%),
+        url("assets/pyramid-hero.jpg") center 42% / cover no-repeat;
+      transform: perspective(1200px) rotateX(4deg) scale(1.08);
+      transform-origin: 50% 70%;
+      filter: contrast(1.08) saturate(1.05);
+      animation: pyramidFloat 28s var(--ease) infinite alternate;
     }
-    @keyframes drift {
-      from { transform: scale(1.02); }
-      to { transform: scale(1.07) translate3d(-1%, -0.8%, 0); }
+    @keyframes pyramidFloat {
+      from { transform: perspective(1200px) rotateX(3deg) scale(1.06) translate3d(0,0,0); }
+      to { transform: perspective(1200px) rotateX(5deg) scale(1.12) translate3d(0,-1.5%,0); }
     }
-    .hero-inner {
-      position: relative; z-index: 1;
-      width: min(100% - 2.5rem, var(--max));
-      margin: 0 auto 3.5rem;
-      max-width: 34rem;
-      animation: rise 0.85s var(--ease) both;
+    .hero-scan {
+      position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0, transparent 3px,
+        rgba(196,165,116,0.02) 3px, rgba(196,165,116,0.02) 4px
+      );
+      mix-blend-mode: soft-light; opacity: 0.5;
     }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: none; }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none; opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(196,165,116,0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196,165,116,0.25) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 55%, black, transparent 75%);
     }
+    .hero-stage {
+      position: relative; z-index: 2; width: min(100% - 2.5rem, var(--max));
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2rem; align-items: end;
+      padding: 6rem 0 3.5rem;
+    }
+    .hero-copy { max-width: 34rem; }
     .hero-brand {
-      font-family: var(--display); font-weight: 700;
-      font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -0.03em;
-      line-height: 1.05; margin-bottom: 1rem; color: var(--brand);
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem); letter-spacing: -0.03em;
+      line-height: 1.02; margin-bottom: 1rem;
+      text-shadow: 0 2px 0 rgba(0,0,0,0.85), 0 0 40px rgba(196,165,116,0.12);
     }
-    .hero-brand span { color: var(--typ-tone); }
+    .hero-brand span { color: var(--gold); }
     .hero-line {
-      font-family: var(--display); font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-      font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.65rem;
-      max-width: 22ch; color: var(--typ);
+      font-family: var(--display); font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase;
+      color: #EDE8DC; max-width: 22ch; margin-bottom: 0.75rem;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.8);
     }
-    .hero-support { font-size: 0.9rem; color: var(--typ-tone); max-width: 36ch; margin-bottom: 1.75rem; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1.5rem; }
+    .hero-support {
+      color: var(--mist); font-size: 0.9rem; max-width: 38ch; margin-bottom: 1.75rem;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.4rem; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 0.75rem 1.1rem; font: inherit; font-size: 0.72rem;
-      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
-      border: 1px solid transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s;
+      padding: 0.8rem 1.15rem; font: inherit; font-size: 0.7rem;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid transparent; cursor: pointer; transition: .2s ease;
     }
-    .btn-primary { background: var(--brand); color: var(--bg); }
-    .btn-primary:hover { background: var(--accent); color: #fff; }
-    .btn-line { background: transparent; border-color: var(--brd); color: var(--typ); }
-    .btn-line:hover { border-color: var(--typ); color: var(--typ); }
+    .btn-gold { background: var(--gold); color: #14110C; border-color: var(--gold); font-weight: 700; }
+    .btn-gold:hover { filter: brightness(1.08); color: #14110C; }
+    .btn-ghost { background: rgba(0,0,0,0.35); color: var(--bone); border-color: rgba(244,242,236,0.28); }
+    .btn-ghost:hover { border-color: var(--bone); color: #fff; }
+    .btn-ink { background: var(--obsidian); color: var(--bone); border-color: var(--obsidian); }
+    .btn-ink:hover { background: #000; color: #fff; }
+    .btn-outline-dark { background: transparent; color: var(--obsidian); border-color: var(--line-l); }
+    .btn-outline-dark:hover { border-color: var(--obsidian); }
     .badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .badge {
-      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
-      border: 1px solid var(--brd); color: var(--typ-tone); padding: 0.3rem 0.5rem;
-      background: color-mix(in srgb, var(--bg) 70%, transparent);
+      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(196,165,116,0.35); color: #D8C9A8;
+      padding: 0.3rem 0.5rem; background: rgba(0,0,0,0.4);
     }
 
-    section { padding: 4.75rem 0; border-bottom: 1px solid var(--brd); }
+    /* terminal panel */
+    .term {
+      background: rgba(5,5,5,0.82);
+      border: 1px solid rgba(196,165,116,0.22);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+      font-family: var(--display); font-size: 0.72rem; line-height: 1.55;
+      overflow: hidden;
+    }
+    .term-bar {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: var(--mist); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .term-dot { width: 7px; height: 7px; border-radius: 50%; background: #3A3936; }
+    .term-dot.on { background: var(--jade); box-shadow: 0 0 8px var(--jade); }
+    .term-body { padding: 0.9rem 0.85rem 1rem; color: #BDB9B0; }
+    .term-body .c { color: #6A6862; }
+    .term-body .g { color: var(--jade-soft); }
+    .term-body .y { color: var(--gold); }
+    .term-body .w { color: var(--bone); }
+    .term-body div { margin-bottom: 0.25rem; }
+
+    /* sections */
+    section { padding: 5rem 0; border-bottom: 1px solid var(--line-d); }
+    .mirror {
+      background: var(--bone); color: var(--obsidian);
+      border-bottom: 1px solid var(--line-l);
+    }
+    .mirror a { color: var(--jade); }
+    .mirror a:hover { color: var(--obsidian); }
     .kicker {
-      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.85rem; font-weight: 700;
+      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 0.85rem;
     }
+    .mirror .kicker { color: var(--jade); }
     h2 {
-      font-family: var(--display); font-weight: 700;
-      font-size: clamp(1.55rem, 3vw, 2.15rem); letter-spacing: -0.03em;
-      line-height: 1.15; margin-bottom: 0.85rem; max-width: 20ch; color: var(--brand);
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(1.6rem, 3.2vw, 2.35rem); letter-spacing: -0.03em;
+      line-height: 1.12; max-width: 18ch; margin-bottom: 0.9rem;
     }
-    .lede { color: var(--typ-content); max-width: 52ch; margin-bottom: 2rem; font-size: 0.95rem; }
-    .tone { background: var(--bg-tone); }
+    .lede { max-width: 52ch; color: var(--mist); font-size: 0.95rem; margin-bottom: 2rem; }
+    .mirror .lede { color: #4A4843; }
 
     .creds {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 2.25rem;
+      gap: 1px; background: var(--line-d); border: 1px solid var(--line-d); margin-top: 2rem;
     }
-    .cred { background: var(--bg); padding: 1.15rem 1rem; }
+    .mirror .creds { background: var(--line-l); border-color: var(--line-l); }
+    .cred { background: var(--obsidian-2); padding: 1.15rem 1rem; }
+    .mirror .cred { background: #fff; }
     .cred strong { display: block; font-family: var(--display); font-size: 0.75rem; margin-bottom: 0.25rem; }
-    .cred span { font-size: 0.72rem; color: var(--typ-tone); }
-    .inception { height: 36px; width: auto; margin-top: 0.45rem; filter: grayscale(1); opacity: 0.85; }
+    .cred span { font-size: 0.72rem; color: var(--mist); }
+    .mirror .cred span { color: #6B6963; }
+    .inception { height: 34px; margin-top: 0.4rem; filter: grayscale(1) brightness(1.3); opacity: 0.9; }
+    .mirror .inception { filter: grayscale(1); opacity: 0.85; }
 
-    /* Service blocks — clarity first */
-    .service {
-      padding: 2rem 0;
-      border-top: 1px solid var(--brd);
-      display: grid; grid-template-columns: 1fr 11rem; gap: 1.25rem 2rem;
-      align-items: start;
+    /* EMPRESAS — sophisticated product modules */
+    .emp-intro { margin-bottom: 2.5rem; }
+    .catalog { display: flex; flex-direction: column; gap: 1.15rem; }
+    .mod {
+      position: relative;
+      display: grid; grid-template-columns: 1fr 13.5rem;
+      gap: 0; border: 1px solid var(--line-d);
+      background:
+        linear-gradient(135deg, rgba(196,165,116,0.04), transparent 40%),
+        var(--obsidian-2);
+      overflow: hidden;
+      transition: border-color .25s, transform .25s var(--ease);
     }
-    .service:last-of-type { border-bottom: 1px solid var(--brd); }
-    .service .eyebrow {
-      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--accent); font-weight: 700; margin-bottom: 0.45rem;
+    .mod:hover { border-color: rgba(196,165,116,0.45); transform: translateY(-2px); }
+    .mod::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--gold), transparent 70%);
+      opacity: 0.55;
     }
-    .service h3 {
-      font-family: var(--display); font-size: 1.15rem; font-weight: 700;
+    .mod.star::before { background: linear-gradient(180deg, var(--jade-soft), var(--gold)); opacity: 0.9; }
+    .mod-main { padding: 1.6rem 1.5rem 1.5rem 1.65rem; }
+    .mod-side {
+      padding: 1.6rem 1.25rem; border-left: 1px solid var(--line-d);
+      background: rgba(0,0,0,0.28);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+    }
+    .eyebrow {
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 0.45rem;
+    }
+    .mod.star .eyebrow { color: var(--jade-soft); }
+    .mod h3 {
+      font-family: var(--display); font-size: 1.2rem; font-weight: 700;
       letter-spacing: -0.02em; margin-bottom: 0.55rem;
     }
-    .service p { color: var(--typ-content); font-size: 0.9rem; max-width: 52ch; margin-bottom: 0.55rem; }
-    .service .not { color: var(--typ-tone); font-size: 0.8rem; }
-    .service .meta { margin-top: 0.65rem; font-size: 0.72rem; color: var(--typ-tone); }
-    .service .star {
-      display: inline-block; margin-left: 0.35rem; font-size: 0.58rem;
-      letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
-      border: 1px solid var(--accent); padding: 0.1rem 0.35rem; vertical-align: 0.15em;
+    .pill {
+      display: inline-block; margin-left: 0.4rem; vertical-align: 0.2em;
+      font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid var(--jade-soft); color: var(--jade-soft);
+      padding: 0.12rem 0.4rem;
     }
-    .price-col { text-align: right; }
-    .price-col .p {
-      font-family: var(--display); font-weight: 700; font-size: 0.95rem; color: var(--brand);
+    .mod p { color: #B4B0A6; font-size: 0.88rem; max-width: 54ch; margin-bottom: 0.5rem; }
+    .mod .not { color: #7A776F; font-size: 0.78rem; }
+    .mod .for { margin-top: 0.75rem; font-size: 0.7rem; letter-spacing: 0.04em; color: var(--mist); }
+    .codechip {
+      display: inline-flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.9rem;
     }
-    .price-col small { display: block; margin-top: 0.3rem; font-size: 0.68rem; color: var(--typ-tone); font-weight: 400; }
-    .price-list { list-style: none; margin-top: 0.75rem; font-size: 0.8rem; color: var(--typ-content); }
-    .price-list li { padding: 0.25rem 0; border-top: 1px solid var(--brd); display: flex; justify-content: space-between; gap: 1rem; }
-    .price-list li:last-child { border-bottom: 1px solid var(--brd); }
-    .price-list b { font-family: var(--display); white-space: nowrap; }
+    .codechip span {
+      font-family: var(--display); font-size: 0.62rem; color: #8A867C;
+      border: 1px solid var(--line-d); padding: 0.25rem 0.45rem; background: rgba(0,0,0,0.25);
+    }
+    .from {
+      font-family: var(--display); font-size: 0.65rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mist); margin-bottom: 0.35rem;
+    }
+    .amount {
+      font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--bone);
+      letter-spacing: -0.02em;
+    }
+    .amount small { display: block; font-weight: 400; font-size: 0.68rem; color: var(--mist); margin-top: 0.25rem; }
+    .tiers { list-style: none; margin-top: 0.85rem; }
+    .tiers li {
+      display: flex; justify-content: space-between; gap: 0.75rem;
+      font-size: 0.72rem; color: #A09C92; padding: 0.3rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .tiers b { color: var(--bone); font-family: var(--display); font-weight: 600; white-space: nowrap; }
+    .mod-side .btn { width: 100%; }
 
+    /* nested architecture + sovereignty inside Empresas */
+    .subblock { margin-top: 3.25rem; }
+    .subblock h3 {
+      font-family: var(--display); font-size: 1.05rem; margin-bottom: 0.65rem; color: var(--gold);
+    }
     .pipeline {
       display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 1.5rem;
+      gap: 1px; background: var(--line-d); border: 1px solid var(--line-d); margin-top: 1rem;
     }
-    .pipe { background: var(--bg); padding: 1.25rem 1rem; }
-    .pipe .n { font-family: var(--display); font-size: 0.7rem; color: var(--accent); font-weight: 700; margin-bottom: 0.45rem; }
-    .pipe h3 { font-family: var(--display); font-size: 0.88rem; margin-bottom: 0.35rem; }
-    .pipe p { font-size: 0.75rem; color: var(--typ-tone); }
-    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
-    .chip {
-      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
-      border: 1px solid var(--brd); padding: 0.35rem 0.55rem; color: var(--typ-tone); background: var(--bg);
-    }
-
-    .pillars {
+    .pipe { background: var(--obsidian); padding: 1.1rem 0.9rem; }
+    .pipe .n { font-family: var(--display); font-size: 0.65rem; color: var(--gold); margin-bottom: 0.35rem; }
+    .pipe h4 { font-family: var(--display); font-size: 0.82rem; margin-bottom: 0.3rem; }
+    .pipe p { font-size: 0.7rem; color: var(--mist); }
+    .sov-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 1.5rem;
+      gap: 1px; background: var(--line-d); border: 1px solid var(--line-d); margin-top: 1rem;
     }
-    .pillar { background: var(--bg); padding: 1.35rem 1.15rem; }
-    .pillar .n { font-size: 0.65rem; color: var(--accent); font-weight: 700; letter-spacing: 0.1em; }
-    .pillar h3 { font-family: var(--display); font-size: 0.92rem; margin: 0.45rem 0 0.4rem; }
-    .pillar p { font-size: 0.78rem; color: var(--typ-tone); }
+    .sov { background: var(--obsidian); padding: 1.15rem 1rem; }
+    .sov .n { font-size: 0.62rem; color: var(--jade-soft); letter-spacing: 0.1em; font-weight: 700; }
+    .sov h4 { font-family: var(--display); font-size: 0.88rem; margin: 0.4rem 0 0.35rem; }
+    .sov p { font-size: 0.74rem; color: var(--mist); }
 
-    .papers {
-      display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 0.5rem;
+    /* Investigación — mirror light */
+    .inv-grid {
+      display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 1.25rem; margin-top: 1.5rem;
     }
+    .inv-card {
+      border: 1px solid var(--line-l); background: #fff; padding: 1.5rem 1.35rem;
+      position: relative; overflow: hidden;
+    }
+    .inv-card::after {
+      content: ""; position: absolute; right: -20px; top: -20px; width: 120px; height: 120px;
+      border: 1px solid rgba(63,92,74,0.15); border-radius: 50%;
+    }
+    .inv-card .tag {
+      font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--jade); font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .inv-card h3 { font-family: var(--display); font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .inv-card p { font-size: 0.86rem; color: #4A4843; }
+    .inv-card pre {
+      margin-top: 1rem; padding: 0.85rem; background: var(--obsidian); color: #BDB9B0;
+      font-family: var(--display); font-size: 0.68rem; line-height: 1.5; overflow: auto;
+      border: 1px solid #2A2926;
+    }
+    .papers { margin-top: 2rem; }
     .paper {
-      display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem;
-      padding: 1.35rem 0; border-top: 1px solid var(--brd); text-decoration: none; color: inherit;
+      display: grid; grid-template-columns: 8rem 1fr; gap: 1rem;
+      padding: 1.2rem 0; border-top: 1px solid var(--line-l);
     }
-    .paper:last-child { border-bottom: 1px solid var(--brd); }
-    .paper:hover h3 { color: var(--accent); }
-    .paper .role {
-      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent); font-weight: 700;
-    }
-    .paper h3 { font-family: var(--display); font-size: 1rem; margin: 0.2rem 0 0.4rem; }
-    .paper p { font-size: 0.82rem; color: var(--typ-tone); max-width: 52ch; }
+    .paper:last-child { border-bottom: 1px solid var(--line-l); }
+    .paper .role { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--jade); font-weight: 700; }
+    .paper h3 { font-family: var(--display); font-size: 0.98rem; margin-bottom: 0.35rem; }
+    .paper p { font-size: 0.82rem; color: #4A4843; max-width: 54ch; }
 
+    /* Laboratorio */
     .lab-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--brd); border: 1px solid var(--brd); margin-top: 1.5rem;
+      gap: 1px; background: var(--line-d); border: 1px solid var(--line-d); margin-top: 1.5rem;
     }
     .lab-card {
-      background: var(--bg); padding: 1.35rem 1.15rem; text-decoration: none; color: inherit;
+      background: var(--obsidian-2); padding: 1.4rem 1.2rem; text-decoration: none; color: inherit;
       transition: background .2s;
     }
-    .lab-card:hover { background: var(--accent-soft); }
-    .lab-card .tag { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--typ-tone); }
-    .lab-card h3 { font-family: var(--display); font-size: 0.95rem; margin: 0.5rem 0 0.4rem; }
-    .lab-card p { font-size: 0.78rem; color: var(--typ-tone); }
+    .lab-card:hover { background: var(--obsidian-3); }
+    .lab-card .tag { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .lab-card h3 { font-family: var(--display); font-size: 0.95rem; margin: 0.5rem 0 0.4rem; color: var(--bone); }
+    .lab-card p { font-size: 0.78rem; color: var(--mist); }
 
-    .bridge {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: end;
-    }
-    .bridge p { max-width: 40ch; color: var(--typ-content); font-size: 0.9rem; }
-
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.05fr; gap: 2.5rem; align-items: start;
-    }
-    .terminal {
-      background: var(--bg-ink); color: #C9C7C1; padding: 1.4rem 1.25rem;
-      border: 1px solid #2A2927; font-size: 0.82rem;
+    /* contacto */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 2.25rem; }
+    .terminal-form {
+      background: #050505; border: 1px solid var(--line-d); padding: 1.35rem 1.2rem;
+      font-size: 0.82rem; color: #C9C7C1;
     }
     .tc-line { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; margin-bottom: 0.85rem; }
-    .tc-comment { color: #6A6862; width: 100%; }
-    .tc-prompt { color: #A8C4B4; font-weight: 700; }
-    .tc-label { color: #8A8882; min-width: 4.5rem; }
+    .tc-comment { color: #5A5852; width: 100%; }
+    .tc-prompt { color: var(--jade-soft); font-weight: 700; }
+    .tc-label { color: #8A8780; min-width: 4.5rem; }
     .tc-input {
       flex: 1; min-width: 12rem; background: transparent; border: 0;
-      border-bottom: 1px solid #33322E; color: #F7F6F3; font: inherit; padding: 0.35rem 0; outline: none;
+      border-bottom: 1px solid #2E2C28; color: var(--bone); font: inherit; padding: 0.35rem 0; outline: none;
     }
-    .tc-input:focus { border-bottom-color: #A8C4B4; }
-    .tc-textarea { min-height: 5.5rem; width: 100%; resize: vertical; }
-    .tc-message { align-items: flex-start; }
+    .tc-input:focus { border-bottom-color: var(--gold); }
+    .tc-textarea { width: 100%; min-height: 5.5rem; resize: vertical; }
+    .tc-msg { align-items: flex-start; }
     .tc-submit {
-      background: #A8C4B4; color: #141413; border: 0; font: inherit;
+      background: var(--gold); color: #14110C; border: 0; font: inherit;
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.6rem 1rem; cursor: pointer;
+      padding: 0.65rem 1rem; cursor: pointer;
     }
-    .tc-submit:hover { filter: brightness(1.05); }
-    .confirm { display: none; color: #A8C4B4; margin-top: 0.75rem; }
+    .confirm { display: none; color: var(--jade-soft); margin-top: 0.75rem; }
     .confirm.show { display: block; }
-    .fine { font-size: 0.75rem; color: var(--typ-tone); margin-top: 1.1rem; line-height: 1.7; }
+    .fine { font-size: 0.74rem; color: var(--mist); margin-top: 1rem; line-height: 1.7; }
 
     footer {
-      padding: 2rem 0 2.5rem; font-size: 0.7rem; color: var(--typ-tone);
+      padding: 2rem 0 2.5rem; font-size: 0.68rem; color: var(--mist);
+      border-top: 1px solid var(--line-d);
     }
     .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
-    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
     .reveal.in { opacity: 1; transform: none; }
 
-    @media (max-width: 900px) {
-      .creds, .pipeline, .pillars, .lab-grid { grid-template-columns: 1fr 1fr; }
-      .pipeline { grid-template-columns: 1fr 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .service { grid-template-columns: 1fr; }
-      .price-col { text-align: left; }
-      .paper { grid-template-columns: 1fr; gap: 0.35rem; }
+    @media (max-width: 960px) {
+      .hero-stage, .inv-grid, .contact-grid { grid-template-columns: 1fr; }
+      .mod { grid-template-columns: 1fr; }
+      .mod-side { border-left: 0; border-top: 1px solid var(--line-d); }
+      .pipeline, .sov-grid, .creds, .lab-grid { grid-template-columns: 1fr 1fr; }
+      .term { max-width: 28rem; }
     }
     @media (max-width: 720px) {
       .nav-toggle { display: block; }
       .nav-links {
         display: none; position: absolute; left: 0; right: 0; top: 100%;
-        background: var(--bg); border-bottom: 1px solid var(--brd);
-        flex-direction: column; padding: 0.85rem 1.25rem 1.1rem; gap: 0.75rem;
+        background: rgba(11,11,10,0.98); border-bottom: 1px solid var(--line-d);
+        flex-direction: column; padding: 1rem 1.25rem; gap: 0.8rem;
       }
       .nav-links.open { display: flex; }
-      .creds, .pipeline, .pillars, .lab-grid { grid-template-columns: 1fr; }
-      .hero { min-height: 78vh; }
+      .pipeline, .sov-grid, .creds, .lab-grid { grid-template-columns: 1fr; }
+      .paper { grid-template-columns: 1fr; }
+      .hero-stage { padding-top: 4.5rem; }
     }
   </style>
 </head>
@@ -320,9 +425,10 @@
       <span class="prompt">indioyori@anáhuac:~$</span>
       <span>soberanía_cognitiva</span>
       <span class="sep">·</span>
-      <span>lab · empresas</span>
+      <span class="ok">edge-rag · operativo</span>
       <span class="sep">·</span>
-      <span><b>MCC</b> método estrella</span>
+      <span>mcc.protocolo v1</span>
+      <span class="blink" aria-hidden="true"></span>
     </div>
   </div>
 
@@ -333,298 +439,325 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#sobre">Sobre nosotros</a></li>
         <li><a href="#empresas">Empresas</a></li>
-        <li><a href="#arquitectura">Arquitectura</a></li>
-        <li><a href="#soberania">Soberanía</a></li>
-        <li><a href="#academia">Academia</a></li>
+        <li><a href="#investigacion">Investigación</a></li>
         <li><a href="#laboratorio">Laboratorio</a></li>
-        <li><a class="ext" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Archivo</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Archivo</a></li>
       </ul>
     </div>
   </header>
 
   <main>
     <section class="hero" id="hero" aria-label="Inicio">
-      <div class="hero-atmosphere" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <p class="hero-brand">FronterIA<span>—</span>Lab</p>
-        <p class="hero-line">Consultoría e infraestructura de IA soberana.</p>
-        <p class="hero-support">Criterio, mandato cognitivo y sistemas que operan dentro de tu perímetro.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#empresas">Ver servicios</a>
-          <a class="btn btn-line" href="#contacto">Solicitar diagnóstico</a>
+      <div class="hero-pyramid" role="img" aria-label="Pirámide — territorio Anáhuac"></div>
+      <div class="hero-scan" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-stage">
+        <div class="hero-copy">
+          <p class="hero-brand">FronterIA<span>—</span>Lab</p>
+          <p class="hero-line">Consultoría e infraestructura de IA soberana</p>
+          <p class="hero-support">Criterio, mandato cognitivo y sistemas que operan dentro de tu perímetro — no demos que se evaporan.</p>
+          <div class="cta-row">
+            <a class="btn btn-gold" href="#empresas">Ver oferta empresas</a>
+            <a class="btn btn-ghost" href="#contacto">Solicitar diagnóstico</a>
+          </div>
+          <div class="badges">
+            <span class="badge">GT EPICC · CLACSO</span>
+            <span class="badge">MCC validado</span>
+            <span class="badge">NVIDIA Inception</span>
+            <span class="badge">Zenodo DOI</span>
+          </div>
         </div>
-        <div class="badges">
-          <span class="badge">GT EPICC · CLACSO</span>
-          <span class="badge">MCC validado</span>
-          <span class="badge">NVIDIA Inception</span>
-          <span class="badge">Zenodo DOI</span>
-        </div>
+        <aside class="term" aria-label="Terminal de laboratorio">
+          <div class="term-bar">
+            <span class="term-dot on"></span><span class="term-dot"></span><span class="term-dot"></span>
+            <span style="margin-left:0.5rem">tektron · session</span>
+          </div>
+          <div class="term-body">
+            <div><span class="c"># perímetro local · sin fuga de corpus</span></div>
+            <div><span class="g">$</span> init <span class="y">mcc.protocolo</span> --abstener</div>
+            <div><span class="w">→</span> certainty_without_substance: <span class="y">flagged</span></div>
+            <div><span class="w">→</span> retrieval: <span class="g">FAISS+BM25</span> · rerank: on</div>
+            <div><span class="w">→</span> cite: <span class="g">doc# · §</span> · airgap: ready</div>
+            <div><span class="g">$</span> status <span class="blink"></span></div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section id="sobre">
+    <section class="mirror" id="sobre">
       <div class="wrap reveal">
         <p class="kicker">Sobre nosotros</p>
-        <h2>Un laboratorio, no una promesa opaca.</h2>
-        <p class="lede">Construimos sistemas de IA que operan dentro de tu perímetro — nube privada, on-premise o air-gap. Tus datos no entrenan modelos ajenos. Cada respuesta cita su origen; cuando el corpus no alcanza, el sistema se abstiene.</p>
-        <p class="lede" style="margin-top:-1rem">No somos una startup camino a una salida. Somos un laboratorio de infraestructura y método, cobrado en pesos, bajo LFPDPPP y NOM-151 cuando aplica. Trabajo desde territorio Anáhuac — linaje yoreme y ódami — con el rigor de corpus reales y auditoría, no de demos.</p>
+        <h2>Laboratorio de infraestructura y método.</h2>
+        <p class="lede">Construimos sistemas de IA dentro de tu perímetro — nube privada, on-premise o air-gap. Tus datos no entrenan modelos ajenos. Cada respuesta cita su origen; cuando el corpus no alcanza, el sistema se abstiene.</p>
+        <p class="lede" style="margin-top:-1rem">No somos una startup camino a una salida. Cobramos en pesos, operamos bajo LFPDPPP y NOM-151 cuando aplica, y trabajamos desde territorio Anáhuac — linaje yoreme y ódami — con rigor de corpus reales.</p>
         <div class="creds">
-          <div class="cred"><strong>Lab soberano</strong><span>Infraestructura y método</span></div>
+          <div class="cred"><strong>Lab soberano</strong><span>Infraestructura + método</span></div>
           <div class="cred"><strong>GT EPICC · CLACSO</strong><span>Investigación afiliada</span></div>
           <div class="cred"><strong>Zenodo</strong><span>DOI 10.5281/zenodo.17728016</span></div>
           <div class="cred">
             <strong>NVIDIA Inception</strong>
-            <img class="inception" src="assets/nvidia-inception.png" alt="NVIDIA Inception" width="120" height="36" />
+            <img class="inception" src="assets/nvidia-inception.png" alt="NVIDIA Inception" width="120" height="34" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="empresas" class="tone">
+    <section id="empresas">
       <div class="wrap reveal">
-        <p class="kicker">Empresas</p>
-        <h2>Qué ofrecemos a organizaciones.</h2>
-        <p class="lede">Consultoría de IA soberana: formación crítica, método MCC, auditoría de mandato, protocolo de instrucción e implementación RAG sobre tus documentos. Cada oferta tiene alcance y precio claros.</p>
+        <div class="emp-intro">
+          <p class="kicker">Empresas</p>
+          <h2>Oferta para organizaciones.</h2>
+          <p class="lede">Formación, método estrella MCC, auditoría de mandato, protocolo de instrucción e implementación RAG soberana — con arquitectura y soberanía como base del mismo sistema.</p>
+        </div>
 
-        <article class="service" id="svc-certeza">
-          <div>
-            <div class="eyebrow">Formación</div>
-            <h3>Certeza sin sustancia</h3>
-            <p>Puerta del método. Literacy crítica para que el equipo deje de confundir fluidez con verdad — y no ceda el juicio a un modelo que suena seguro.</p>
-            <p class="not">No es un taller de prompts ni un catálogo de herramientas.</p>
-            <p class="meta">Para: directivos, medios, universidades, ONG y equipos que ya usan IA.</p>
-            <ul class="price-list">
-              <li><span>Keynote 60–90 min</span><b>$32,000 MXN</b></li>
-              <li><span>Taller ½ día</span><b>$55,000 MXN</b></li>
-              <li><span>Taller día completo</span><b>$85,000 MXN</b></li>
-            </ul>
-          </div>
-          <div class="price-col">
-            <div class="p">desde $32,000</div>
-            <small>MXN · IVA no incl.</small>
-            <p class="meta" style="margin-top:1rem"><a href="#contacto">Solicitar →</a></p>
-          </div>
-        </article>
+        <div class="catalog">
+          <article class="mod" id="svc-certeza">
+            <div class="mod-main">
+              <div class="eyebrow">01 · Formación</div>
+              <h3>Certeza sin sustancia</h3>
+              <p>Literacy crítica para directivos y equipos: dejar de confundir fluidez con verdad. Puerta de entrada al método MCC.</p>
+              <p class="not">No es taller de prompts ni catálogo de herramientas.</p>
+              <p class="for">Para: medios, universidades, ONG, dirección y equipos que ya usan IA.</p>
+              <div class="codechip"><span>keynote</span><span>taller</span><span>literacy_critica</span></div>
+              <ul class="tiers">
+                <li><span>Keynote 60–90 min</span><b>$32,000 MXN</b></li>
+                <li><span>Taller ½ día</span><b>$55,000 MXN</b></li>
+                <li><span>Taller día completo</span><b>$85,000 MXN</b></li>
+              </ul>
+            </div>
+            <div class="mod-side">
+              <div>
+                <div class="from">Desde</div>
+                <div class="amount">$32,000<small>MXN · IVA no incl.</small></div>
+              </div>
+              <a class="btn btn-ghost" href="#contacto">Solicitar</a>
+            </div>
+          </article>
 
-        <article class="service" id="svc-mcc">
-          <div>
-            <div class="eyebrow">Método estrella</div>
-            <h3>MCC — Calibración Contextual <span class="star">estrella</span></h3>
-            <p>Protocolo para intervenir la gramática computacional de los LLM: certeza sin sustancia, optimización silenciosa y sesgo de contexto. Validación CLACSO / GT EPICC. Es el núcleo técnico y formativo del lab — también la abstención auditada en nuestros sistemas RAG.</p>
-            <p class="not">No es “prompt engineering” genérico. Detalle de capas y glifos en Academia.</p>
-            <p class="meta">Para: equipos que ya tienen criterio o vienen de Certeza · investigadores · orgs que adoptan el método.</p>
-            <ul class="price-list">
-              <li><span>Curso digital MCC</span><b>$149 USD</b></li>
-              <li><span>Programa in-company</span><b>desde $120,000 MXN</b></li>
-            </ul>
-          </div>
-          <div class="price-col">
-            <div class="p">método</div>
-            <small>CLACSO · GT EPICC</small>
-            <p class="meta" style="margin-top:1rem"><a href="#academia">Ver protocolo →</a></p>
-          </div>
-        </article>
+          <article class="mod star" id="svc-mcc">
+            <div class="mod-main">
+              <div class="eyebrow">02 · Método estrella</div>
+              <h3>MCC — Calibración Contextual <span class="pill">estrella</span></h3>
+              <p>Protocolo sobre la gramática computacional de los LLM: certeza sin sustancia, optimización silenciosa, sesgo de contexto. Validación CLACSO / GT EPICC. También es la abstención auditada en nuestros sistemas RAG.</p>
+              <p class="not">No es “prompt engineering” genérico.</p>
+              <p class="for">Para: equipos con criterio, adopción de método, formación profunda.</p>
+              <div class="codechip"><span>4_capas</span><span>16_glifos</span><span>multi-modelo</span><span>CLACSO</span></div>
+              <ul class="tiers">
+                <li><span>Curso digital</span><b>$149 USD</b></li>
+                <li><span>Programa in-company</span><b>desde $120,000 MXN</b></li>
+              </ul>
+            </div>
+            <div class="mod-side">
+              <div>
+                <div class="from">Método</div>
+                <div class="amount">MCC<small>validado CLACSO</small></div>
+              </div>
+              <a class="btn btn-gold" href="#contacto">Solicitar programa</a>
+            </div>
+          </article>
 
-        <article class="service" id="svc-macs">
-          <div>
-            <div class="eyebrow">Diagnóstico</div>
-            <h3>MACS — Mandato cognitivo situado</h3>
-            <p>Auditoría de cómo la organización produce con IA: dónde falla el mandato, dónde se cede el juicio, dónde el riesgo es epistémico y operativo. Informe + sesión ejecutiva.</p>
-            <p class="not">No es readiness de growth ni checklist de tools. No se llama “auditoría MCC”.</p>
-            <p class="meta">Para: organizaciones con IA en decisión o producción.</p>
-            <ul class="price-list">
-              <li><span>MACS Express (~2 sem.)</span><b>$65,000 MXN</b></li>
-              <li><span>MACS Completa (4–8 sem.)</span><b>$145,000 MXN</b></li>
-            </ul>
-          </div>
-          <div class="price-col">
-            <div class="p">desde $65,000</div>
-            <small>MXN · 50% anticipo</small>
-            <p class="meta" style="margin-top:1rem"><a href="#contacto">Agendar →</a></p>
-          </div>
-        </article>
+          <article class="mod" id="svc-macs">
+            <div class="mod-main">
+              <div class="eyebrow">03 · Diagnóstico</div>
+              <h3>MACS — Mandato cognitivo situado</h3>
+              <p>Auditoría de cómo la organización produce con IA: falla de mandato, cesión de juicio, riesgo epistémico y operativo. Informe + sesión ejecutiva.</p>
+              <p class="not">No es readiness de growth ni “auditoría MCC”.</p>
+              <div class="codechip"><span>express</span><span>completa</span><span>informe</span></div>
+              <ul class="tiers">
+                <li><span>Express (~2 semanas)</span><b>$65,000 MXN</b></li>
+                <li><span>Completa (4–8 semanas)</span><b>$145,000 MXN</b></li>
+              </ul>
+            </div>
+            <div class="mod-side">
+              <div>
+                <div class="from">Desde</div>
+                <div class="amount">$65,000<small>MXN · 50% anticipo</small></div>
+              </div>
+              <a class="btn btn-ghost" href="#contacto">Agendar</a>
+            </div>
+          </article>
 
-        <article class="service" id="svc-ipa">
-          <div>
-            <div class="eyebrow">Gobernanza</div>
-            <h3>IPA — Protocolo de instrucción</h3>
-            <p>Después de MACS: reglas de cómo la organización instruye a sus sistemas — para no reproducir extractivismo cognitivo ni menús opacos de “uso responsable” de brochure.</p>
-            <p class="not">Solo se abre post-diagnóstico MACS.</p>
-            <ul class="price-list">
-              <li><span>IPA Express</span><b>$55,000 MXN</b></li>
-              <li><span>IPA Completa</span><b>$110,000 MXN</b></li>
-              <li><span>Bundle MACS Express + IPA Express</span><b>$110,000 MXN</b></li>
-            </ul>
-          </div>
-          <div class="price-col">
-            <div class="p">post-MACS</div>
-            <small>gobernanza operativa</small>
-          </div>
-        </article>
+          <article class="mod" id="svc-ipa">
+            <div class="mod-main">
+              <div class="eyebrow">04 · Gobernanza</div>
+              <h3>IPA — Protocolo de instrucción</h3>
+              <p>Post-MACS: cómo la organización instruye a sus sistemas sin brochure vacío de “uso responsable”.</p>
+              <p class="not">Solo después del diagnóstico MACS.</p>
+              <ul class="tiers">
+                <li><span>IPA Express</span><b>$55,000 MXN</b></li>
+                <li><span>IPA Completa</span><b>$110,000 MXN</b></li>
+                <li><span>Bundle MACS Express + IPA Express</span><b>$110,000 MXN</b></li>
+              </ul>
+            </div>
+            <div class="mod-side">
+              <div>
+                <div class="from">Post-MACS</div>
+                <div class="amount">desde $55,000<small>MXN</small></div>
+              </div>
+              <a class="btn btn-ghost" href="#contacto">Cotizar</a>
+            </div>
+          </article>
 
-        <article class="service" id="svc-rag">
-          <div>
-            <div class="eyebrow">Implementación</div>
-            <h3>Sistemas RAG soberanos</h3>
-            <p>Sistema dedicado, indexado sobre <strong>documentos propios</strong>, en perímetro controlado. Respuestas con cita; abstención cuando el corpus no sostiene (MCC). Motor de laboratorio: TEKTRON.</p>
-            <p class="not">No es chatbot de ventas genérico ni SaaS multi-tenant barato.</p>
-            <p class="meta">Para: abogados, investigadores y empresas con conocimiento sensible.</p>
-            <ul class="price-list">
-              <li><span>Diagnóstico técnico (acreditable)</span><b>desde $35,000 MXN</b></li>
-              <li><span>Piloto soberano</span><b>desde $150,000 MXN</b></li>
-              <li><span>Especializado (legal / research)</span><b>desde $220,000 MXN</b></li>
-              <li><span>Retainer de operación</span><b>desde $18,000 MXN/mes</b></li>
-            </ul>
-          </div>
-          <div class="price-col">
-            <div class="p">cotización</div>
-            <small>personalizada</small>
-            <p class="meta" style="margin-top:1rem"><a href="#contacto">Cotizar →</a></p>
-          </div>
-        </article>
+          <article class="mod" id="svc-rag">
+            <div class="mod-main">
+              <div class="eyebrow">05 · Implementación</div>
+              <h3>Sistemas RAG soberanos</h3>
+              <p>Sistema dedicado sobre <strong>documentos propios</strong>, en perímetro controlado. Citas verificables; abstención MCC cuando no hay evidencia. Motor de lab: TEKTRON.</p>
+              <p class="not">No es chatbot de ventas ni SaaS genérico.</p>
+              <p class="for">Para: abogados, investigadores, empresas con conocimiento sensible.</p>
+              <div class="codechip"><span>on-prem</span><span>air-gap</span><span>cite+</span><span>tektron</span></div>
+              <ul class="tiers">
+                <li><span>Diagnóstico técnico (acreditable)</span><b>desde $35,000</b></li>
+                <li><span>Piloto soberano</span><b>desde $150,000</b></li>
+                <li><span>Especializado legal/research</span><b>desde $220,000</b></li>
+                <li><span>Retainer operación</span><b>desde $18,000/mes</b></li>
+              </ul>
+            </div>
+            <div class="mod-side">
+              <div>
+                <div class="from">Cotización</div>
+                <div class="amount">personalizada<small>piloto desde $150k MXN</small></div>
+              </div>
+              <a class="btn btn-gold" href="#contacto">Solicitar cotización</a>
+            </div>
+          </article>
+        </div>
 
-        <p class="fine">IVA 16% no incluido · Anticipo 50% · SPEI / Stripe / Mercado Pago · CFDI 4.0 · Institucional intl. en USD</p>
+        <div class="subblock" id="arquitectura">
+          <h3>// arquitectura — base de todos los sistemas</h3>
+          <p class="lede" style="margin-bottom:0">Del corpus a la cita. Retrieval híbrido, generación local, abstención cuando no hay evidencia.</p>
+          <div class="pipeline">
+            <div class="pipe"><div class="n">01</div><h4>Ingesta</h4><p>Documentos → chunks</p></div>
+            <div class="pipe"><div class="n">02</div><h4>Indexación</h4><p>FAISS + BM25</p></div>
+            <div class="pipe"><div class="n">03</div><h4>Reranking</h4><p>Cross-encoder</p></div>
+            <div class="pipe"><div class="n">04</div><h4>Generación</h4><p>Modelo local</p></div>
+            <div class="pipe"><div class="n">05</div><h4>Respuesta</h4><p>Cita · MCC</p></div>
+          </div>
+        </div>
+
+        <div class="subblock" id="soberania">
+          <h3>// soberanía — datos que no salen de casa</h3>
+          <div class="sov-grid">
+            <div class="sov"><div class="n">01</div><h4>Perímetro propio</h4><p>Modelo e índice en tu red.</p></div>
+            <div class="sov"><div class="n">02</div><h4>Trazabilidad</h4><p>Cada fragmento cita origen.</p></div>
+            <div class="sov"><div class="n">03</div><h4>Contexto local</h4><p>Industria y normativa.</p></div>
+            <div class="sov"><div class="n">04</div><h4>Cumplimiento MX</h4><p>LFPDPPP · NOM-151.</p></div>
+            <div class="sov"><div class="n">05</div><h4>Costos en pesos</h4><p>Sin factura dólar variable.</p></div>
+            <div class="sov"><div class="n">06</div><h4>Air-gap</h4><p>Máxima sensibilidad.</p></div>
+          </div>
+        </div>
+
+        <p class="fine">IVA 16% no incluido · Anticipo 50% · SPEI / Stripe / Mercado Pago · CFDI 4.0</p>
       </div>
     </section>
 
-    <section id="arquitectura">
+    <section class="mirror" id="investigacion">
       <div class="wrap reveal">
-        <p class="kicker">Arquitectura</p>
-        <h2>Del corpus a la cita.</h2>
-        <p class="lede">Base de todos los sistemas del lab — presentes y futuros. Retrieval híbrido, generación local y abstención MCC cuando no hay evidencia.</p>
-        <div class="pipeline">
-          <div class="pipe"><div class="n">01</div><h3>Ingesta</h3><p>Documentos → chunks limpios</p></div>
-          <div class="pipe"><div class="n">02</div><h3>Indexación</h3><p>Híbrida FAISS + BM25</p></div>
-          <div class="pipe"><div class="n">03</div><h3>Reranking</h3><p>Cross-encoder</p></div>
-          <div class="pipe"><div class="n">04</div><h3>Generación</h3><p>Modelo local · on-prem</p></div>
-          <div class="pipe"><div class="n">05</div><h3>Respuesta</h3><p>Cita + sección · MCC</p></div>
-        </div>
-        <div class="chips">
-          <span class="chip">Hybrid RAG</span>
-          <span class="chip">FAISS + BM25</span>
-          <span class="chip">Cross-encoder</span>
-          <span class="chip">Docker Edge</span>
-          <span class="chip">MCC.protocolo</span>
-          <span class="chip">Air-gap ready</span>
-        </div>
-      </div>
-    </section>
+        <p class="kicker">Investigación</p>
+        <h2>RAG, TEKTRON y la gramática del lab.</h2>
+        <p class="lede">Aquí explicamos qué significa un sistema RAG soberano, el agente dedicado TEKTRON, y los papers que sostienen el método.</p>
 
-    <section id="soberania" class="tone">
-      <div class="wrap reveal">
-        <p class="kicker">Soberanía</p>
-        <h2>Diseñado para datos que no pueden salir de casa.</h2>
-        <p class="lede">Soberanía cognitiva en la práctica: perímetro, trazabilidad y el derecho a no ceder el juicio — en línea con neuroderechos y gobernanza situada.</p>
-        <div class="pillars">
-          <div class="pillar"><div class="n">01</div><h3>Perímetro propio</h3><p>Modelo e índice dentro de tu red; sin nube extranjera obligatoria.</p></div>
-          <div class="pillar"><div class="n">02</div><h3>Trazabilidad</h3><p>Cada fragmento cita documento y sección.</p></div>
-          <div class="pillar"><div class="n">03</div><h3>Contexto local</h3><p>Afinado a tu industria y normativa.</p></div>
-          <div class="pillar"><div class="n">04</div><h3>Cumplimiento MX</h3><p>LFPDPPP y NOM-151 cuando el caso lo exige.</p></div>
-          <div class="pillar"><div class="n">05</div><h3>Costos en pesos</h3><p>Predecibles; sin factura variable en dólares.</p></div>
-          <div class="pillar"><div class="n">06</div><h3>Air-gap</h3><p>Máxima sensibilidad, desconectado de redes externas.</p></div>
+        <div class="inv-grid">
+          <article class="inv-card">
+            <div class="tag">Sistema RAG</div>
+            <h3>Qué es un sistema RAG (en serio)</h3>
+            <p>No es “ChatGPT con PDFs”. Es recuperación sobre <em>tu</em> corpus, ranking, generación condicionada y —con MCC— abstención cuando no hay evidencia. La respuesta cita documento y sección.</p>
+            <pre><span style="color:#6A6862"># flujo mínimo</span>
+ingest → index(FAISS+BM25) → rerank
+     → generate(local) → cite | abstain</pre>
+          </article>
+          <article class="inv-card">
+            <div class="tag">TEKTRON</div>
+            <h3>Agente dedicado TEKTRON</h3>
+            <p>Motor de laboratorio para asistentes soberanos: perímetro controlado, corpus propio, operación edge/on-prem. No se vende como marca de vitrina; sostiene los <strong>Sistemas RAG soberanos</strong> y demos auditables.</p>
+            <pre><span style="color:#6A6862"># sesión</span>
+$ tektron status
+→ perimeter: private
+→ mcc: armed
+→ cite: enabled</pre>
+          </article>
         </div>
-      </div>
-    </section>
 
-    <section id="academia">
-      <div class="wrap reveal">
-        <p class="kicker">Academia e investigación</p>
-        <h2>La gramática del laboratorio.</h2>
-        <p class="lede">Tres obras sostienen la identidad de FronterIA-Lab: método, cosmogonía y regulación. Aquí el rigor; en Empresas, la oferta.</p>
         <div class="papers">
-          <a class="paper" href="https://doi.org/10.5281/zenodo.17728016" target="_blank" rel="noopener">
+          <div class="paper">
             <div class="role">Método estrella</div>
             <div>
               <h3>MCC — Protocolo de Calibración Contextual</h3>
-              <p>Especificación de cuatro capas y dieciséis operaciones sobre la gramática computacional de los LLM. Validación empírica multi-modelo. GT EPICC — CLACSO. DOI Zenodo.</p>
+              <p>Cuatro capas, dieciséis operaciones. Evidencia multi-modelo. GT EPICC — CLACSO. <a href="https://doi.org/10.5281/zenodo.17728016" target="_blank" rel="noopener">DOI Zenodo</a>.</p>
             </div>
-          </a>
+          </div>
           <div class="paper">
             <div class="role">Cosmogonía</div>
             <div>
               <h3>Código Fuente del Sexto Sol</h3>
-              <p>Cibernética del Tonalli e insurgencia del silicio. Ontología anahuaca, reciprocidad y soberanía cognitiva en Abya Yala — el de dónde habla el lab.</p>
+              <p>Cibernética del Tonalli. De dónde habla el lab: Anáhuac, reciprocidad, anti-extractivismo cognitivo.</p>
             </div>
           </div>
           <div class="paper">
             <div class="role">Regulación</div>
             <div>
               <h3>Soberanía cognitiva y neuroderechos</h3>
-              <p>Marco decolonial: Olvido Estructural y el derecho a la inoptimizabilidad. Puente entre gobernanza, MACS/IPA y la protección del pensamiento situado.</p>
+              <p>Olvido Estructural y el derecho a la inoptimizabilidad. Puente a gobernanza (MACS/IPA) y marco de derechos.</p>
             </div>
           </div>
         </div>
-        <p class="fine" style="margin-top:1.25rem">Más archivo y ensayos → <a href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">indioyori.fronteria-lab.com</a></p>
       </div>
     </section>
 
-    <section id="laboratorio" class="tone">
+    <section id="laboratorio">
       <div class="wrap reveal">
         <p class="kicker">Laboratorio</p>
-        <h2>Entender la máquina sin tragarse el manual SV.</h2>
-        <p class="lede">Piezas claras sobre LLM, RAG y perímetro — en la gramática de FronterIA-Lab. El contenido se publica y actualiza en Ghost (tag laboratorio); esta sección solo destaca.</p>
+        <h2>Cursos y guías gratuitas.</h2>
+        <p class="lede">Publicaciones abiertas (qué es un RAG, perímetro, certeza…). Las escribes en Ghost con el tag <strong>laboratorio</strong> y aparecen aquí / en el archivo — sin tocar este HTML.</p>
         <div class="lab-grid">
           <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
-            <div class="tag">Base</div>
-            <h3>Qué es un LLM</h3>
-            <p>Sin humo: probabilidad, no oráculo.</p>
-          </a>
-          <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
-            <div class="tag">Infra</div>
+            <div class="tag">Guía</div>
             <h3>Qué es un sistema RAG</h3>
-            <p>Corpus, cita y límites del perímetro.</p>
+            <p>Entrada al tag laboratorio en Indioyori.</p>
           </a>
           <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
-            <div class="tag">Método</div>
-            <h3>Por qué “suena cierto” no es saber</h3>
-            <p>Certeza sin sustancia, en una página.</p>
+            <div class="tag">Guía</div>
+            <h3>Perímetro y air-gap</h3>
+            <p>Por qué el dato no debe salir de casa.</p>
+          </a>
+          <a class="lab-card" href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">
+            <div class="tag">Guía</div>
+            <h3>Certeza sin sustancia</h3>
+            <p>Fluidez ≠ verdad — en una página.</p>
           </a>
         </div>
-        <p class="fine" style="margin-top:1.25rem"><a href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">Ver todo el laboratorio en Ghost →</a> · crea el tag <code>laboratorio</code> y publica ahí; no hace falta tocar este HTML.</p>
+        <p class="fine" style="margin-top:1.25rem"><a href="https://indioyori.fronteria-lab.com/tag/laboratorio/" target="_blank" rel="noopener">Abrir laboratorio en el blog →</a></p>
       </div>
     </section>
 
-    <section id="archivo">
-      <div class="wrap bridge reveal">
-        <div>
-          <p class="kicker">Archivo / Blog</p>
-          <h2>Indioyori piensa en público.</h2>
-          <p>El lab opera ofertas y sistemas. La voz, el archivo y la comunidad viven en Ghost.</p>
-        </div>
-        <a class="btn btn-primary" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Ir a Indioyori →</a>
-      </div>
-    </section>
-
-    <section id="contacto">
+    <section class="mirror" id="contacto">
       <div class="wrap reveal">
         <div class="contact-grid">
           <div>
             <p class="kicker">Contacto</p>
             <h2>Cuéntanos el perímetro.</h2>
-            <p class="lede">Indica si buscas formación (Certeza/MCC), MACS, IPA o RAG soberano. Sector y restricciones de datos ayudan a responder con precisión.</p>
-            <p class="fine">
+            <p class="lede">Indica servicio (Certeza, MCC, MACS, IPA, RAG), sector y restricciones de datos.</p>
+            <p class="fine" style="color:#4A4843">
               Outreach: <a href="mailto:indioyori@fronteria-lab.com">indioyori@fronteria-lab.com</a><br />
               Infra: <a href="mailto:ragflow@fronteria-lab.com">ragflow@fronteria-lab.com</a><br />
-              50% anticipo · IVA aparte · México / LatAm
+              50% anticipo · IVA aparte
             </p>
           </div>
-          <form class="terminal" id="contactForm" action="contact.php" method="POST" novalidate>
-            <div class="tc-line tc-comment"># certeza · mcc · macs · ipa · rag · sin compromiso</div>
+          <form class="terminal-form" id="contactForm" action="contact.php" method="POST" novalidate>
+            <div class="tc-line tc-comment"># empresas · investigación · laboratorio</div>
             <div class="tc-line">
               <span class="tc-prompt">$</span><span class="tc-label">correo</span>
               <input class="tc-input" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email" />
             </div>
-            <div class="tc-line tc-message">
+            <div class="tc-line tc-msg">
               <span class="tc-prompt">$</span><span class="tc-label">mensaje</span>
-              <textarea class="tc-input tc-textarea" name="mensaje" placeholder="sector, servicio de interés, datos sensibles..." required></textarea>
+              <textarea class="tc-input tc-textarea" name="mensaje" placeholder="servicio, sector, datos sensibles..." required></textarea>
             </div>
             <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true">
               <label>Sitio web<input type="text" name="empresa_web" tabindex="-1" autocomplete="off" /></label>
             </div>
-            <div class="tc-line">
-              <button type="submit" class="tc-submit">enviar</button>
-            </div>
+            <div class="tc-line"><button class="tc-submit" type="submit">enviar</button></div>
             <div class="confirm" id="confirmMsg">Gracias — recibimos tu mensaje.</div>
           </form>
         </div>
@@ -635,7 +768,7 @@
   <footer>
     <div class="wrap footer-row">
       <div>© <span id="y"></span> FronterIA-Lab · Indioyori · territorio Anáhuac</div>
-      <div>MCC · Sexto Sol · Neuroderechos · precios lista</div>
+      <div>espejo de obsidiana · MCC · TEKTRON</div>
     </div>
   </footer>
 

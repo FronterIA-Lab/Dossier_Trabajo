@@ -1,9 +1,11 @@
-# fronteria-lab.com — v3
+# fronteria-lab.com — v4 (espejo de obsidiana)
 
-Paleta mate (blog + jade). Secciones: Hero · Sobre nosotros · Empresas · Arquitectura · Soberanía · Academia · Laboratorio · Archivo · Contacto.
+Secciones: Hero (pirámide negra/dorada) · Sobre nosotros · **Empresas** (todo B2B + arquitectura + soberanía) · Investigación · Laboratorio (Ghost tag `laboratorio`) · Contacto.
 
 ## Subir a hosting
-`fronteria-lab-site.zip` → `index.html` + `assets/` (conservar `contact.php`).
+`fronteria-lab-site.zip` → `index.html` + `assets/` (conservar `contact.php` en el servidor).
 
 ## Preview local
-`preview-local.zip` → abrir `PREVIEW-ABRIR-EN-NAVEGADOR.html` en el navegador.
+`preview-local.zip` → abrir `PREVIEW-ABRIR-EN-NAVEGADOR.html` en el navegador (assets embebidos).
+
+Estructura canónica: `dossier/19_ESTRUCTURA_V4_OBSIDIANA.md`.
