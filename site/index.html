@@ -4,413 +4,559 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FronterIA-Lab · Consultoría e infraestructura de IA soberana</title>
-  <meta name="description" content="Consultoría de IA soberana para empresas: formación crítica (Certeza · MCC), auditoría MACS, protocolos IPA y sistemas RAG dedicados a tus documentos. CLACSO · NVIDIA Inception." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Laboratorio de IA soberana: formación crítica (Certeza · MCC), auditoría MACS, protocolos IPA y sistemas RAG dedicados a tus documentos. CLACSO · NVIDIA Inception · territorio Anáhuac." />
   <link rel="canonical" href="https://fronteria-lab.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FronterIA-Lab" />
   <meta property="og:title" content="FronterIA-Lab · IA soberana para empresas" />
-  <meta property="og:description" content="Formación, auditoría de mandato cognitivo y sistemas RAG soberanos. Perímetro propio. Criterio propio." />
+  <meta property="og:description" content="Criterio, mandato cognitivo y sistemas que se quedan donde vive tu información." />
   <meta property="og:url" content="https://fronteria-lab.com/" />
   <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,700|space-mono:400,700" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,700,800|space-mono:400,700" rel="stylesheet" />
   <style>
     :root {
-      --bg: #ffffff;
-      --bg-tone: #f4f4f4;
-      --bg-ink: #0a0a0a;
-      --typ: #111111;
-      --typ-tone: #6b6b6b;
-      --typ-content: #2b2b2b;
-      --brd: #e4e4e4;
-      --brd-strong: #cfcfcf;
-      --brand: #111111;
-      --brand-contrast: #ffffff;
-      --radius: 2px;
-      --container: 1120px;
-      --font: "Space Mono", ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
-      --font-display: "JetBrains Mono", "Space Mono", ui-monospace, monospace;
+      --color-bg: #030303;
+      --color-surface: #0a0a0a;
+      --color-surface-2: #121212;
+      --color-stone: #252525;
+      --color-text: #DAD7D2;
+      --color-text-secondary: #a5a5a5;
+      --color-text-muted: #595959;
+      --color-accent: #B5B5B5;
+      --color-jade: #5a8f72;
+      --color-signal: rgba(90, 143, 114, 0.45);
+      --font: "JetBrains Mono", "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+      --max-width: 1280px;
+      --header-height: 72px;
+      --ease: cubic-bezier(0.6, 0, 0.4, 1);
     }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body {
-      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
       font-family: var(--font);
-      color: var(--typ);
-      background: var(--bg);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+      padding-top: calc(var(--header-height) + 28px);
+      overflow-x: hidden;
     }
-    a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+      background-size: 280px; mix-blend-mode: overlay;
+    }
+    ::selection { background: var(--color-accent); color: var(--color-bg); }
+    a { color: var(--color-accent); text-decoration: none; transition: color .35s ease; }
+    a:hover { color: #fff; }
     img { max-width: 100%; display: block; }
-    .container { width: min(100% - 2.5rem, var(--container)); margin-inline: auto; }
+    .container { width: min(100% - 3rem, var(--max-width)); margin-inline: auto; }
 
-    /* sysbar — ADN Indioyori */
+    /* Indioyori strip — thin, not the whole page */
     .sysbar {
-      background: var(--bg-ink);
-      color: #d3d3d3;
-      font-size: 0.72rem;
-      letter-spacing: 0.02em;
-      padding: 0.45rem 0;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
+      height: 28px; display: flex; align-items: center;
+      background: #000; border-bottom: 1px solid #1a1a1a;
+      font-size: 0.62rem; letter-spacing: 0.06em; color: #8a8a8a;
     }
-    .sysbar .inner { display: flex; flex-wrap: wrap; gap: 0.35rem 0.75rem; align-items: center; }
-    .sysbar .prompt { color: #fff; font-weight: 700; }
-    .sysbar .sep { color: #565656; }
-    .sysbar b { color: #fff; font-weight: 700; }
+    .sysbar .inner { width: min(100% - 3rem, var(--max-width)); margin: 0 auto; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .sysbar .prompt { color: #e8e4dc; font-weight: 700; }
+    .sysbar .sep { opacity: .35; }
+    .sysbar b { color: var(--color-jade); font-weight: 600; }
     .sysbar .cursor {
-      display: inline-block; width: 0.55ch; height: 1em;
-      background: #fff; margin-left: 2px; vertical-align: -0.1em;
-      animation: blink 1.1s steps(1) infinite;
+      width: 0.5ch; height: 0.9em; background: var(--color-jade);
+      display: inline-block; animation: tc-blink 1.1s steps(1) infinite;
     }
-    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes tc-blink { 50% { opacity: 0; } }
 
-    /* header */
     .site-header {
-      position: sticky; top: 0; z-index: 40;
-      background: color-mix(in srgb, var(--bg) 90%, transparent);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--brd);
-    }
-    .header-row {
+      position: fixed; top: 28px; left: 0; right: 0; z-index: 1000;
+      height: var(--header-height);
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; min-height: 3.5rem;
+      padding: 0 2.5rem;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(30,30,30,0.6);
     }
-    .brand {
-      font-family: var(--font-display);
-      font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .brand span { opacity: 0.35; margin: 0 0.15em; }
-    .nav-links {
-      display: flex; flex-wrap: wrap; gap: 0.15rem 0.1rem;
-      list-style: none; margin: 0; padding: 0;
-    }
+    .brand { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--color-text); }
+    .brand span { color: var(--color-accent); }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; }
+    .nav-toggle span { display: block; width: 1.3rem; height: 1px; background: var(--color-text); margin: 5px 0; }
+    .nav-links { list-style: none; display: flex; gap: 0.15rem 1.1rem; flex-wrap: wrap; }
     .nav-links a {
-      display: inline-block; padding: 0.35rem 0.55rem;
-      font-size: 0.72rem; color: var(--typ-tone);
-      border-radius: var(--radius); text-decoration: none;
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-text-muted);
     }
-    .nav-links a:hover { background: var(--bg-tone); color: var(--typ); text-decoration: none; }
-    .nav-links a.ext { border: 1px solid var(--brd); }
-    .nav-toggle {
-      display: none; background: none; border: 0; padding: 0.4rem; cursor: pointer;
-    }
-    .nav-toggle span {
-      display: block; width: 1.25rem; height: 1px; background: var(--typ); margin: 5px 0;
-    }
+    .nav-links a:hover, .nav-links a.ext { color: var(--color-text); }
+    .nav-links a.ext { border-bottom: 1px solid var(--color-jade); padding-bottom: 2px; }
 
-    /* hero — full bleed */
-    .hero {
-      position: relative; min-height: min(92vh, 820px);
-      display: flex; align-items: flex-end;
-      color: #f2f0ea;
-      overflow: hidden;
+    /* HERO — full bleed mineral */
+    #hero {
+      position: relative;
+      min-height: calc(100vh - var(--header-height) - 28px);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; border-bottom: 1px solid var(--color-stone);
     }
-    .hero-media {
+    .hero-bg {
       position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.92) 100%),
-        url("assets/hero.jpg") center / cover no-repeat;
-      transform: scale(1.04);
-      animation: heroDrift 28s ease-in-out infinite alternate;
+      background: url("assets/mineral-2.jpg") center / cover no-repeat;
+      filter: contrast(1.06) brightness(0.95);
+      transform: scale(1.03);
+      animation: heroDrift 32s var(--ease) infinite alternate;
     }
     @keyframes heroDrift {
-      from { transform: scale(1.04) translate3d(0,0,0); }
-      to { transform: scale(1.08) translate3d(-1.2%, -1%, 0); }
+      from { transform: scale(1.03) translate3d(0,0,0); }
+      to { transform: scale(1.08) translate3d(-1.5%, -1.2%, 0); }
+    }
+    .hero-bg::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(3,3,3,0.25) 0%, transparent 30%, transparent 55%, rgba(3,3,3,0.72) 100%),
+        radial-gradient(ellipse 70% 55% at 50% 45%, transparent 35%, rgba(3,3,3,0.45) 100%);
+      mix-blend-mode: multiply;
     }
     .hero-content {
-      position: relative; z-index: 1;
-      width: min(100% - 2.5rem, var(--container));
-      margin: 0 auto 3.5rem;
-      max-width: 40rem;
-      animation: rise 0.9s ease both;
+      position: relative; z-index: 5;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: clamp(14px, 2vw, 22px);
+      padding: 0 5vw; max-width: 52rem;
+      animation: rise 1.1s var(--ease) both;
     }
     @keyframes rise {
-      from { opacity: 0; transform: translateY(18px); }
+      from { opacity: 0; transform: translateY(22px); }
       to { opacity: 1; transform: none; }
     }
-    .hero-brand {
-      font-family: var(--font-display);
-      font-size: clamp(1.85rem, 5vw, 3rem);
-      font-weight: 700; letter-spacing: 0.02em;
-      line-height: 1.05; margin: 0 0 1rem;
-      text-transform: uppercase;
+    .engraved-main {
+      font-weight: 800;
+      font-size: clamp(2rem, 1.2rem + 4vw, 4.2rem);
+      letter-spacing: -0.02em;
+      color: #DAD7D2;
+      text-shadow: 0 1.5px 0 rgba(0,0,0,.7), 0 -1px 0 rgba(255,255,255,.05), 0 0 40px rgba(218,215,210,.08);
+      line-height: 1.05;
     }
-    .hero-brand span { opacity: 0.45; }
-    .hero-line {
-      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
-      color: #e8e4dc; margin: 0 0 0.75rem; max-width: 28ch;
+    .engraved-sub {
+      font-weight: 600;
+      font-size: clamp(1rem, 0.85rem + 1.2vw, 1.65rem);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #E9EBED;
+      text-shadow: 0 1.5px 0 rgba(0,0,0,.85), 0 0 18px rgba(0,0,0,.5);
+      max-width: 22ch; line-height: 1.2;
     }
     .hero-support {
-      font-size: 0.85rem; color: #b8b4ac; margin: 0 0 1.75rem; max-width: 36ch;
+      max-width: 38ch; font-size: 0.9rem; color: var(--color-text-secondary);
+      text-shadow: 0 1px 8px rgba(0,0,0,.8);
     }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 0.7rem 1.05rem; font: inherit; font-size: 0.75rem;
-      border-radius: var(--radius); cursor: pointer; border: 1px solid transparent;
-      text-decoration: none; transition: background .2s, color .2s, border-color .2s;
+    .hero-status {
+      display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 0.35rem 0.65rem; margin-top: 0.2rem;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid rgba(90,143,114,0.25);
+      border-radius: 3px; background: rgba(3,3,3,0.5);
+      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-text-muted);
     }
-    .btn:hover { text-decoration: none; }
-    .btn-primary { background: #fff; color: #111; }
-    .btn-primary:hover { background: #e8e4dc; }
-    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
-    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
-    .btn-dark { background: var(--bg-ink); color: #fff; }
-    .btn-dark:hover { background: #222; }
-    .btn-line { background: transparent; border-color: var(--brd-strong); color: var(--typ); }
-    .btn-line:hover { border-color: var(--typ); }
-
-    .badges {
-      display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem;
-      margin-top: 1.75rem;
+    .live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--color-jade); box-shadow: 0 0 10px var(--color-jade);
+      animation: nodePulse 2.4s ease-in-out infinite;
     }
-    .badge {
-      font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.28); color: #d8d4cc;
-      padding: 0.28rem 0.5rem; border-radius: var(--radius);
+    @keyframes nodePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.85); }
+    }
+    .hero-status strong { color: var(--color-jade); font-weight: 600; }
+    .hero-status .sep { opacity: 0.35; }
+    .hero-links { display: flex; gap: clamp(20px, 4vw, 44px); margin-top: 8px; flex-wrap: wrap; justify-content: center; }
+    .hero-link {
+      font-weight: 700; font-size: 0.88rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #E9EBED; position: relative; padding-bottom: 6px;
+      text-shadow: 0 2px 0 rgba(0,0,0,.9), 0 0 14px rgba(0,0,0,.6);
+    }
+    .hero-link::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+      background: rgba(233,235,237,.35); transition: background .35s;
+    }
+    .hero-link:hover { color: #fff; }
+    .hero-link:hover::after { background: rgba(255,255,255,.7); }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: 0.5rem;
+    }
+    .hero-badges span {
+      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(218,215,210,0.22); color: #c8c4bc;
+      padding: 0.28rem 0.5rem; background: rgba(0,0,0,0.35);
+    }
+    .hero-seal {
+      position: absolute; left: 50%; bottom: clamp(18px, 3.5vh, 40px);
+      transform: translateX(-50%); z-index: 5;
+      padding: 6px 0; border-top: 1px solid rgba(233,235,237,.22);
+      border-bottom: 1px solid rgba(233,235,237,.22);
+      font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: #E9EBED; opacity: 0.7; white-space: nowrap;
+      text-shadow: 0 1.5px 0 rgba(0,0,0,.85);
     }
 
     /* sections */
-    section { padding: 4.5rem 0; border-bottom: 1px solid var(--brd); }
-    .section-kicker {
-      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--typ-tone); margin: 0 0 0.85rem;
+    .section-padding { padding: clamp(4.5rem, 9vw, 7.5rem) 0; position: relative; }
+    .section-meta-bar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.5rem;
+      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--color-text-muted); margin-bottom: 1rem;
     }
+    .section-meta-bar .meta-sep { opacity: 0.35; }
+    .section-meta-bar .meta-live { color: var(--color-jade); display: inline-flex; align-items: center; gap: 0.35rem; }
+    .section-meta-bar .meta-live::before {
+      content: ""; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--color-jade); box-shadow: 0 0 6px var(--color-jade);
+    }
+    .section-label {
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--color-text-muted); border-bottom: 1px solid var(--color-stone);
+      padding-bottom: 0.8rem; margin-bottom: 2rem; display: inline-block;
+    }
+    .section-label .label-prefix { color: var(--color-jade); font-weight: 600; margin-right: 0.35rem; }
     h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 3vw, 1.85rem);
-      line-height: 1.2; margin: 0 0 0.75rem; font-weight: 700;
-      max-width: 22ch;
+      font-size: clamp(1.85rem, 3.5vw, 3.2rem); font-weight: 600;
+      letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 1.25rem;
+      max-width: 18ch;
     }
-    .lede { color: var(--typ-content); max-width: 52ch; margin: 0 0 2rem; font-size: 0.9rem; }
+    .lede { max-width: 54ch; color: var(--color-text-secondary); font-size: 1.02rem; margin-bottom: 2.25rem; }
 
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--brd);
-      border-left: 1px solid var(--brd);
+    /* postura with mineral panel */
+    #postura { background: var(--color-bg); border-bottom: 1px solid var(--color-stone); }
+    .postura-split {
+      display: grid; grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2rem, 5vw, 4rem); align-items: stretch;
     }
-    .pillar {
-      display: block; padding: 1.25rem 1.1rem 1.4rem;
-      border-right: 1px solid var(--brd); border-bottom: 1px solid var(--brd);
-      text-decoration: none; transition: background .2s;
-      min-height: 100%;
+    .postura-body p {
+      color: var(--color-text); font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.35rem;
     }
-    .pillar:hover { background: var(--bg-tone); text-decoration: none; }
-    .pillar .n { font-size: 0.65rem; color: var(--typ-tone); letter-spacing: 0.08em; }
-    .pillar h3 {
-      font-family: var(--font-display); font-size: 0.95rem;
-      margin: 0.55rem 0 0.4rem; font-weight: 700;
+    .postura-signal {
+      color: var(--color-text-secondary); font-size: 0.92rem;
+      border-left: 2px solid var(--color-jade); padding-left: 0.9rem;
+      margin-top: 1.5rem; line-height: 1.65;
     }
-    .pillar p { margin: 0; font-size: 0.78rem; color: var(--typ-tone); }
+    .mineral-panel {
+      position: relative; min-height: 320px; border: 1px solid var(--color-stone);
+      background: url("assets/mineral-6.jpg") center / cover no-repeat;
+      overflow: hidden;
+    }
+    .mineral-panel::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(3,3,3,0.15), rgba(3,3,3,0.65));
+    }
+    .mineral-panel .cap {
+      position: absolute; z-index: 1; left: 1rem; bottom: 1rem; right: 1rem;
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #cfcbc3;
+    }
 
-    .stack { display: grid; gap: 1.25rem; }
+    /* four lines — dense lab grid, not soft cards */
+    #servicios { border-bottom: 1px solid var(--color-stone); }
+    .lines-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--color-stone); background: var(--color-stone); gap: 1px;
+    }
+    .line-cell {
+      background: var(--color-surface); padding: 1.5rem 1.25rem 1.65rem;
+      text-decoration: none; color: inherit; display: block;
+      position: relative; overflow: hidden;
+      transition: background .35s var(--ease);
+    }
+    .line-cell::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: transparent; transition: background .35s;
+    }
+    .line-cell:hover { background: var(--color-surface-2); color: inherit; }
+    .line-cell:hover::before { background: var(--color-jade); }
+    .line-cell .n { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--color-jade); margin-bottom: 1rem; }
+    .line-cell h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.55rem; color: var(--color-text); }
+    .line-cell p { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.55; }
+
+    /* offers */
+    .offer-stack { display: flex; flex-direction: column; }
     .offer {
-      display: grid; grid-template-columns: 1fr auto; gap: 0.75rem 1.5rem;
-      align-items: start; padding: 1.25rem 0;
-      border-top: 1px solid var(--brd);
+      display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem;
+      padding: 1.5rem 0; border-top: 1px solid var(--color-stone);
+      align-items: start;
     }
-    .offer:last-child { border-bottom: 1px solid var(--brd); }
-    .offer h3 {
-      font-family: var(--font-display); font-size: 1rem;
-      margin: 0 0 0.35rem; font-weight: 700;
-    }
-    .offer p { margin: 0; font-size: 0.82rem; color: var(--typ-content); max-width: 48ch; }
-    .offer .meta { font-size: 0.72rem; color: var(--typ-tone); margin-top: 0.45rem; }
+    .offer:last-child { border-bottom: 1px solid var(--color-stone); }
+    .offer h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+    .offer p { color: var(--color-text-secondary); font-size: 0.9rem; max-width: 48ch; }
+    .offer .meta { margin-top: 0.45rem; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--color-text-muted); text-transform: uppercase; }
     .price {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: 0.85rem; white-space: nowrap; text-align: right;
+      font-weight: 700; font-size: 0.95rem; color: var(--color-text);
+      text-align: right; white-space: nowrap;
     }
-    .price small { display: block; font-weight: 400; color: var(--typ-tone); font-size: 0.68rem; margin-top: 0.2rem; }
+    .price small { display: block; font-weight: 400; color: var(--color-text-muted); font-size: 0.68rem; margin-top: 0.25rem; letter-spacing: 0.04em; }
 
-    .split {
-      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: start;
+    #formacion {
+      background:
+        linear-gradient(180deg, rgba(3,3,3,0.92), rgba(3,3,3,0.97)),
+        url("assets/mineral-1.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--color-stone);
     }
-    .note {
-      border-left: 2px solid var(--typ);
-      padding: 0.15rem 0 0.15rem 1rem;
-      font-size: 0.82rem; color: var(--typ-content);
+    #macs { border-bottom: 1px solid var(--color-stone); }
+    .two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 4vw, 3.5rem); }
+    .jade-note {
+      margin-top: 1.25rem; padding: 1.1rem 1.15rem;
+      border: 1px solid rgba(90,143,114,0.35);
+      background: rgba(90,143,114,0.06);
+      font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.65;
     }
+    .jade-note strong { color: var(--color-jade); font-weight: 600; }
 
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--brd); }
-    .step { padding: 1.35rem 1.15rem; border-right: 1px solid var(--brd); }
-    .step:last-child { border-right: 0; }
-    .step .n { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--typ-tone); }
-    .step h3 { font-family: var(--font-display); font-size: 0.95rem; margin: 0.5rem 0; }
-    .step p { margin: 0; font-size: 0.78rem; color: var(--typ-tone); }
+    #rag {
+      position: relative; border-bottom: 1px solid var(--color-stone);
+      overflow: hidden;
+    }
+    #rag .rag-bg {
+      position: absolute; inset: 0; opacity: 0.18;
+      background: url("assets/mineral-7.jpg") center / cover no-repeat;
+      filter: grayscale(0.3) contrast(1.1);
+    }
+    #rag .container { position: relative; z-index: 1; }
 
-    .portfolio-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--brd);
-      border: 1px solid var(--brd);
+    /* process */
+    #metodo { border-bottom: 1px solid var(--color-stone); background: var(--color-surface); }
+    .steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--color-stone); gap: 1px; background: var(--color-stone);
+      margin-top: 2rem;
+    }
+    .step { background: var(--color-bg); padding: 1.75rem 1.35rem; position: relative; }
+    .step .n {
+      font-size: 2.5rem; font-weight: 800; color: rgba(218,215,210,0.08);
+      position: absolute; right: 0.8rem; top: 0.4rem; line-height: 1;
+    }
+    .step h3 { font-size: 1.05rem; margin: 0.5rem 0 0.55rem; }
+    .step p { font-size: 0.82rem; color: var(--color-text-muted); }
+    .step .tag { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--color-jade); text-transform: uppercase; }
+
+    /* portfolio */
+    #portafolio { border-bottom: 1px solid var(--color-stone); }
+    .folio-grid {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 1px;
+      background: var(--color-stone); border: 1px solid var(--color-stone);
     }
     .folio {
-      background: var(--bg); padding: 1.35rem 1.2rem; text-decoration: none;
-      transition: background .2s;
+      background: var(--color-surface); min-height: 220px;
+      display: grid; grid-template-rows: 1fr auto;
+      text-decoration: none; color: inherit; overflow: hidden;
+      transition: background .35s;
     }
-    .folio:hover { background: var(--bg-tone); text-decoration: none; }
-    .folio .tag { font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--typ-tone); }
-    .folio h3 { font-family: var(--font-display); font-size: 0.95rem; margin: 0.45rem 0 0.35rem; }
-    .folio p { margin: 0; font-size: 0.78rem; color: var(--typ-tone); }
-
-    .cred-row {
-      display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; align-items: center;
+    .folio:hover { background: var(--color-surface-2); color: inherit; }
+    .folio.featured { grid-row: span 2; min-height: 450px; }
+    .folio-media {
+      background-size: cover; background-position: center; min-height: 140px;
+      position: relative;
     }
-    .cred-item { font-size: 0.78rem; color: var(--typ-content); }
-    .cred-item strong { display: block; font-family: var(--font-display); font-size: 0.8rem; color: var(--typ); margin-bottom: 0.15rem; }
-    .inception { height: 42px; width: auto; filter: grayscale(1); opacity: 0.85; }
+    .folio.featured .folio-media { min-height: 280px; }
+    .folio-media::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(3,3,3,0.85) 100%);
+    }
+    .folio-body { padding: 1.25rem 1.35rem 1.5rem; }
+    .folio-body .tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-jade); }
+    .folio-body h3 { font-size: 1.05rem; margin: 0.45rem 0 0.4rem; font-weight: 600; }
+    .folio-body p { font-size: 0.8rem; color: var(--color-text-muted); }
 
     .bridge {
+      border-bottom: 1px solid var(--color-stone);
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.96)),
-        url("assets/atmosphere.jpg") center / cover no-repeat;
-      border-bottom: 1px solid var(--brd);
+        linear-gradient(90deg, rgba(3,3,3,0.88), rgba(3,3,3,0.55)),
+        url("assets/mineral-4.jpg") center / cover no-repeat;
     }
     .bridge .inner {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: end;
-      padding: 3.5rem 0;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;
+      align-items: end; padding: clamp(3rem, 6vw, 4.5rem) 0;
     }
-    .bridge h2 { max-width: 18ch; }
-    .bridge p { margin: 0; max-width: 36ch; font-size: 0.85rem; color: var(--typ-content); }
+    .bridge h2 { margin: 0 0 0.6rem; max-width: 16ch; }
+    .bridge p { color: var(--color-text-secondary); max-width: 36ch; font-size: 0.92rem; }
+    .bridge-link {
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;
+      color: #E9EBED; border-bottom: 1px solid var(--color-jade); padding-bottom: 4px;
+    }
 
-    /* contact terminal */
-    .terminal-contact {
-      background: var(--bg-ink); color: #d3d3d3;
-      padding: 1.5rem 1.25rem 1.35rem; border-radius: var(--radius);
-      font-size: 0.82rem;
+    #credenciales { border-bottom: 1px solid var(--color-stone); }
+    .cred-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--color-stone); border: 1px solid var(--color-stone); margin-top: 1.5rem;
     }
-    .tc-line { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; margin-bottom: 0.85rem; }
-    .tc-comment { color: #6a6a6a; }
-    .tc-prompt { color: #fff; font-weight: 700; }
-    .tc-label { color: #9a9a9a; min-width: 4.5rem; }
+    .cred-item { background: var(--color-surface); padding: 1.35rem 1.15rem; }
+    .cred-item strong { display: block; font-size: 0.78rem; letter-spacing: 0.06em; margin-bottom: 0.35rem; color: var(--color-text); }
+    .cred-item span { font-size: 0.75rem; color: var(--color-text-muted); }
+    .inception { height: 40px; width: auto; margin-top: 0.5rem; filter: grayscale(1) brightness(1.2); opacity: 0.9; }
+
+    /* contact terminal — keep lab DNA */
+    #contacto { background: var(--color-bg); }
+    .contact-split { display: grid; grid-template-columns: 1fr 1.05fr; gap: 2.5rem; align-items: start; }
+    .terminal-contact {
+      background: #050505; border: 1px solid var(--color-stone);
+      padding: 1.5rem 1.35rem 1.4rem; font-size: 0.82rem; color: #c8c8c8;
+      box-shadow: inset 0 0 40px rgba(90,143,114,0.04);
+    }
+    .tc-line { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; margin-bottom: 0.9rem; }
+    .tc-comment { color: #555; }
+    .tc-prompt { color: var(--color-jade); font-weight: 700; }
+    .tc-label { color: #888; min-width: 4.5rem; }
     .tc-input {
       flex: 1; min-width: 12rem; background: transparent; border: 0;
-      border-bottom: 1px solid #333; color: #f0f0f0; font: inherit;
+      border-bottom: 1px solid #2a2a2a; color: #f0f0f0; font: inherit;
       padding: 0.35rem 0; outline: none;
     }
-    .tc-input:focus { border-bottom-color: #fff; }
+    .tc-input:focus { border-bottom-color: var(--color-jade); }
     .tc-textarea { min-height: 5.5rem; resize: vertical; width: 100%; }
     .tc-message-line { align-items: flex-start; }
-    .tc-message-line .tc-label { margin-top: 0.35rem; }
     .tc-submit {
-      background: #fff; color: #111; border: 0; font: inherit; font-size: 0.75rem;
-      padding: 0.55rem 0.9rem; cursor: pointer; border-radius: var(--radius);
+      background: var(--color-jade); color: #04120c; border: 0; font: inherit;
+      font-weight: 700; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.6rem 1rem; cursor: pointer;
     }
-    .tc-submit:hover { background: #e8e4dc; }
-    .tc-cursor { color: #fff; animation: blink 1.1s steps(1) infinite; margin-left: 0.35rem; }
-    .tc-hint { color: #666; font-size: 0.68rem; margin-left: 0.5rem; }
-    .confirm-msg { display: none; color: #cfcfcf; margin-top: 0.75rem; }
+    .tc-submit:hover { filter: brightness(1.1); }
+    .tc-cursor { color: var(--color-jade); animation: tc-blink 1.1s steps(1) infinite; margin-left: 0.35rem; }
+    .tc-hint { color: #555; font-size: 0.65rem; margin-left: 0.45rem; }
+    .confirm-msg { display: none; color: var(--color-jade); margin-top: 0.75rem; }
     .confirm-msg.show { display: block; }
-    .fine { font-size: 0.72rem; color: var(--typ-tone); margin-top: 1rem; }
+    .fine { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1.25rem; line-height: 1.7; }
 
     footer {
-      padding: 2rem 0 2.5rem; font-size: 0.72rem; color: var(--typ-tone);
+      padding: 2.25rem 0 2.75rem; border-top: 1px solid var(--color-stone);
+      font-size: 0.68rem; letter-spacing: 0.06em; color: var(--color-text-muted);
     }
-    .footer-row {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
-    }
+    .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
-    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
     .reveal.in { opacity: 1; transform: none; }
 
-    @media (max-width: 900px) {
-      .pillars { grid-template-columns: 1fr 1fr; }
-      .split, .steps, .portfolio-grid { grid-template-columns: 1fr; }
-      .step { border-right: 0; border-bottom: 1px solid var(--brd); }
-      .step:last-child { border-bottom: 0; }
-      .offer { grid-template-columns: 1fr; }
-      .price { text-align: left; }
+    @media (max-width: 980px) {
+      .lines-grid, .cred-row { grid-template-columns: 1fr 1fr; }
+      .postura-split, .two-col, .contact-split, .folio-grid, .steps { grid-template-columns: 1fr; }
+      .folio.featured { grid-row: auto; min-height: 280px; }
     }
     @media (max-width: 720px) {
+      .site-header { padding: 0 1.25rem; }
       .nav-toggle { display: block; }
       .nav-links {
-        display: none; position: absolute; left: 0; right: 0; top: 100%;
-        background: var(--bg); border-bottom: 1px solid var(--brd);
-        flex-direction: column; padding: 0.5rem 1.25rem 0.85rem;
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--color-stone);
+        flex-direction: column; padding: 1rem 1.25rem 1.25rem; gap: 0.85rem;
       }
       .nav-links.open { display: flex; }
-      .pillars { grid-template-columns: 1fr; }
-      .hero { min-height: 85vh; }
+      .lines-grid, .cred-row { grid-template-columns: 1fr; }
+      .offer { grid-template-columns: 1fr; }
+      .price { text-align: left; }
+      .hero-seal { letter-spacing: 0.14em; font-size: 0.58rem; }
+      .container { width: min(100% - 2rem, var(--max-width)); }
     }
   </style>
 </head>
 <body>
-  <div class="sysbar">
-    <div class="container inner">
+  <div class="sysbar" aria-hidden="true">
+    <div class="inner">
       <span class="prompt">indioyori@anáhuac:~$</span>
       <span>soberanía_cognitiva</span>
       <span class="sep">·</span>
-      <span>lab · empresas</span>
+      <span>lab empresas</span>
       <span class="sep">·</span>
-      <span><b>FronterIA-Lab</b></span>
-      <span class="cursor" aria-hidden="true"></span>
+      <span><b>edge-rag</b> operativo</span>
+      <span class="cursor"></span>
     </div>
   </div>
 
-  <header class="site-header" id="siteHeader">
-    <div class="container header-row">
-      <a class="brand" href="#hero">FronterIA<span>—</span>Lab</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#formacion">Formación</a></li>
-        <li><a href="#macs">MACS</a></li>
-        <li><a href="#rag">RAG</a></li>
-        <li><a href="#portafolio">Portafolio</a></li>
-        <li><a class="ext" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Indioyori</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="#hero">FRONTERIA<span>—</span>LAB</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#macs">MACS</a></li>
+      <li><a href="#rag">RAG</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a class="ext" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Indioyori</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
   </header>
 
   <main>
-    <section class="hero" id="hero" aria-label="Inicio">
-      <div class="hero-media" role="img" aria-label="Territorio e infraestructura"></div>
+    <section id="hero">
+      <div class="hero-bg" role="img" aria-label="Textura mineral / territorio"></div>
       <div class="hero-content">
-        <p class="hero-brand">FronterIA<span>—</span>Lab</p>
-        <p class="hero-line">Infraestructura y consultoría de IA soberana.</p>
+        <div class="engraved-main">FRONTERIA-LAB</div>
+        <div class="engraved-sub">Infraestructura y consultoría de IA soberana</div>
         <p class="hero-support">Criterio, mandato cognitivo y sistemas que se quedan donde vive tu información.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contacto">Solicitar diagnóstico</a>
-          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        <div class="hero-status">
+          <span class="live-dot"></span>
+          <span><strong>lab</strong> · operativo</span>
+          <span class="sep">·</span>
+          <span>territorio anáhuac</span>
+          <span class="sep">·</span>
+          <span>yoreme·ódami</span>
         </div>
-        <div class="badges" aria-label="Credenciales">
-          <span class="badge">GT EPICC · CLACSO</span>
-          <span class="badge">MCC validado CLACSO</span>
-          <span class="badge">NVIDIA Inception</span>
-          <span class="badge">Zenodo DOI</span>
+        <div class="hero-links">
+          <a class="hero-link" href="#contacto">Solicitar diagnóstico</a>
+          <a class="hero-link" href="#servicios">Ver servicios</a>
+        </div>
+        <div class="hero-badges">
+          <span>GT EPICC · CLACSO</span>
+          <span>MCC validado CLACSO</span>
+          <span>NVIDIA Inception</span>
+          <span>Zenodo DOI</span>
+        </div>
+      </div>
+      <div class="hero-seal">Territorio Anáhuac</div>
+    </section>
+
+    <section id="postura" class="section-padding">
+      <div class="container reveal">
+        <div class="section-meta-bar">
+          <span>PERIMETER: local</span><span class="meta-sep">·</span>
+          <span class="meta-live">LFPDPPP</span><span class="meta-sep">·</span>
+          <span>NOM-151</span><span class="meta-sep">·</span>
+          <span>NVIDIA Inception</span>
+        </div>
+        <span class="section-label"><span class="label-prefix">SYS.01 //</span> Postura</span>
+        <h2>Infraestructura que se queda donde vive tu información.</h2>
+        <div class="postura-split">
+          <div class="postura-body">
+            <p>Construimos sistemas de IA que operan dentro de tu perímetro — nube privada, on-premise o air-gap. Tus datos no entrenan modelos ajenos. Cada respuesta cita el documento de origen; cuando el corpus no sostiene, el sistema se abstiene.</p>
+            <p>No vendemos magia de prompts. Operamos como laboratorio: formación crítica, auditoría de mandato e implementación soberana — cobrado en pesos, bajo LFPDPPP y NOM-151 cuando aplica.</p>
+            <p class="postura-signal">Ingeniería RAG de borde desde territorio Anáhuac — linaje yoreme y ódami — con el rigor de quien indexa corpus reales y responde ante auditoría, no ante un demo.</p>
+          </div>
+          <div class="mineral-panel" role="img" aria-label="Textura mineral del lab">
+            <div class="cap">MCC.protocolov1 · abstención auditada · GT EPICC-CLACSO</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="servicios">
+    <section id="servicios" class="section-padding">
       <div class="container reveal">
-        <p class="section-kicker">01 · Qué hacemos</p>
+        <div class="section-meta-bar">
+          <span>MENU: 4 líneas</span><span class="meta-sep">·</span>
+          <span class="meta-live">primer nivel</span><span class="meta-sep">·</span>
+          <span>sin prompts commodity</span>
+        </div>
+        <span class="section-label"><span class="label-prefix">SYS.02 //</span> Qué hacemos</span>
         <h2>Cuatro líneas. Un laboratorio.</h2>
-        <p class="lede">Formación crítica, auditoría de mandato, gobernanza de instrucción e implementación soberana. No vendemos tips de prompts.</p>
-        <div class="pillars">
-          <a class="pillar" href="#formacion">
-            <div class="n">Formación</div>
+        <p class="lede">Misma categoría que “consultoría de IA”. Otro manual: criterio, mandato, perímetro.</p>
+        <div class="lines-grid">
+          <a class="line-cell" href="#formacion">
+            <div class="n">01 · Formación</div>
             <h3>Certeza + MCC</h3>
-            <p>Literacy crítica y método. Validación CLACSO.</p>
+            <p>Literacy crítica y método. Validación CLACSO / GT EPICC.</p>
           </a>
-          <a class="pillar" href="#macs">
-            <div class="n">Diagnóstico</div>
+          <a class="line-cell" href="#macs">
+            <div class="n">02 · Diagnóstico</div>
             <h3>MACS</h3>
             <p>Auditoría del mandato cognitivo de producción.</p>
           </a>
-          <a class="pillar" href="#gobernanza">
-            <div class="n">Gobernanza</div>
+          <a class="line-cell" href="#gobernanza">
+            <div class="n">03 · Gobernanza</div>
             <h3>MACS + IPA</h3>
             <p>Del diagnóstico al protocolo de instrucción.</p>
           </a>
-          <a class="pillar" href="#rag">
-            <div class="n">Implementación</div>
+          <a class="line-cell" href="#rag">
+            <div class="n">04 · Implementación</div>
             <h3>RAG soberanos</h3>
             <p>Sistemas dedicados a tus documentos.</p>
           </a>
@@ -418,52 +564,58 @@
       </div>
     </section>
 
-    <section id="formacion">
+    <section id="formacion" class="section-padding">
       <div class="container reveal">
-        <p class="section-kicker">02 · Formación y método</p>
+        <div class="section-meta-bar">
+          <span>MÉTODO</span><span class="meta-sep">·</span>
+          <span class="meta-live">CLACSO</span><span class="meta-sep">·</span>
+          <span>keynote · taller · curso</span>
+        </div>
+        <span class="section-label"><span class="label-prefix">SYS.03 //</span> Formación y método</span>
         <h2>Certeza sin sustancia · MCC</h2>
-        <p class="lede">La puerta del método es literacy crítica. El método profundo es MCC — con validación CLACSO / GT EPICC.</p>
-        <div class="stack">
+        <p class="lede">Certeza es la puerta. MCC es el método profundo — con validación CLACSO. No es un catálogo de herramientas.</p>
+        <div class="offer-stack">
           <div class="offer">
             <div>
               <h3>Certeza sin sustancia — Keynote</h3>
               <p>60–90 min. El equipo deja de confundir fluidez con verdad.</p>
-              <p class="meta">Directivos · medios · universidades · ONG</p>
+              <div class="meta">Directivos · medios · universidades · ONG</div>
             </div>
             <div class="price">$32,000 MXN<small>intl $1,900 USD</small></div>
           </div>
           <div class="offer">
             <div>
               <h3>Certeza sin sustancia — Taller</h3>
-              <p>Formación in-company. Criterio + práctica. No catálogo de herramientas.</p>
-              <p class="meta">½ día hasta 20 pers. · día completo hasta 25</p>
+              <p>Formación in-company. Criterio + práctica. Sin temario de prompts.</p>
+              <div class="meta">½ día · día completo</div>
             </div>
-            <div class="price">$55,000 · $85,000 MXN<small>½ día · día completo</small></div>
+            <div class="price">$55,000 · $85,000 MXN<small>hasta 20 / 25 personas</small></div>
           </div>
           <div class="offer">
             <div>
               <h3>Curso MCC (digital)</h3>
               <p>Método de Calibración Contextual. Usar la IA sin ceder el juicio.</p>
-              <p class="meta">Validación CLACSO · GT EPICC · publicación con media</p>
+              <div class="meta">Validación CLACSO · GT EPICC</div>
             </div>
             <div class="price">$149 USD<small>lista</small></div>
           </div>
         </div>
-        <p class="fine" style="margin-top:1.25rem">
-          Archivo, ensayos y comunidad →
-          <a href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener"><strong>indioyori.fronteria-lab.com</strong></a>
-        </p>
+        <p class="fine">Archivo y voz → <a href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">indioyori.fronteria-lab.com</a></p>
       </div>
     </section>
 
-    <section id="macs">
+    <section id="macs" class="section-padding">
       <div class="container reveal">
-        <div class="split">
+        <div class="two-col">
           <div>
-            <p class="section-kicker">03 · Diagnóstico</p>
+            <div class="section-meta-bar">
+              <span>AUDITORÍA</span><span class="meta-sep">·</span>
+              <span class="meta-live">instrumento v1.0</span>
+            </div>
+            <span class="section-label"><span class="label-prefix">SYS.04 //</span> Diagnóstico</span>
             <h2>MACS — mandato cognitivo situado</h2>
-            <p class="lede">No es auditoría de tools ni readiness de growth. Es inspección de cómo la organización produce con IA — y dónde falla el mandato.</p>
-            <div class="stack">
+            <p class="lede">No es readiness de growth ni checklist de tools. Es inspección de cómo la organización produce con IA — y dónde falla el mandato.</p>
+            <div class="offer-stack">
               <div class="offer">
                 <div>
                   <h3>MACS Express</h3>
@@ -474,42 +626,55 @@
               <div class="offer">
                 <div>
                   <h3>MACS Completa</h3>
-                  <p>Multi-área · Mapa de Grieta · puente a IPA / RAG. 4–8 semanas.</p>
+                  <p>Multi-área · Mapa de Grieta · puente a IPA / RAG.</p>
                 </div>
                 <div class="price">$145,000 MXN<small>$8,500 USD</small></div>
               </div>
             </div>
           </div>
           <div id="gobernanza">
-            <p class="section-kicker">04 · Gobernanza</p>
-            <h2>IPA — después del diagnóstico</h2>
-            <p class="lede">Protocolo de instrucción. Solo post-MACS.</p>
-            <div class="note">
-              Express <strong>$55,000 MXN</strong> · Completa <strong>$110,000 MXN</strong>.
-              Bundle sugerido MACS Express + IPA Express: <strong>$110,000 MXN</strong>.
+            <div class="section-meta-bar">
+              <span>PROTOCOLO</span><span class="meta-sep">·</span>
+              <span>solo post-MACS</span>
+            </div>
+            <span class="section-label"><span class="label-prefix">SYS.05 //</span> Gobernanza</span>
+            <h2>IPA</h2>
+            <p class="lede">Protocolo de instrucción anticolonial. Se abre después del diagnóstico.</p>
+            <div class="jade-note">
+              Express <strong>$55,000 MXN</strong> · Completa <strong>$110,000 MXN</strong>.<br />
+              Bundle MACS Express + IPA Express: <strong>$110,000 MXN</strong>.
+            </div>
+            <div class="mineral-panel" style="margin-top:1.75rem;min-height:200px;background-image:url('assets/mineral-3.jpg')">
+              <div class="cap">falla de mandato → protocolo · no brochure de ética</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="rag">
+    <section id="rag" class="section-padding">
+      <div class="rag-bg" aria-hidden="true"></div>
       <div class="container reveal">
-        <p class="section-kicker">05 · Implementación</p>
-        <h2>Sistemas RAG soberanos</h2>
-        <p class="lede">Dedicados / indexados con documentos propios. Para abogados, investigadores y empresas. Cotización personalizada. Motor de lab: TEKTRON.</p>
-        <div class="stack">
+        <div class="section-meta-bar">
+          <span>IMPLEMENTACIÓN</span><span class="meta-sep">·</span>
+          <span class="meta-live">cotización</span><span class="meta-sep">·</span>
+          <span>motor TEKTRON</span>
+        </div>
+        <span class="section-label"><span class="label-prefix">SYS.06 //</span> Sistemas RAG soberanos</span>
+        <h2>Dedicados a tus documentos.</h2>
+        <p class="lede">Para abogados, investigadores y empresas. Indexados sobre corpus propio, en perímetro controlado. Cotización personalizada.</p>
+        <div class="offer-stack">
           <div class="offer">
             <div>
               <h3>Diagnóstico técnico</h3>
-              <p>Viabilidad, corpus, perímetro, alcance del piloto. Acreditable al piloto (60 días).</p>
+              <p>Viabilidad, corpus, perímetro, alcance. Acreditable al piloto (60 días).</p>
             </div>
             <div class="price">desde $35,000 MXN</div>
           </div>
           <div class="offer">
             <div>
               <h3>Piloto soberano</h3>
-              <p>Un corpus acotado · un entorno · citas · abstención cuando no hay evidencia (MCC).</p>
+              <p>Un corpus · un entorno · citas · abstención MCC cuando no hay evidencia.</p>
             </div>
             <div class="price">desde $150,000 MXN</div>
           </div>
@@ -525,23 +690,27 @@
       </div>
     </section>
 
-    <section id="metodo">
+    <section id="metodo" class="section-padding">
       <div class="container reveal">
-        <p class="section-kicker">06 · Cómo trabajamos</p>
+        <div class="section-meta-bar"><span>SECUENCIA</span><span class="meta-sep">·</span><span class="meta-live">operativa</span></div>
+        <span class="section-label"><span class="label-prefix">SYS.07 //</span> Cómo trabajamos</span>
         <h2>Criterio → mandato → perímetro</h2>
-        <div class="steps" style="margin-top:1.75rem">
+        <div class="steps">
           <div class="step">
             <div class="n">01</div>
+            <div class="tag">Formación</div>
             <h3>Criterio</h3>
-            <p>Certeza / formación. El equipo deja de firmar fluidez vacía.</p>
+            <p>Certeza / MCC. El equipo deja de firmar fluidez vacía.</p>
           </div>
           <div class="step">
             <div class="n">02</div>
+            <div class="tag">Auditoría</div>
             <h3>Mandato</h3>
             <p>MACS (+ IPA). Quién manda sobre el modelo — y con qué protocolo.</p>
           </div>
           <div class="step">
             <div class="n">03</div>
+            <div class="tag">Infra</div>
             <h3>Perímetro</h3>
             <p>RAG soberano. El conocimiento se queda en casa.</p>
           </div>
@@ -549,31 +718,40 @@
       </div>
     </section>
 
-    <section id="portafolio">
+    <section id="portafolio" class="section-padding">
       <div class="container reveal">
-        <p class="section-kicker">07 · Portafolio</p>
-        <h2>Obra seleccionada</h2>
-        <p class="lede">No un catálogo de agentes. Método, teoría e instrumentos con los que operamos.</p>
-        <div class="portfolio-grid">
-          <a class="folio" href="https://doi.org/10.5281/zenodo.17728016" target="_blank" rel="noopener">
-            <div class="tag">Método · CLACSO</div>
-            <h3>MCC — Calibración Contextual</h3>
-            <p>Protocolo y praxis. Validación GT EPICC-CLACSO. DOI Zenodo.</p>
+        <div class="section-meta-bar">
+          <span>OBRA</span><span class="meta-sep">·</span>
+          <span>no catálogo de agentes</span><span class="meta-sep">·</span>
+          <span class="meta-live">selección</span>
+        </div>
+        <span class="section-label"><span class="label-prefix">SYS.08 //</span> Portafolio</span>
+        <h2>Método, teoría, instrumento.</h2>
+        <p class="lede">Lo que sostiene el lab — no una vitrina de códices comerciales.</p>
+        <div class="folio-grid">
+          <a class="folio featured" href="https://doi.org/10.5281/zenodo.17728016" target="_blank" rel="noopener">
+            <div class="folio-media" style="background-image:url('assets/mineral-5.jpg')"></div>
+            <div class="folio-body">
+              <div class="tag">Método · CLACSO · Zenodo</div>
+              <h3>MCC — Calibración Contextual</h3>
+              <p>Protocolo y praxis. Validación GT EPICC-CLACSO. DOI 10.5281/zenodo.17728016.</p>
+            </div>
           </a>
           <a class="folio" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">
-            <div class="tag">Literacy crítica</div>
-            <h3>Certeza sin sustancia</h3>
-            <p>Keynote y taller. Fluidez ≠ verdad.</p>
+            <div class="folio-media" style="background-image:url('assets/mineral-8.jpg')"></div>
+            <div class="folio-body">
+              <div class="tag">Literacy crítica</div>
+              <h3>Certeza sin sustancia</h3>
+              <p>Keynote y taller. Fluidez ≠ verdad.</p>
+            </div>
           </a>
           <a class="folio" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">
-            <div class="tag">Teoría</div>
-            <h3>Grieta Generativa / Olvido Estructural</h3>
-            <p>Poder, colonialidad y soberanía cognitiva en LLMs.</p>
-          </a>
-          <a class="folio" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">
-            <div class="tag">Archivo</div>
-            <h3>Indioyori — voz y archivo</h3>
-            <p>Ensayos, talleres y comunidad desde territorio Anáhuac.</p>
+            <div class="folio-media" style="background-image:url('assets/mineral-4.jpg')"></div>
+            <div class="folio-body">
+              <div class="tag">Teoría</div>
+              <h3>Grieta / Olvido Estructural</h3>
+              <p>Poder, colonialidad y soberanía cognitiva en LLMs.</p>
+            </div>
           </a>
         </div>
       </div>
@@ -582,22 +760,22 @@
     <div class="bridge">
       <div class="container inner reveal">
         <div>
-          <p class="section-kicker">Voz</p>
-          <h2>El lab vende. Indioyori piensa en público.</h2>
-          <p>Misma línea. Roles distintos. El archivo vive en Ghost.</p>
+          <span class="section-label" style="border:0;padding:0;margin-bottom:1rem"><span class="label-prefix">VOZ //</span> Indioyori</span>
+          <h2>El lab opera. Indioyori piensa en público.</h2>
+          <p>Misma línea epistémica. El archivo, los ensayos y la comunidad viven en Ghost.</p>
         </div>
-        <a class="btn btn-dark" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Ir a Indioyori →</a>
+        <a class="bridge-link" href="https://indioyori.fronteria-lab.com" target="_blank" rel="noopener">Ir al archivo Indioyori →</a>
       </div>
     </div>
 
-    <section id="credenciales">
+    <section id="credenciales" class="section-padding">
       <div class="container reveal">
-        <p class="section-kicker">08 · Credenciales</p>
-        <h2>Con quién y bajo qué sello.</h2>
-        <div class="cred-row" style="margin-top:1.5rem">
-          <div class="cred-item"><strong>GT EPICC · CLACSO</strong>Investigación en soberanía cognitiva</div>
-          <div class="cred-item"><strong>MCC validado</strong>Método con respaldo CLACSO</div>
-          <div class="cred-item"><strong>Zenodo</strong>DOI 10.5281/zenodo.17728016</div>
+        <span class="section-label"><span class="label-prefix">SYS.09 //</span> Credenciales</span>
+        <h2>Sellos que ya están.</h2>
+        <div class="cred-row">
+          <div class="cred-item"><strong>GT EPICC · CLACSO</strong><span>Investigación en soberanía cognitiva</span></div>
+          <div class="cred-item"><strong>MCC validado</strong><span>Método con respaldo CLACSO</span></div>
+          <div class="cred-item"><strong>Zenodo</strong><span>DOI 10.5281/zenodo.17728016</span></div>
           <div class="cred-item">
             <strong>NVIDIA Inception</strong>
             <img class="inception" src="assets/nvidia-inception.png" alt="NVIDIA Inception Member" width="140" height="42" />
@@ -606,38 +784,39 @@
       </div>
     </section>
 
-    <section id="contacto">
+    <section id="contacto" class="section-padding">
       <div class="container reveal">
-        <div class="split">
+        <div class="contact-split">
           <div>
-            <p class="section-kicker">09 · Contacto</p>
-            <h2>Diagnóstico. Sin compromiso de alcance.</h2>
-            <p class="lede">Cuéntanos sector, datos sensibles y si buscas formación, MACS o RAG. Respondemos desde México / LatAm.</p>
+            <div class="section-meta-bar"><span>CONTACTO</span><span class="meta-sep">·</span><span class="meta-live">México · LatAm</span></div>
+            <span class="section-label"><span class="label-prefix">SYS.10 //</span> Diagnóstico</span>
+            <h2>Cuéntanos el perímetro.</h2>
+            <p class="lede">Sector, datos sensibles y si buscas formación, MACS o RAG. Sin compromiso de alcance.</p>
             <p class="fine">
               Outreach: <a href="mailto:indioyori@fronteria-lab.com">indioyori@fronteria-lab.com</a><br />
-              Infra RAG: <a href="mailto:ragflow@fronteria-lab.com">ragflow@fronteria-lab.com</a><br />
+              Infra: <a href="mailto:ragflow@fronteria-lab.com">ragflow@fronteria-lab.com</a><br />
               50% anticipo · IVA aparte
             </p>
           </div>
           <form class="terminal-contact" id="contactForm" action="contact.php" method="POST" novalidate>
             <div class="tc-line tc-comment"># formación · MACS · RAG soberano · sin compromiso</div>
-            <div class="tc-line tc-comment"># indioyori@fronteria-lab.com · México · LatAm</div>
+            <div class="tc-line tc-comment"># indioyori@fronteria-lab.com · territorio anáhuac</div>
             <div class="tc-line">
               <span class="tc-prompt">$</span><span class="tc-label">correo</span>
-              <input class="tc-input" type="email" id="tc-email" name="email" placeholder="tu@empresa.com" required autocomplete="email" />
+              <input class="tc-input" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email" />
             </div>
             <div class="tc-line tc-message-line">
               <span class="tc-prompt">$</span><span class="tc-label">mensaje</span>
-              <textarea class="tc-input tc-textarea" id="tc-message" name="mensaje" placeholder="sector, necesidad (formación / MACS / RAG), restricciones de datos..." required></textarea>
+              <textarea class="tc-input tc-textarea" name="mensaje" placeholder="sector, necesidad, restricciones de datos..." required></textarea>
             </div>
             <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true">
               <label>Sitio web<input type="text" name="empresa_web" tabindex="-1" autocomplete="off" /></label>
             </div>
-            <div class="tc-line tc-action-line">
+            <div class="tc-line">
               <button type="submit" class="tc-submit">enviar</button><span class="tc-cursor">_</span>
               <span class="tc-hint">↵ Enter también envía</span>
             </div>
-            <div class="confirm-msg" id="confirmMsg">Gracias — recibimos tu mensaje. Te contactaremos pronto.</div>
+            <div class="confirm-msg" id="confirmMsg">Gracias — recibimos tu mensaje.</div>
           </form>
         </div>
       </div>
@@ -647,16 +826,12 @@
   <footer>
     <div class="container footer-row">
       <div>© <span id="y"></span> FronterIA-Lab · Indioyori · territorio Anáhuac</div>
-      <div>
-        <a href="https://indioyori.fronteria-lab.com">Archivo Indioyori</a>
-        · precios lista; cotización en RAG
-      </div>
+      <div><a href="https://indioyori.fronteria-lab.com">Archivo</a> · precios lista · RAG a cotización</div>
     </div>
   </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
     const toggle = document.getElementById("navToggle");
     const links = document.getElementById("navLinks");
     toggle.addEventListener("click", () => {
@@ -667,7 +842,6 @@
       links.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
     }));
-
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
     }, { threshold: 0.12 });
