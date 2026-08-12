@@ -177,24 +177,40 @@ Formulario / correos · 50% anticipo · IVA · qué pedir en el mensaje (formaci
 
 ---
 
-## Look (solo criterio, aún sin build)
+## Look — tipografía y color (aún sin build)
 
-- Mate, limpio, tecnológico  
-- Tipografía y tono alineados al **blog** (Space Mono / JetBrains; ink; sin circo SYS)  
-- Atmósfera sutil (no página plana; no overload mineral del demo anterior)  
-- Sin cards de “5 Códices”  
-- Claridad > densidad epistémica en la home
+**Tipografía (blog):** JetBrains Mono (títulos) · Space Mono (cuerpo/UI).
+
+**Paleta mate — misma familia que Indioyori, un grado más “lab”:**
+
+| Token | Hex | Uso |
+|---|---|---|
+| `--bg` | `#F7F6F3` | Fondo página (papel mate, no blanco puro chillón) |
+| `--bg-tone` | `#EFEDE8` | Franjas / hover / bloques suaves |
+| `--bg-ink` | `#141413` | Sysbar, tipografía fuerte, botones primarios |
+| `--typ` | `#1C1B1B` | Texto principal (= accent Ghost del blog) |
+| `--typ-tone` | `#6B6B6B` | Secundario, meta, precios auxiliares |
+| `--typ-content` | `#2E2E2C` | Párrafos largos |
+| `--brd` | `#DDDBD4` | Líneas, divisores |
+| `--brand` | `#141413` | Marca / CTAs |
+| `--accent` | `#3D5C4A` | **Un solo acento mate** (jade carbonatado): links activos, “live”, foco MCC — sin glow |
+| `--accent-soft` | `#E4EBE6` | Fondos muy suaves de acento |
+
+**No usar:** púrpura IA · neón · crema+terracota cliché · negro `#000` puro en todo el canvas · sombras multilayers.
+
+**Atmósfera:** fondo mate + una imagen/textura muy baja opacidad en hero (opcional); el resto tipográfico y limpio.  
+**No:** página 100% oscura mineral del demo anterior; **sí:** parentesco claro con Ghost Indioyori.
 
 ---
 
-## Decisiones (paquete recomendado — confirmar)
+## Decisiones (confirmadas 12 ago 2026)
 
 | # | Decisión | Recomendación | Estado |
 |---|---|---|---|
-| **D1** | Orden de scroll 0→8 | Hero → Sobre nosotros → **Empresas** → Arquitectura → Soberanía → Academia → Laboratorio → Archivo → Contacto | ⏳ por confirmar |
-| **D2** | Dónde va el detalle MCC (A–D / 16 glifos) | **Academia** (profundidad). En **Empresas**: MCC como método estrella con promesa corta + link “ver protocolo”. | ⏳ por confirmar |
-| **D3** | Cómo vive Laboratorio | Tag/colección **Ghost** (`laboratorio` / lab-notes). Sin WordPress nuevo en cPanel. Home solo destaca + “ver todo”. | ⏳ por confirmar |
-| **D4** | Precios en Empresas | **Sí, precios lista** por servicio (primer nivel). RAG: bandas + “cotización personalizada”. | ⏳ por confirmar |
+| **D1** | Orden de scroll 0→8 | Hero → Sobre nosotros → **Empresas** → Arquitectura → Soberanía → Academia → Laboratorio → Archivo → Contacto | ✅ confirmado |
+| **D2** | Dónde va el detalle MCC (A–D / 16 glifos) | **Academia** (profundidad). En **Empresas**: MCC como método estrella con promesa corta + link “ver protocolo”. | ✅ confirmado |
+| **D3** | Cómo vive Laboratorio | Tag/colección **Ghost** (`laboratorio` / lab-notes). Sin WordPress nuevo en cPanel. Home solo destaca + “ver todo”. | ✅ confirmado |
+| **D4** | Precios en Empresas | **Sí, precios lista** por servicio (primer nivel). RAG: bandas + “cotización personalizada”. | ✅ confirmado |
 
 ### Paquete si dices “ok a todo”
 
