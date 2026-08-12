@@ -187,11 +187,20 @@ Formulario / correos · 50% anticipo · IVA · qué pedir en el mensaje (formaci
 
 ---
 
-## Decisiones que necesito de ti (marcar sí/no)
+## Decisiones (paquete recomendado — confirmar)
 
-1. ¿Aprobamos el orden 0→8 de arriba?  
-2. ¿MCC A–D vive en **Academia** (recomendado) o dentro del bloque MCC en **Empresas**?  
-3. ¿Laboratorio = tag/colección en Ghost (recomendado), sin WordPress nuevo?  
-4. ¿Precios lista visibles dentro de cada servicio en Empresas (sí, primer nivel) o solo “cotizar”?  
+| # | Decisión | Recomendación | Estado |
+|---|---|---|---|
+| **D1** | Orden de scroll 0→8 | Hero → Sobre nosotros → **Empresas** → Arquitectura → Soberanía → Academia → Laboratorio → Archivo → Contacto | ⏳ por confirmar |
+| **D2** | Dónde va el detalle MCC (A–D / 16 glifos) | **Academia** (profundidad). En **Empresas**: MCC como método estrella con promesa corta + link “ver protocolo”. | ⏳ por confirmar |
+| **D3** | Cómo vive Laboratorio | Tag/colección **Ghost** (`laboratorio` / lab-notes). Sin WordPress nuevo en cPanel. Home solo destaca + “ver todo”. | ⏳ por confirmar |
+| **D4** | Precios en Empresas | **Sí, precios lista** por servicio (primer nivel). RAG: bandas + “cotización personalizada”. | ⏳ por confirmar |
 
-Cuando respondas, recién ahí armamos copy por sección y después el HTML.
+### Paquete si dices “ok a todo”
+
+- Nav: `Sobre nosotros` · `Empresas` · `Arquitectura` · `Soberanía` · `Academia` · `Laboratorio` · `Archivo` · `Contacto`
+- Identidad: MCC estrella · Sexto Sol (territorio) · Neuroderechos (regulación)
+- Look: mate, limpio, tecnológico, guiado por el blog
+- Siguiente paso tras confirmar: **copy sección por sección** (aún sin HTML)
+
+Respuesta útil: `ok a todo` **o** `D2=Empresas`, etc.
